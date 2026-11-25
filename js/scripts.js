@@ -165,8 +165,30 @@
   }
 
   /* ------------------------------------------------------------------------
-     4. Subtle Desktop Mouse Parallax on Hero Floating Artifacts
+     4. Steep Hero Scroll Scrub + Subtle Desktop Mouse Parallax
      ------------------------------------------------------------------------ */
+  const heroScrubBg = document.querySelector('[data-hero-scrub]');
+  if (heroScrubBg && !prefersReducedMotion) {
+    let scrubTicking = false;
+    function updateHeroScrub() {
+      scrubTicking = false;
+      const y = Math.min(window.scrollY || 0, 900);
+      const offset = -(y * 0.16);
+      heroScrubBg.style.transform = `translate3d(0px, ${offset.toFixed(1)}px, 0px)`;
+    }
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (!scrubTicking) {
+          requestAnimationFrame(updateHeroScrub);
+          scrubTicking = true;
+        }
+      },
+      { passive: true }
+    );
+    updateHeroScrub();
+  }
+
   const heroStage = document.querySelector('.hero-steep__stage');
   const floatCards = document.querySelectorAll('[data-parallax]');
   if (heroStage && floatCards.length && !prefersReducedMotion && window.innerWidth > 1080) {
@@ -365,12 +387,12 @@
       title: 'Level 01 — Market microstructure',
       question: 'How does the market physically work?',
       analogy:
-        'Everyday analogy: An order book works like a queue at a shop counter, and the bid-ask spread is simply two people negotiating before agreeing on a price.',
+        'Everyday analogy: An order book resembles a queue at a shop counter, and the bid-ask spread is simply two sides negotiating before agreeing.',
       summary:
-        'Why markets exist, how price differs from value, major market players (retail, HNIs, mutual funds, foreign institutions, market makers), exchange matching engines, and how market, limit, and stop orders physically execute.',
+        'Why markets exist, price versus value, participant objectives (retail, HNIs, mutual funds, FIIs, market makers), exchange matching engines, and market, limit, and stop orders.',
       outcomes: [
-        'Explain how an exchange matches your order without guessing',
-        'Distinguish how mutual funds, FIIs, and market makers operate vs. retail',
+        'Explain how exchanges match orders and how mutual funds, FIIs, and market makers act',
+        'Distinguish price versus value clearly in plain Malayalam',
         'Understand market, limit, and stop orders physically inside the queue'
       ],
       metricA: 'Starting point: Zero prior knowledge required',
@@ -383,15 +405,15 @@
       title: 'Level 02 — Order flow intelligence',
       question: 'What is happening inside the auction right now?',
       analogy:
-        'Everyday analogy: Absorption behaves like a sponge soaking up water, and a trapped trader resembles a truck turning onto a road with no exit.',
+        'Everyday analogy: Absorption behaves like a sponge soaking water, and a trapped trader like a truck entering a road with no exit.',
       summary:
-        'Reading actual buying versus selling activity inside price movement: volume, delta (the net difference between aggressive buyers and sellers), absorption (when large orders quietly soak up pressure), exhaustion, and trapped participants.',
+        'Actual buying versus selling inside each move: volume, delta (net aggressive buying minus selling), absorption (large orders soaking pressure), exhaustion, and trapped traders.',
       outcomes: [
-        'Read volume and net aggressive delta inside historical price movement',
-        'Recognize absorption when large orders quietly soak up market pressure',
-        'Identify exhaustion and trapped participants without lagging arrows'
+        'Read volume and net aggressive delta inside historical price moves',
+        'Spot absorption when large orders soak up market pressure',
+        'Identify exhaustion and trapped traders without lagging arrows'
       ],
-      metricA: 'Focus: Actual buying vs. selling activity',
+      metricA: 'Focus: Actual buying vs. selling inside each move',
       metricB: 'Core question: What is happening inside the auction right now?',
       chartLabel: 'Historical Educational Diagram · Volume, Delta & Absorption',
       svg: '<rect x="64" y="14" width="68" height="48" rx="8" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.16"/><rect x="156" y="10" width="68" height="52" rx="8" fill="#a78bfa" fill-opacity="0.18" stroke="#a78bfa" stroke-opacity="0.65"/><rect x="248" y="20" width="68" height="42" rx="8" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.16"/><rect x="340" y="12" width="68" height="50" rx="8" fill="#e8b87d" fill-opacity="0.2" stroke="#e8b87d" stroke-opacity="0.75"/><path d="M98 44 L190 22 L282 40 L374 26 L466 16" stroke="#ffffff" stroke-opacity="0.7" stroke-width="1.4" fill="none"/>'
@@ -403,13 +425,13 @@
       analogy:
         'Everyday analogy: An auction works like a busy fish market cycling between calm agreement and rapid price discovery.',
       summary:
-        'How markets cycle between quiet balance and directional imbalance, why some prices get accepted and others get rejected, and telling proactive buying or selling from reactive moves.',
+        'Cycles of balance and imbalance, acceptance versus rejection of price, and proactive versus reactive moves.',
       outcomes: [
-        'Distinguish quiet balanced markets from directional imbalance phases',
-        'Observe why certain price zones get accepted while others get rejected',
-        'Separate proactive initiative moves from reactive short-term rotations'
+        'Distinguish balanced sessions from directional imbalance cycles',
+        'Read acceptance versus rejection at key price boundaries',
+        'Separate proactive initiative moves from reactive rotations'
       ],
-      metricA: 'Focus: Balance vs. directional imbalance',
+      metricA: 'Focus: Balance and imbalance cycles',
       metricB: 'Core question: Why is price behaving this way?',
       chartLabel: 'Historical Educational Diagram · Balance to Imbalance Cycle',
       svg: '<rect x="36" y="24" width="160" height="36" rx="8" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.2" stroke-dasharray="4 3"/><path d="M48 48 L84 30 L122 52 L168 32 L212 42 L268 16 L326 24 L374 14 L496 22" stroke="#2dd4bf" stroke-width="1.6" fill="none"/><rect x="316" y="10" width="186" height="24" rx="6" fill="#a78bfa" fill-opacity="0.14" stroke="#a78bfa" stroke-opacity="0.45"/>'
@@ -421,11 +443,11 @@
       analogy:
         'Everyday analogy: Liquidity behaves like water flow pooling naturally where buyers and sellers agree on fair value.',
       summary:
-        'Mapping where the market spent time and heavy volume to identify fair value: Point of Control (price with greatest activity), Value Area High and Low (fair-value boundaries), initial balance, and unfinished highs or lows.',
+        'Where time and heavy volume built fair value: Point of Control (most active price), Value Area High and Low (fair-value range), initial balance, and unfinished auction highs or lows.',
       outcomes: [
-        'Identify Point of Control (POC) and fair-value boundaries (VAH / VAL)',
-        'Read initial balance and spot unfinished highs or lows calmly',
-        'Anchor analysis around accepted value instead of arbitrary lines'
+        'Map Point of Control (POC) and Value Area High/Low (VAH/VAL)',
+        'Read initial balance and unfinished auction highs or lows',
+        'Anchor every read to agreed fair value instead of arbitrary lines'
       ],
       metricA: 'Focus: Fair-value boundaries (VAH / POC / VAL)',
       metricB: 'Core question: Where did buyers and sellers agree on fair value?',
@@ -435,126 +457,126 @@
     '5': {
       phase: 'Phase II · Structural Depth (Levels 04–07)',
       title: 'Level 05 — Institutional inventory',
-      question: 'Who is positioned, and what might force them to adjust?',
+      question: 'Who is positioned, and what forces adjustment?',
       analogy:
-        'Everyday analogy: Institutional inventory works like a shopkeeper’s stock—holding too much forces adjustments when demand shifts.',
+        'Everyday analogy: Inventory works like a shopkeeper\'s stock—holding too much forces adjustment when demand shifts.',
       summary:
-        'Thinking in positions instead of isolated candles: how large participants build, hedge, transfer, or adjust long and short stock, and what forces them to unwind.',
+        'Thinking in positions instead of isolated candles: how large participants accumulate, distribute, hedge, and unwind stock.',
       outcomes: [
-        'Think in participant positions instead of isolated candle shapes',
-        'Understand how large funds build, hedge, and transfer inventory',
-        'Recognize structural conditions that force inventory adjustments'
+        'Think in positions rather than isolated candle patterns',
+        'Understand how large participants accumulate, distribute, and hedge',
+        'Spot structural pressure that forces institutional unwinds'
       ],
-      metricA: 'Focus: Participant positioning & unwinds',
-      metricB: 'Core question: Who is positioned, and what might force them to adjust?',
+      metricA: 'Focus: Institutional positioning & unwinds',
+      metricB: 'Core question: Who is positioned, and what forces adjustment?',
       chartLabel: 'Historical Educational Diagram · Inventory Build & Adjustment',
       svg: '<path d="M24 56 C 110 54, 178 60, 248 48 C 310 38, 366 14, 506 12" stroke="#a78bfa" stroke-width="1.7" fill="none"/><path d="M24 56 C 110 54, 178 60, 248 48 L248 68 L24 68 Z" fill="#e8b87d" fill-opacity="0.16"/><circle cx="248" cy="48" r="4.5" fill="#e8b87d"/><circle cx="378" cy="20" r="4.5" fill="#ffffff"/>'
     },
     '6': {
       phase: 'Phase II · Structural Depth (Levels 04–07)',
       title: 'Level 06 — Macro flow intelligence',
-      question: 'Why might big capital be moving the way it is?',
+      question: 'Why might big capital be moving this way?',
       analogy:
-        'Everyday analogy: Observing broader economic currents across bonds, currencies, and commodities before zooming into one chart.',
+        'Everyday analogy: Reading broader economic currents across bonds, currencies, and commodities before zooming into one chart.',
       summary:
-        'Tracking how capital shifts across asset classes through bonds, the Dollar Index, USDINR, gold, crude oil, the VIX (a measure of expected market swings), institutional cash flows, and derivatives positioning.',
+        'Tracking capital across asset classes: bonds, Dollar Index, USDINR, gold, crude, VIX (expected market volatility), FII/DII flows, and derivatives positioning.',
       outcomes: [
-        'Track cross-asset signals across bonds, Dollar Index, USDINR, gold, and crude',
-        'Interpret the VIX and institutional cash flows calmly without headline noise',
-        'Connect macro capital shifts directly to daily market behavior'
+        'Track cross-asset shifts across bonds, Dollar Index, USDINR, gold, and crude',
+        'Interpret VIX, FII/DII flows, and derivatives positioning calmly',
+        'Connect macro capital shifts directly to daily auction structure'
       ],
-      metricA: 'Focus: Cross-asset capital flows',
-      metricB: 'Core question: Why might big capital be moving the way it is?',
+      metricA: 'Focus: Cross-asset macro capital flows',
+      metricB: 'Core question: Why might big capital be moving this way?',
       chartLabel: 'Historical Educational Diagram · Macro Capital Flow Connections',
       svg: '<circle cx="84" cy="38" r="22" stroke="#2dd4bf" stroke-opacity="0.65" stroke-width="1.2"/><circle cx="268" cy="38" r="26" stroke="#a78bfa" stroke-opacity="0.8" stroke-width="1.4"/><circle cx="452" cy="38" r="22" stroke="#e8b87d" stroke-opacity="0.7" stroke-width="1.2"/><path d="M108 38 H240 M296 38 H428" stroke="#ffffff" stroke-opacity="0.35" stroke-dasharray="4 4" stroke-width="1.2"/>'
     },
     '7': {
       phase: 'Phase II · Structural Depth (Levels 04–07)',
-      title: 'Level 07 — Multi-timeframe auction intelligence',
-      question: "Where does today's session sit inside the bigger picture?",
+      title: 'Level 07 — Multi-timeframe auctions',
+      question: 'Where does today sit inside the bigger picture?',
       analogy:
-        'Everyday analogy: Reading the full regional map first so one five-minute street turn never misleads your whole route.',
+        'Everyday analogy: Reading the full regional map first so a five-minute move never blinds you to the larger structure.',
       summary:
-        'Seeing how monthly, weekly, daily, and intraday auctions nest inside each other so you never mistake a five-minute move for the whole story.',
+        'Nesting monthly, weekly, daily, and intraday auctions so a five-minute move never blinds you to the larger structure.',
       outcomes: [
-        'Nest monthly, weekly, daily, and intraday auctions in one structured view',
-        'Avoid getting misled by isolated five-minute chart movements',
-        'Apply the same top-down lens across equities, derivatives, and swings'
+        'Nest monthly, weekly, daily, and intraday auctions clearly',
+        'Keep higher-timeframe context anchored above short-term noise',
+        'Apply one consistent structural lens across instruments'
       ],
       metricA: 'Focus: Nested multi-timeframe context',
-      metricB: "Core question: Where does today's session sit inside the bigger picture?",
+      metricB: 'Core question: Where does today sit inside the bigger picture?',
       chartLabel: 'Historical Educational Diagram · Nested Timeframe Hierarchy',
       svg: '<rect x="36" y="8" width="464" height="60" rx="10" stroke="#ffffff" stroke-opacity="0.2" stroke-width="1"/><rect x="92" y="16" width="352" height="44" rx="8" stroke="#a78bfa" stroke-opacity="0.45" stroke-width="1.2"/><rect x="168" y="24" width="200" height="28" rx="6" fill="#e8b87d" fill-opacity="0.16" stroke="#e8b87d" stroke-opacity="0.75" stroke-width="1.2"/>'
     },
     '8': {
       phase: 'Phase III · Independent Mastery (Levels 08–11)',
       title: 'Level 08 — Auction narrative analysis',
-      question: 'Can I explain the market story plainly without guessing?',
+      question: 'Can I explain the story straight without guessing?',
       analogy:
-        'Everyday analogy: Speaking a language naturally out loud instead of waiting for a translation tool to flash cues.',
+        'Everyday analogy: Speaking a language naturally out loud instead of waiting for indicators to flash cues.',
       summary:
-        'Tying earlier levels together to read a single candle, session, week, or month without indicator dependency, explaining clearly what happened, who was affected, and what remains unresolved.',
+        'Reading a candle, session, week, or month without indicator dependency to explain clearly what happened and what remains unresolved.',
       outcomes: [
-        'Read a clean chart with every indicator removed from the screen',
-        'Explain out loud what happened, who was affected, and what remains unresolved',
-        'Separate observed facts cleanly from unverified assumptions'
+        'Read any clean chart with RSI, MACD, moving averages, and arrows removed',
+        'Explain clearly what happened and what remains unresolved',
+        'Separate observed raw facts from unverified assumptions'
       ],
       metricA: 'Focus: Indicator-free narration',
-      metricB: 'Core question: Can I explain the market story plainly without guessing?',
+      metricB: 'Core question: Can I explain the story straight without guessing?',
       chartLabel: 'Historical Educational Diagram · Clean Indicator-Free Chart Read',
       svg: '<path d="M22 54 L94 42 L152 50 L230 24 L298 34 L388 18 L508 26" stroke="#ffffff" stroke-opacity="0.88" stroke-width="1.5" fill="none"/><circle cx="230" cy="24" r="4" fill="#a78bfa"/><circle cx="388" cy="18" r="4" fill="#e8b87d"/>'
     },
     '9': {
       phase: 'Phase III · Independent Mastery (Levels 08–11)',
       title: 'Level 09 — Institutional decision framework',
-      question: 'How do all these observations connect before I act?',
+      question: 'How do all pieces connect before I act?',
       analogy:
-        'Everyday analogy: Following a clear sequence from widest context down to precise action—never backwards.',
+        'Everyday analogy: Putting analysis in exact top-down order so nothing contradicts before execution.',
       summary:
-        'Putting the pieces in the right order: macro context first, then fair value, inventory, auction structure, order flow, and finally execution.',
+        'Putting analysis in exact order: macro first, then fair value, inventory, auction structure, order flow, and finally execution.',
       outcomes: [
-        'Assemble macro, fair value, inventory, auction state, and order flow in sequence',
-        'Build one written checklist before ever placing a practice or live decision',
-        'Eliminate conflicting rules and impulsive unexamined entries'
+        'Sequence macro, fair value, inventory, auction structure, and order flow',
+        'Write one clear pre-trade checklist before any risk is considered',
+        'Eliminate contradictory setups and impulsive entries'
       ],
-      metricA: 'Focus: Top-down decision sequence',
-      metricB: 'Core question: How do all these observations connect before I act?',
+      metricA: 'Focus: Ordered institutional sequence',
+      metricB: 'Core question: How do all pieces connect before I act?',
       chartLabel: 'Historical Educational Diagram · Ordered Institutional Sequence',
       svg: '<rect x="20" y="24" width="76" height="28" rx="14" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.2"/><rect x="122" y="24" width="76" height="28" rx="14" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.2"/><rect x="224" y="24" width="84" height="28" rx="14" fill="#a78bfa" fill-opacity="0.2" stroke="#a78bfa" stroke-opacity="0.65"/><rect x="334" y="24" width="76" height="28" rx="14" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.2"/><rect x="436" y="24" width="78" height="28" rx="14" fill="#e8b87d" fill-opacity="0.22" stroke="#e8b87d" stroke-opacity="0.8"/><path d="M96 38 H122 M198 38 H224 M308 38 H334 M410 38 H436" stroke="#ffffff" stroke-opacity="0.4" stroke-width="1.2"/>'
     },
     '10': {
       phase: 'Phase III · Independent Mastery (Levels 08–11)',
       title: 'Level 10 — Professional execution',
-      question: 'How do I express my thesis with controlled risk?',
+      question: 'How do I express a thesis responsibly?',
       analogy:
-        'Everyday analogy: Risk gets carried the way you carry something made of glass—deliberate, calm, and protected.',
+        'Everyday analogy: Risk is handled like carrying glass—deliberate, steady, and capped in advance.',
       summary:
-        'Turning a clear read into disciplined action: entering and scaling positions, setting strict risk limits, managing open trades, journaling, and reviewing decisions by quality rather than luck.',
+        'Entries, scaling, strict risk limits, trade management, written journaling, and judging decisions by quality per unit of risk.',
       outcomes: [
-        'Manage position size and stop-loss logic calmly before acting',
-        'Log written decision journals and review process quality over lucky outcomes',
-        'Practice thoroughly through paper trading before real capital enters'
+        'Size positions and place disciplined stop-loss rules calmly',
+        'Log written journals and judge decisions by quality per unit of risk',
+        'Practice thoroughly on paper before live capital enters'
       ],
-      metricA: 'Focus: Disciplined execution & risk control',
-      metricB: 'Core question: How do I express my thesis with controlled risk?',
+      metricA: 'Focus: Risk-capped execution & journaling',
+      metricB: 'Core question: How do I express a thesis responsibly?',
       chartLabel: 'Historical Educational Diagram · Defined Risk & Review Discipline',
       svg: '<line x1="24" y1="54" x2="508" y2="54" stroke="#ffffff" stroke-opacity="0.16" stroke-width="1"/><rect x="64" y="42" width="44" height="12" rx="4" fill="#eb8080" fill-opacity="0.55"/><rect x="150" y="34" width="44" height="20" rx="4" fill="#2dd4bf" fill-opacity="0.45"/><rect x="236" y="22" width="44" height="32" rx="4" fill="#2dd4bf" fill-opacity="0.62"/><rect x="322" y="44" width="44" height="10" rx="4" fill="#eb8080" fill-opacity="0.5"/><rect x="408" y="10" width="44" height="44" rx="4" fill="#e8b87d" fill-opacity="0.8"/>'
     },
     '11': {
       phase: 'Phase III · Independent Mastery (Levels 08–11)',
       title: 'Level 11 — Independent market research',
-      question: 'Can I test, challenge, and validate my own ideas?',
+      question: 'Can I test and challenge my own ideas?',
       analogy:
-        'Everyday analogy: Moving beyond any teacher’s notes so you can examine new conditions and revise hypotheses independently.',
+        'Everyday analogy: Standing on your own feet so you never rely on tips or a mentor forever.',
       summary:
-        'Going beyond any teacher’s framework: asking sharp market questions, forming testable hypotheses, actively hunting for evidence that proves you wrong, documenting results, and revising as markets evolve.',
+        'Forming testable hypotheses, hunting actively for contradictory evidence, documenting results, and revising frameworks as markets evolve.',
       outcomes: [
-        'Form clear, testable hypotheses and hunt for evidence that disproves them',
-        'Document observations rigorously and adapt as market regimes shift',
-        'Achieve genuine intellectual independence without relying on tips or mentors'
+        'Form testable hypotheses and hunt for contradictory evidence',
+        'Document results and revise frameworks as market regimes evolve',
+        'Operate with genuine independent judgment for life'
       ],
       metricA: 'Focus: Lifetime independent research',
-      metricB: 'Core question: Can I test, challenge, and validate my own ideas?',
+      metricB: 'Core question: Can I test and challenge my own ideas?',
       chartLabel: 'Historical Educational Diagram · Scientific Research Cycle',
       svg: '<circle cx="268" cy="38" r="24" stroke="#a78bfa" stroke-opacity="0.7" stroke-width="1.3" stroke-dasharray="5 4"/><circle cx="152" cy="38" r="14" stroke="#2dd4bf" stroke-opacity="0.65" stroke-width="1.2"/><circle cx="384" cy="38" r="14" stroke="#e8b87d" stroke-opacity="0.75" stroke-width="1.2"/><path d="M168 38 H242 M294 38 H368" stroke="#ffffff" stroke-opacity="0.45" stroke-width="1.2"/>'
     }
@@ -718,7 +740,7 @@
       }
     }
 
-    if (tyEmailEl && data.email) tyEmailEl.textContent = data.email;
+    if (tyEmailEl && data.email) tyEmailEl.textContent = ` (${data.email})`;
     if (tySlotEl && data.slot) tySlotEl.textContent = data.slot;
 
     function buildStartEndIso(isoStr) {
@@ -746,12 +768,12 @@
     }
 
     const calTimes = buildStartEndIso(data.iso);
-    const evTitle = 'TradeSchool Free 30-Minute 1-on-1 Intro Session';
+    const evTitle = 'TRADE SCHOOL Initial Assessment with Renjith R Pillai';
     const evDetails =
-      'Live 30-minute one-on-one introductory session with your TradeSchool mentor: starting level map, plain-English historical chart walkthrough (30+ day lag educational data), and exact written dynamic fees & refund terms. Strictly educational, zero tips.';
+      'Live Malayalam initial assessment session with Chief Mentor Renjith R Pillai (TRADE SCHOOL, THC Institute): starting level map, compliant historical chart walkthrough (minimum 30-day data lag), and exact current dynamic pricing & written 100% post-assessment refund terms. Strictly educational, zero stock tips.';
 
     if (tyGcalBtn) {
-      const gcalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(evTitle)}&dates=${calTimes.start}/${calTimes.end}&details=${encodeURIComponent(evDetails)}&location=${encodeURIComponent('Online Video Session (link emailed)')}`;
+      const gcalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(evTitle)}&dates=${calTimes.start}/${calTimes.end}&details=${encodeURIComponent(evDetails)}&location=${encodeURIComponent('Private Online Video Link (emailed)')}`;
       tyGcalBtn.setAttribute('href', gcalUrl);
     }
 
@@ -761,7 +783,7 @@
         const icsContent = [
           'BEGIN:VCALENDAR',
           'VERSION:2.0',
-          'PRODID:-//TradeSchool//Intro Session//EN',
+          'PRODID:-//TRADE SCHOOL//Initial Assessment//EN',
           'BEGIN:VEVENT',
           `DTSTART:${calTimes.start}`,
           `DTEND:${calTimes.end}`,
@@ -775,7 +797,7 @@
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'tradeschool-intro-session.ics';
+        a.download = 'tradeschool-initial-assessment.ics';
         document.body.appendChild(a);
         a.click();
         a.remove();
@@ -828,7 +850,24 @@
   }
 
   /* ------------------------------------------------------------------------
-     15. Native Mobile Sticky Bottom Bar & Horizontal Pill Centering
+     15. Native Mobile Stacked Tables (Auto-stamp data-label from thead th)
+     ------------------------------------------------------------------------ */
+  document.querySelectorAll('.editorial-table').forEach((table) => {
+    const headers = Array.from(table.querySelectorAll('thead th')).map((th) =>
+      th.textContent.trim()
+    );
+    if (!headers.length) return;
+    table.querySelectorAll('tbody tr').forEach((row) => {
+      Array.from(row.children).forEach((cell, idx) => {
+        if (headers[idx] && !cell.hasAttribute('data-label')) {
+          cell.setAttribute('data-label', headers[idx]);
+        }
+      });
+    });
+  });
+
+  /* ------------------------------------------------------------------------
+     16. Native Mobile Sticky Bottom Bar & Horizontal Pill Centering
      ------------------------------------------------------------------------ */
   const stickyBar = document.getElementById('mobile-sticky-cta');
   const footer = document.querySelector('.site-footer');
