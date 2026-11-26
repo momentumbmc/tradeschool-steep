@@ -5775,6 +5775,73 @@ button, a {
   border-radius: clamp(14px, 1.8vw, 18px);
 }
 
+/* Responsive zcal Split: Mobile/Smaller Screens keep inline widget; Desktop (>= 1024px) uses 901x1113 iframe */
+.zcal-embed--mobile {
+  display: block;
+  width: 100%;
+}
+
+.zcal-inline-widget > div {
+  width: 100%;
+  min-width: min(100%, 320px) !important;
+}
+
+.zcal-inline-widget iframe {
+  width: 100% !important;
+  max-width: 100%;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .form-shell--booking {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .form-shell--booking > :not(.zcal-embed-wrap) {
+    padding-left: clamp(16px, 4.5vw, 24px);
+    padding-right: clamp(16px, 4.5vw, 24px);
+  }
+
+  .form-shell--booking .zcal-embed-wrap {
+    padding: 0;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 400px) {
+  .form-shell--booking {
+    margin-left: calc(var(--gutter) * -1);
+    margin-right: calc(var(--gutter) * -1);
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .form-shell--booking {
+    max-width: 1060px;
+    padding-left: clamp(20px, 2.6vw, 44px);
+    padding-right: clamp(20px, 2.6vw, 44px);
+  }
+
+  .zcal-embed--desktop {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .zcal-embed--desktop iframe {
+    display: block;
+    max-width: 100%;
+  }
+}
+
 /* 6. Single Clean Navigation Breakpoint (980px) */
 @media (max-width: 980px) {
   .desktop-nav { display: none; }

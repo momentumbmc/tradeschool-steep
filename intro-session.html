@@ -244,7 +244,7 @@
           </p>
         </div>
 
-        <div class="form-shell form-shell--wide mt-32 reveal">
+        <div class="form-shell form-shell--wide form-shell--booking mt-32 reveal">
           <div style="text-align:center;max-width:640px;margin:0 auto;">
             <h3 class="t-panel-title">Reserve your free 30-minute intro call.</h3>
             <p class="t-body mt-12">
@@ -252,11 +252,51 @@
             </p>
           </div>
 
-          <!-- Live zcal Inline Scheduling Widget -->
-          <div class="zcal-embed-wrap mt-24">
-            <script type="text/javascript" async src="https://static.zcal.co/embed/v1/embed.js"></script>
+          <!-- Live zcal Scheduling Widget (Updated Desktop Iframe >= 1024px; Existing Inline Widget on Mobile & Smaller Screens) -->
+          <div class="zcal-embed-wrap mt-24" id="zcal-embed-root">
             <div class="zcal-inline-widget"><a href="https://zcal.co/i/YAkrlzRI">30-minute mentor session - Schedule a meeting</a></div>
           </div>
+          <script>
+            (function () {
+              var root = document.getElementById('zcal-embed-root');
+              if (!root) return;
+              var mq = window.matchMedia('(min-width: 1024px)');
+              var activeMode = null;
+
+              function mountZcal() {
+                var mode = mq.matches ? 'desktop' : 'mobile';
+                if (mode === activeMode) return;
+                activeMode = mode;
+
+                if (mode === 'desktop') {
+                  root.innerHTML =
+                    '<div class="zcal-embed--desktop">' +
+                      '<iframe src="https://zcal.co/i/YAkrlzRI?embed=1&embedType=iframe" title="30-minute mentor session - Schedule a meeting" loading="lazy" style="border:none; min-width: 320px; min-height: 544px; height: 1113px; width: 901px" id="zcal-invite" scrolling="no"></iframe>' +
+                    '</div>';
+                } else {
+                  root.innerHTML =
+                    '<div class="zcal-embed--mobile">' +
+                      '<div class="zcal-inline-widget"><a href="https://zcal.co/i/YAkrlzRI">30-minute mentor session - Schedule a meeting</a></div>' +
+                    '</div>';
+                  var oldScript = document.getElementById('zcal-embed-script');
+                  if (oldScript) oldScript.remove();
+                  var s = document.createElement('script');
+                  s.id = 'zcal-embed-script';
+                  s.type = 'text/javascript';
+                  s.async = true;
+                  s.src = 'https://static.zcal.co/embed/v1/embed.js';
+                  document.head.appendChild(s);
+                }
+              }
+
+              mountZcal();
+              if (mq.addEventListener) {
+                mq.addEventListener('change', mountZcal);
+              } else if (mq.addListener) {
+                mq.addListener(mountZcal);
+              }
+            })();
+          </script>
 
           <p class="hero-steep__reassurance" style="text-align:center;">Free 30-minute live call. Admission after formal assessment only. 100% refund if you quit after assessment sessions (no refund thereafter). Zero unsolicited calls.</p>
           <p class="risk-note" style="text-align:center;">Education only. Trading and investing involve a real risk of loss.</p>
