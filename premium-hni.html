@@ -1,0 +1,4848 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#121212">
+  <title>Pillai &amp; Partners | Private Coaching in Financial Markets</title>
+  <meta name="description"
+    content="India's private one-on-one coaching practice in financial markets for high-earning individuals and business owners. Stop silent portfolio leaks, protect capital across economic cycles, and verify every financial decision yourself with 16-year practitioner Renjith R Pillai.">
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' rx='8' fill='%23121212'/%3E%3Cpolygon points='18,7 29,18 18,29 7,18' fill='none' stroke='%23e8b87d' stroke-width='1.5'/%3E%3Cpolygon points='18,13 23,18 18,23 13,18' fill='%23e8b87d'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Allura&family=Inter:wght@400..600&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Scoped Tier-1 Private-Office Visual Architecture -->
+  <style>
+    /* ========================================================================
+       Pillai & Partners: Tier-1 Executive Architecture & Data Visualization
+       100% Inherited TRADE SCHOOL / Steep Tokens. Zero External Colors.
+       Dark Obsidian (#121212) -> Luminous Paper (#ffffff) -> Dark Obsidian
+       ======================================================================== */
+    html {
+      scroll-padding-top: 76px;
+    }
+
+    body.pp-page {
+      background-color: var(--color-dark-canvas);
+      color: var(--color-dark-heading);
+      overscroll-behavior-y: none;
+      --pp-pad-card: clamp(18px, 3vw, 38px);
+      --pp-pad-panel: clamp(18px, 3.6vw, 44px);
+      --pp-gap: clamp(14px, 2vw, 24px);
+    }
+
+    /* Intrinsic Zero-Overflow Guard across all custom grid & flex children */
+    .pp-panel__pane > *,
+    .pp-audit-grid > *,
+    .pp-erosion-grid > *,
+    .pp-metrics-grid > *,
+    .pp-wf-grid > *,
+    .pp-wf-bento-tri > *,
+    .pp-pillars-top > *,
+    .pp-principal-grid > *,
+    .pp-advisory-diagram > *,
+    .pp-steps-grid > *,
+    .pp-pricing-band > *,
+    .pp-intake-grid > * {
+      min-width: 0;
+    }
+
+    /* Fluid intrinsic SVG scaling inside custom chart/diagram frames */
+    .pp-panel__art-stage svg,
+    .pp-erosion-card svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .pp-anchor {
+      scroll-margin-top: 76px;
+    }
+
+    /* Subtle architectural coordinate micro-grid for dark obsidian surfaces */
+    .pp-grid-backdrop {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+      background-size: 72px 72px;
+      -webkit-mask-image: radial-gradient(ellipse 76% 64% at 50% 22%, #000 14%, transparent 80%);
+      mask-image: radial-gradient(ellipse 76% 64% at 50% 22%, #000 14%, transparent 80%);
+    }
+
+    /* ------------------------------------------------------------------------
+       Standalone Adaptive Header: Obsidian <-> Alabaster Glass
+       ------------------------------------------------------------------------ */
+    .pp-header {
+      background: rgba(18, 18, 21, 0.78);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      transition: background-color 0.35s var(--ease-steep), border-color 0.35s var(--ease-steep);
+    }
+
+    /* Bespoke Heritage Wordmark: Handwritten Signature "Pillai" + Editorial "&" + Architectural "PARTNERS" */
+    .pp-wordmark {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.34em;
+      line-height: 1;
+      color: #ffffff;
+      flex-shrink: 0;
+      white-space: nowrap;
+      transition: color 0.3s var(--ease-steep);
+    }
+
+    .pp-wordmark__script {
+      font-family: "Allura", "Snell Roundhand", "Brush Script MT", cursive;
+      font-weight: 400;
+      font-size: clamp(28px, 2.4vw, 35px);
+      line-height: 0.85;
+      letter-spacing: 0.01em;
+      color: inherit;
+      transform: translateY(2px);
+    }
+
+    .pp-wordmark__amp {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(15px, 1.3vw, 18px);
+      color: #e8b87d;
+      line-height: 1;
+      transition: color 0.3s var(--ease-steep);
+    }
+
+    .pp-wordmark__partners {
+      font-family: var(--font-sans);
+      font-weight: 500;
+      font-size: clamp(10.5px, 0.92vw, 12px);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(240, 240, 242, 0.88);
+      line-height: 1;
+      transition: color 0.3s var(--ease-steep);
+    }
+
+    .pp-wordmark--compact .pp-wordmark__script {
+      font-size: 27px;
+    }
+
+    .pp-wordmark--compact .pp-wordmark__amp {
+      font-size: 14px;
+    }
+
+    .pp-wordmark--compact .pp-wordmark__partners {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+    }
+
+    .pp-wordmark--footer .pp-wordmark__script {
+      font-size: clamp(32px, 3vw, 40px);
+    }
+
+    .pp-wordmark--footer .pp-wordmark__amp {
+      font-size: clamp(17px, 1.5vw, 20px);
+    }
+
+    .pp-wordmark--footer .pp-wordmark__partners {
+      font-size: clamp(11.5px, 1.05vw, 13px);
+      letter-spacing: 0.24em;
+    }
+
+    .pp-header .desktop-nav {
+      gap: 6px;
+    }
+
+    .pp-header .desktop-nav a {
+      font-size: 14px;
+      font-weight: 430;
+      color: var(--color-dark-secondary);
+      padding: 8px 13px;
+    }
+
+    .pp-header .desktop-nav a:hover,
+    .pp-header .desktop-nav a.is-current {
+      color: var(--color-white);
+    }
+
+    .pp-header .desktop-nav a.is-current {
+      background: rgba(255, 255, 255, 0.085);
+    }
+
+    /* Adaptive Light Polarity over Sections 4 to 6 */
+    .pp-header.is-light-surface {
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom-color: rgba(20, 22, 25, 0.09);
+    }
+
+    .pp-header.is-light-surface .pp-wordmark {
+      color: var(--color-ink);
+    }
+
+    .pp-header.is-light-surface .pp-wordmark__amp {
+      color: #8c6a3e;
+    }
+
+    .pp-header.is-light-surface .pp-wordmark__partners {
+      color: #2f343e;
+    }
+
+    .pp-header.is-light-surface .desktop-nav a {
+      color: #3f4450;
+    }
+
+    .pp-header.is-light-surface .desktop-nav a:hover,
+    .pp-header.is-light-surface .desktop-nav a.is-current {
+      color: var(--color-ink);
+    }
+
+    .pp-header.is-light-surface .desktop-nav a.is-current {
+      background: rgba(20, 22, 25, 0.055);
+    }
+
+    .pp-header.is-light-surface .btn--primary {
+      background: var(--color-ink);
+      color: var(--color-white);
+      border-color: var(--color-ink);
+    }
+
+    .pp-header.is-light-surface .mobile-menu-btn {
+      color: var(--color-ink);
+    }
+
+    /* ------------------------------------------------------------------------
+       ACT I: Obsidian Dark Surfaces (Sections 1 to 3)
+       Steep-grade living dark nebula atmosphere, sliding tab bar, scroll-triggered
+       data choreography & subtle cursor-tracking spotlight borders.
+       ------------------------------------------------------------------------ */
+    .pp-hero {
+      position: relative;
+      padding-top: clamp(120px, 12vw, 162px);
+      padding-bottom: clamp(72px, 8.5vw, 118px);
+      background: linear-gradient(180deg, #161121 0%, var(--color-dark-canvas) 62%);
+      overflow: hidden;
+      border-bottom: 1px solid var(--color-dark-edge);
+    }
+
+    /* Steep Living Dark Nebula Orbs (Dark Twin of Steep's Animated Pastel Mesh) */
+    .pp-dark-atmosphere {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .pp-dark-orb {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      will-change: transform;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .pp-dark-orb--violet {
+      width: 58vw;
+      height: 58vw;
+      max-width: 820px;
+      max-height: 820px;
+      min-width: 380px;
+      min-height: 380px;
+      top: -22%;
+      left: 16%;
+      background: radial-gradient(circle at 50% 50%, rgba(154, 96, 238, 0.24) 0%, rgba(108, 60, 178, 0.1) 46%, transparent 74%);
+      filter: blur(74px);
+      animation: ppDarkDriftA 22s ease-in-out infinite alternate;
+    }
+
+    .pp-dark-orb--gold {
+      width: 48vw;
+      height: 48vw;
+      max-width: 680px;
+      max-height: 680px;
+      min-width: 340px;
+      min-height: 340px;
+      top: 18%;
+      right: -12%;
+      background: radial-gradient(circle at 50% 50%, rgba(232, 184, 125, 0.16) 0%, rgba(232, 184, 125, 0.05) 48%, transparent 74%);
+      filter: blur(72px);
+      animation: ppDarkDriftB 26s ease-in-out infinite alternate;
+    }
+
+    .pp-dark-orb--plum {
+      width: 54vw;
+      height: 44vw;
+      max-width: 760px;
+      max-height: 620px;
+      min-width: 340px;
+      min-height: 300px;
+      bottom: -16%;
+      left: -8%;
+      background: radial-gradient(circle at 50% 50%, rgba(188, 78, 148, 0.18) 0%, rgba(96, 62, 186, 0.09) 48%, transparent 74%);
+      filter: blur(78px);
+      animation: ppDarkDriftC 24s ease-in-out infinite alternate;
+    }
+
+    @keyframes ppDarkDriftA {
+      0% { transform: translate3d(-4%, -2%, 0) scale(1); }
+      50% { transform: translate3d(10%, 8%, 0) scale(1.1); }
+      100% { transform: translate3d(4%, -4%, 0) scale(0.96); }
+    }
+
+    @keyframes ppDarkDriftB {
+      0% { transform: translate3d(4%, 2%, 0) scale(1); }
+      50% { transform: translate3d(-12%, -8%, 0) scale(1.12); }
+      100% { transform: translate3d(-4%, 6%, 0) scale(0.95); }
+    }
+
+    @keyframes ppDarkDriftC {
+      0% { transform: translate3d(-2%, 4%, 0) scale(1.02); }
+      50% { transform: translate3d(12%, -6%, 0) scale(0.94); }
+      100% { transform: translate3d(6%, 2%, 0) scale(1.08); }
+    }
+
+    /* Subtle Cursor-Tracking Spotlight Halo for Dark Luxury Surfaces */
+    .pp-spotlight-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pp-spotlight-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      opacity: 0;
+      z-index: 1;
+      background: radial-gradient(
+        340px circle at var(--mx, 50%) var(--my, 50%),
+        rgba(232, 184, 125, 0.11),
+        rgba(167, 139, 250, 0.06) 38%,
+        transparent 72%
+      );
+      transition: opacity 0.35s var(--ease-steep);
+    }
+
+    .pp-spotlight-card:hover::after {
+      opacity: 1;
+    }
+
+    .pp-spotlight-card > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .pp-hero__inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .pp-hero__copy {
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .pp-eyebrow-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: clamp(6px, 0.9vw, 8px) clamp(12px, 1.8vw, 16px);
+      max-width: 100%;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      backdrop-filter: blur(10px);
+      font-family: var(--font-sans);
+      font-size: clamp(11px, 1.15vw, 13px);
+      font-weight: 450;
+      line-height: 1.35;
+      letter-spacing: 0.02em;
+      color: var(--color-dark-heading);
+      margin-bottom: clamp(18px, 2.8vw, 30px);
+      text-align: left;
+    }
+
+    .pp-eyebrow-pill__dot {
+      position: relative;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #e8b87d;
+      box-shadow: 0 0 0 4px rgba(232, 184, 125, 0.16);
+      flex-shrink: 0;
+    }
+
+    .pp-eyebrow-pill__dot::after {
+      content: "";
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      border: 1px solid rgba(232, 184, 125, 0.65);
+      animation: ppPulseRing 2.6s ease-out infinite;
+    }
+
+    @keyframes ppPulseRing {
+      0% { transform: scale(0.75); opacity: 0.85; }
+      75% { transform: scale(2.1); opacity: 0; }
+      100% { transform: scale(2.1); opacity: 0; }
+    }
+
+    .pp-hero .t-hero-sharp {
+      font-size: clamp(34px, 6vw, 76px);
+      line-height: 1.05;
+      letter-spacing: -0.028em;
+      color: var(--color-dark-heading);
+    }
+
+    .pp-hero .t-hero-sharp .t-muted-tone {
+      color: #c4b5fd;
+    }
+
+    .pp-hero__sub {
+      max-width: 680px;
+      margin: clamp(18px, 2.2vw, 26px) auto 0;
+      color: var(--color-dark-secondary);
+    }
+
+    .pp-hero__actions {
+      margin-top: clamp(26px, 3vw, 36px);
+    }
+
+    .pp-hero__micro {
+      margin: clamp(26px, 3vw, 36px) auto 0;
+      padding-top: 20px;
+      border-top: 1px solid var(--color-dark-edge);
+      max-width: 720px;
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--color-dark-muted);
+    }
+
+    /* Visual 1: Private-Office Architectural Panel (Steep Sliding Tab Bar + Living Geometry) */
+    .pp-panel {
+      margin: clamp(48px, 5.8vw, 72px) auto 0;
+      max-width: 1060px;
+      background: linear-gradient(180deg, rgba(25, 25, 31, 0.94) 0%, rgba(16, 16, 20, 0.98) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      border-radius: 26px;
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.08) inset,
+        var(--shadow-dark-stage);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .pp-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(56% 48% at 84% 0%, rgba(167, 139, 250, 0.14) 0%, transparent 72%),
+        radial-gradient(52% 48% at 14% 104%, rgba(232, 184, 125, 0.1) 0%, transparent 72%);
+    }
+
+    .pp-panel__bar {
+      position: relative;
+      z-index: 2;
+      padding: 16px clamp(18px, 2.6vw, 30px) 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+      background: rgba(255, 255, 255, 0.015);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px 20px;
+    }
+
+    .pp-panel__id {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11.5px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-dark-secondary);
+      padding-bottom: 16px;
+    }
+
+    .pp-panel__diamond {
+      width: 7px;
+      height: 7px;
+      background: #e8b87d;
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    .pp-panel__controls {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: nowrap;
+      max-width: 100%;
+    }
+
+    /* Steep Authentic Horizontal Sliding-Bar Tabs */
+    .pp-panel__tabs {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 20px;
+      padding-bottom: 14px;
+    }
+
+    .pp-panel__tab {
+      position: relative;
+      padding: 4px 2px 6px;
+      font-size: 13.5px;
+      font-weight: 450;
+      color: rgba(255, 255, 255, 0.5);
+      transition: color 0.22s var(--ease-steep);
+      white-space: nowrap;
+    }
+
+    .pp-panel__tab:hover {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .pp-panel__tab.is-active {
+      color: #ffffff;
+      font-weight: 500;
+    }
+
+    .pp-panel__slider {
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      height: 2px;
+      width: 120px;
+      background: #ffffff;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.45);
+      transform: translateX(0);
+      transition: transform 0.35s var(--ease-expo), width 0.35s var(--ease-expo);
+      pointer-events: none;
+    }
+
+    .pp-panel__arrows {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding-bottom: 14px;
+      flex-shrink: 0;
+    }
+
+    .pp-panel__nav-btn {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.72);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.2s var(--ease-steep), color 0.2s var(--ease-steep), border-color 0.2s var(--ease-steep);
+    }
+
+    .pp-panel__nav-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.24);
+      color: #ffffff;
+    }
+
+    .pp-panel__body {
+      position: relative;
+      z-index: 2;
+      padding: clamp(22px, 3.2vw, 36px);
+    }
+
+    .pp-panel__pane {
+      display: none;
+      animation: fadeSlide 0.38s var(--ease-expo);
+    }
+
+    .pp-panel__pane.is-active {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
+      gap: clamp(22px, 3.4vw, 44px);
+      align-items: center;
+    }
+
+    .pp-panel__art-stage {
+      position: relative;
+      border-radius: 18px;
+      background-color: #101014;
+      background-image:
+        radial-gradient(78% 72% at 50% 108%, rgba(146, 86, 212, 0.22) 0%, transparent 70%),
+        linear-gradient(180deg, #121217 0%, #0e0e12 100%);
+      border: 1px solid rgba(255, 255, 255, 0.085);
+      padding: clamp(18px, 2.4vw, 26px);
+      overflow: hidden;
+    }
+
+    .pp-panel__art-stage::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      background-size: 36px 36px;
+    }
+
+    .pp-panel__art-stage svg {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Living Triggered Motion Inside Hero Panel Artworks */
+    .pp-orbit-slow {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: slowSpin 28s linear infinite;
+    }
+
+    .pp-ring-breathe-a {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: ppRingDriftA 6.5s ease-in-out infinite alternate;
+    }
+
+    .pp-ring-breathe-b {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: ppRingDriftB 7.2s ease-in-out infinite alternate;
+    }
+
+    .pp-beacon-pulse {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: ppBeaconPulse 2.8s ease-out infinite;
+    }
+
+    @keyframes ppRingDriftA {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(4px, -3px); }
+    }
+
+    @keyframes ppRingDriftB {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(-4px, 3px); }
+    }
+
+    @keyframes ppBeaconPulse {
+      0% { transform: scale(0.85); opacity: 0.85; }
+      70% { transform: scale(1.75); opacity: 0; }
+      100% { transform: scale(1.75); opacity: 0; }
+    }
+
+    .pp-panel__pane.is-active .pp-macro-draw {
+      stroke-dasharray: 640;
+      stroke-dashoffset: 640;
+      animation: ppStrokeTrace 1.35s var(--ease-expo) forwards;
+    }
+
+    .pp-panel__pane.is-active .pp-macro-draw--b {
+      animation-delay: 0.16s;
+    }
+
+    .pp-panel__pane.is-active .pp-macro-draw--c {
+      animation-delay: 0.3s;
+    }
+
+    @keyframes ppStrokeTrace {
+      to { stroke-dashoffset: 0; }
+    }
+
+    .pp-profile-bar {
+      transform-box: fill-box;
+      transform-origin: left center;
+      transform: scaleX(0);
+    }
+
+    .pp-panel__pane.is-active .pp-profile-bar {
+      animation: ppBarExtend 0.75s var(--ease-expo) calc(var(--i, 0) * 55ms) forwards;
+    }
+
+    @keyframes ppBarExtend {
+      from { transform: scaleX(0); opacity: 0.25; }
+      to { transform: scaleX(1); opacity: 1; }
+    }
+
+    .pp-art-legend {
+      position: relative;
+      z-index: 2;
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+      font-size: 12px;
+      color: var(--color-dark-secondary);
+    }
+
+    .pp-legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .pp-legend-swatch {
+      width: 10px;
+      height: 2.5px;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .pp-panel__readout {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pp-readout-row {
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.075);
+    }
+
+    .pp-readout-row:first-child {
+      padding-top: 0;
+    }
+
+    .pp-readout-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .pp-readout-row__k {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--color-dark-muted);
+      margin-bottom: 6px;
+    }
+
+    .pp-readout-row__v {
+      display: block;
+      font-size: 15px;
+      line-height: 1.48;
+      color: var(--color-dark-heading);
+      font-weight: 430;
+    }
+
+    .pp-readout-row__v--serif {
+      font-family: var(--font-serif);
+      font-size: 23px;
+      line-height: 1.24;
+      letter-spacing: -0.015em;
+      color: #ffffff;
+      font-weight: 400;
+    }
+
+    /* Dark Band Cadence (Steep Signature Vertical Obsidian Sheen) */
+    .pp-dark-band {
+      position: relative;
+      background: var(--color-dark-canvas);
+      color: var(--color-dark-heading);
+      overflow: hidden;
+    }
+
+    .pp-dark-band::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 15%, rgba(255, 255, 255, 0.04) 100%);
+      z-index: 0;
+    }
+
+    .pp-dark-band--elevated {
+      background: #131317;
+      border-top: 1px solid var(--color-dark-edge);
+      border-bottom: 1px solid var(--color-dark-edge);
+    }
+
+    .pp-dark-band .wrap {
+      position: relative;
+      z-index: 2;
+    }
+
+    .pp-dark-eyebrow {
+      color: #e8b87d;
+    }
+
+    .pp-lead-dark {
+      color: var(--color-dark-secondary);
+    }
+
+    .pp-body-dark {
+      color: var(--color-dark-secondary);
+      font-size: 16.5px;
+      line-height: 1.66;
+    }
+
+    .pp-body-dark--emphasis {
+      color: var(--color-dark-heading);
+    }
+
+    /* Section 2: Intrinsic Luxury Diagnostic Ledger (Auto-Fit Grid + Spotlight Glow) */
+    .pp-audit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+      gap: var(--pp-gap);
+      max-width: 1060px;
+      margin: clamp(32px, 4.2vw, 52px) auto 0;
+    }
+
+    .pp-audit-card {
+      position: relative;
+      background: linear-gradient(180deg, rgba(26, 26, 32, 0.9) 0%, rgba(19, 19, 23, 0.98) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.085);
+      border-radius: var(--radius-fluid);
+      padding: clamp(26px, 3.2vw, 38px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+      transition: border-color 0.25s var(--ease-steep), transform 0.3s var(--ease-spring), box-shadow 0.3s var(--ease-steep);
+    }
+
+    .pp-audit-card:hover {
+      border-color: rgba(255, 255, 255, 0.18);
+      transform: translateY(-3px);
+    }
+
+    .pp-audit-card.is-verified {
+      border-color: rgba(45, 212, 191, 0.48);
+      background: linear-gradient(180deg, rgba(22, 34, 34, 0.92) 0%, rgba(18, 22, 24, 0.98) 100%);
+      box-shadow: 0 22px 46px -24px rgba(45, 212, 191, 0.34);
+    }
+
+    .pp-audit-card__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .pp-audit-card__id {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .pp-audit-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #e8b87d;
+      flex-shrink: 0;
+      transition: border-color 0.25s var(--ease-steep), color 0.25s var(--ease-steep), background-color 0.25s var(--ease-steep);
+    }
+
+    .pp-audit-card.is-verified .pp-audit-icon {
+      color: #2dd4bf;
+      border-color: rgba(45, 212, 191, 0.4);
+      background: rgba(45, 212, 191, 0.1);
+    }
+
+    .pp-audit-card__num {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      line-height: 1;
+      color: var(--color-dark-heading-muted);
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.02em;
+    }
+
+    .pp-audit-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      background: rgba(255, 255, 255, 0.04);
+      font-size: 12px;
+      font-weight: 450;
+      color: var(--color-dark-secondary);
+      transition: background-color 0.2s, border-color 0.2s, color 0.2s, transform 0.2s var(--ease-spring);
+    }
+
+    .pp-audit-toggle:hover {
+      border-color: rgba(255, 255, 255, 0.28);
+      color: #ffffff;
+    }
+
+    .pp-audit-toggle:active {
+      transform: scale(0.96);
+    }
+
+    .pp-audit-card.is-verified .pp-audit-toggle {
+      background: rgba(45, 212, 191, 0.16);
+      border-color: rgba(45, 212, 191, 0.5);
+      color: #2dd4bf;
+    }
+
+    .pp-audit-card__q {
+      font-size: clamp(16px, 1.35vw, 17.5px);
+      line-height: 1.6;
+      color: var(--color-dark-heading);
+      font-weight: 430;
+    }
+
+    .pp-perspective-box {
+      margin-top: clamp(24px, 3vw, 32px);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.015) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-left: 2.5px solid #e8b87d;
+      border-radius: var(--radius-fluid);
+      padding: clamp(26px, 3.4vw, 40px);
+      max-width: 1060px;
+      margin-inline: auto;
+    }
+
+    .pp-audit-meter {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px 20px;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--color-dark-edge);
+    }
+
+    .pp-audit-meter__label {
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--color-dark-muted);
+    }
+
+    .pp-audit-meter__label strong {
+      color: var(--color-dark-heading);
+      font-weight: 500;
+    }
+
+    .pp-audit-segments {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(28px, 44px));
+      gap: 6px;
+    }
+
+    .pp-audit-seg {
+      height: 5px;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.1);
+      transition: background-color 0.35s var(--ease-steep), box-shadow 0.35s var(--ease-steep);
+    }
+
+    .pp-audit-seg.is-lit {
+      background: #2dd4bf;
+      box-shadow: 0 0 12px rgba(45, 212, 191, 0.55);
+    }
+
+    .pp-perspective-box__closing {
+      margin-top: 22px;
+      font-family: var(--font-serif);
+      font-size: clamp(22px, 2.2vw, 28px);
+      line-height: 1.3;
+      letter-spacing: -0.015em;
+      color: var(--color-white);
+      font-weight: 400;
+    }
+
+    /* Section 3: Scroll-Triggered 20-Year Compounding Erosion Chart + Interactive Milestones */
+    .pp-erosion-card {
+      max-width: 1060px;
+      margin: clamp(36px, 4.4vw, 52px) auto 0;
+      background: linear-gradient(180deg, rgba(24, 24, 30, 0.96) 0%, rgba(16, 16, 20, 0.99) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      border-radius: 26px;
+      padding: clamp(24px, 3.4vw, 40px);
+      box-shadow: var(--shadow-dark-stage);
+    }
+
+    .pp-erosion-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(240px, 0.55fr);
+      gap: clamp(24px, 3.6vw, 44px);
+      align-items: center;
+    }
+
+    .pp-erosion-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px 16px;
+      margin-bottom: 18px;
+    }
+
+    .pp-erosion-title {
+      font-family: var(--font-serif);
+      font-size: clamp(20px, 2vw, 25px);
+      line-height: 1.24;
+      color: #ffffff;
+      letter-spacing: -0.015em;
+    }
+
+    /* Scroll-Triggered SVG Reveal inside Erosion Chart */
+    .pp-wedge-clip-rect {
+      transform: scaleX(0);
+      transform-origin: 20px 0px;
+      transition: transform 1.45s var(--ease-expo) 0.38s;
+    }
+
+    .pp-erosion-card.is-in .pp-wedge-clip-rect {
+      transform: scaleX(1);
+    }
+
+    .pp-erosion-caliper {
+      opacity: 0;
+      transition: opacity 0.65s var(--ease-steep) 1.05s;
+    }
+
+    .pp-erosion-card.is-in .pp-erosion-caliper {
+      opacity: 1;
+    }
+
+    .pp-erosion-crosshair {
+      transition: transform 0.42s var(--ease-expo);
+    }
+
+    .pp-erosion-axis {
+      margin-top: 12px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      align-items: center;
+      font-size: 11.5px;
+      color: var(--color-dark-muted);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .pp-axis-btn {
+      font-size: 11.5px;
+      font-weight: 450;
+      color: var(--color-dark-muted);
+      padding: 4px 8px;
+      border-radius: var(--radius-pill);
+      border: 1px solid transparent;
+      transition: color 0.2s var(--ease-steep), background-color 0.2s var(--ease-steep), border-color 0.2s var(--ease-steep);
+      justify-self: center;
+    }
+
+    .pp-axis-btn:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .pp-axis-btn.is-active {
+      color: #e8b87d;
+      background: rgba(232, 184, 125, 0.12);
+      border-color: rgba(232, 184, 125, 0.32);
+    }
+
+    .pp-erosion-axis > :first-child { justify-self: start; }
+    .pp-erosion-axis > :last-child { justify-self: end; }
+
+    .pp-erosion-stats {
+      display: flex;
+      flex-direction: column;
+      border-left: 1px solid rgba(255, 255, 255, 0.08);
+      padding-left: clamp(20px, 2.8vw, 32px);
+      gap: 20px;
+    }
+
+    .pp-erosion-stat__kicker {
+      display: block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-dark-muted);
+      margin-bottom: 6px;
+    }
+
+    .pp-erosion-stat__num {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: clamp(32px, 3vw, 42px);
+      line-height: 1;
+      letter-spacing: -0.025em;
+      color: #ffffff;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .pp-erosion-stat__label {
+      display: block;
+      margin-top: 6px;
+      font-size: 13px;
+      line-height: 1.48;
+      color: var(--color-dark-secondary);
+    }
+
+    .pp-erosion-foot {
+      margin-top: 22px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.075);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px 18px;
+      font-size: 12px;
+      color: var(--color-dark-muted);
+    }
+
+    /* Flush Institutional Data Metric Cards (Intrinsic Auto-Fit Grid + Scroll-Triggered Bars) */
+    .pp-metrics-grid {
+      max-width: 1060px;
+      margin: clamp(20px, 3vw, 32px) auto 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+      gap: var(--pp-gap);
+      align-items: stretch;
+    }
+
+    .pp-metric-card {
+      background: linear-gradient(180deg, rgba(26, 26, 32, 0.92) 0%, rgba(19, 19, 23, 0.98) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: var(--radius-fluid);
+      padding: clamp(24px, 2.8vw, 34px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+      transition: border-color 0.25s var(--ease-steep), transform 0.3s var(--ease-spring);
+    }
+
+    .pp-metric-card:hover {
+      border-color: rgba(255, 255, 255, 0.18);
+      transform: translateY(-3px);
+    }
+
+    .pp-metric-card__num {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      font-size: clamp(46px, 4.3vw, 62px);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--color-white);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Flush Hairline Data Bars with Scroll-Triggered Fill */
+    .pp-data-bar {
+      margin-top: 18px;
+    }
+
+    .pp-data-track {
+      position: relative;
+      height: 6px;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      display: flex;
+    }
+
+    .pp-data-fill {
+      height: 100%;
+      border-radius: var(--radius-pill);
+      transform-origin: left center;
+      transform: scaleX(0);
+      transition: transform 1.15s var(--ease-expo) 0.2s;
+    }
+
+    .pp-metrics-grid.is-in .pp-data-fill {
+      transform: scaleX(1);
+    }
+
+    .pp-data-pillars {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 5px;
+      height: 14px;
+    }
+
+    .pp-data-pillar {
+      border-radius: 3px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .pp-data-pillar--coral {
+      background: rgba(255, 255, 255, 0.1);
+      transform-origin: bottom center;
+      transition: background-color 0.45s var(--ease-steep) calc(0.18s + var(--i, 0) * 80ms), transform 0.45s var(--ease-spring) calc(0.18s + var(--i, 0) * 80ms), box-shadow 0.45s var(--ease-steep) calc(0.18s + var(--i, 0) * 80ms);
+    }
+
+    .pp-metrics-grid.is-in .pp-data-pillar--coral {
+      background: #eb8080;
+      box-shadow: 0 0 10px rgba(235, 128, 128, 0.32);
+    }
+
+    .pp-data-meta {
+      margin-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 11.5px;
+      color: var(--color-dark-muted);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .pp-metric-card__desc {
+      margin-top: 16px;
+      font-size: 15px;
+      line-height: 1.56;
+      color: var(--color-dark-secondary);
+    }
+
+    .pp-metric-card__source {
+      padding-top: 14px;
+      border-top: 1px solid var(--color-dark-edge);
+      font-size: 11.5px;
+      font-weight: 450;
+      letter-spacing: 0.045em;
+      text-transform: uppercase;
+      color: var(--color-dark-muted);
+    }
+
+    /* ------------------------------------------------------------------------
+       ACT II: Luminous Steep Light Surfaces (Sections 4 to 6)
+       Animated grainy pastel mesh, floating paper windows, borderless pastel
+       editorial cards, powder-blue story frame & bespoke Steep wireframe stage.
+       Strict polarity isolation so body.theme-dark rules never bleed into light.
+       ------------------------------------------------------------------------ */
+    .pp-light {
+      --bg-page: var(--color-paper);
+      --text-primary: var(--color-ink);
+      --text-secondary: var(--color-slate);
+      --text-muted: var(--color-ash);
+      --border-subtle: var(--color-rule);
+      background: var(--color-paper);
+      color: var(--color-ink);
+      position: relative;
+      overflow-x: clip;
+    }
+
+    .pp-light > .wrap {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Animated Steep Multi-Orb Pastel Mesh Backdrop (Reusing index.html orbs) */
+    .pp-light--dawn {
+      background: #f8f7f9;
+      overflow: hidden;
+    }
+
+    .pp-pastel-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+      background: linear-gradient(180deg, #f8f7f9 0%, #faf9f7 68%, #ffffff 100%);
+    }
+
+    .pp-pastel-bg--soft {
+      background: linear-gradient(180deg, #ffffff 0%, #f9f8fb 42%, #f7f6f9 100%);
+    }
+
+    .pp-pastel-bg .hero-orb {
+      opacity: 0.56;
+    }
+
+    .pp-pastel-bg--soft .hero-orb {
+      opacity: 0.48;
+    }
+
+    .pp-pastel-fade-top {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 120px;
+      pointer-events: none;
+      z-index: 1;
+      background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    .pp-pastel-fade-bottom {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 150px;
+      pointer-events: none;
+      z-index: 1;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+    }
+
+    .pp-light--dawn .grain-overlay--steep,
+    .pp-gov-lower .grain-overlay--steep {
+      opacity: 0.44;
+    }
+
+    /* High-Contrast WCAG AAA Light Typography (>= 8:1 on white & pastel surfaces) */
+    .pp-light h2,
+    .pp-light h3,
+    .pp-light h4,
+    .pp-light .t-chapter--mid,
+    .pp-light .t-editorial,
+    .pp-light .t-feature-title {
+      color: var(--color-ink);
+    }
+
+    .pp-light .t-muted-tone {
+      color: #4b505d;
+    }
+
+    .pp-light .t-eyebrow {
+      color: #484d59;
+      font-weight: 500;
+    }
+
+    .pp-light .t-lead {
+      color: #373c47;
+    }
+
+    .pp-light .t-body {
+      color: #373c47;
+      font-size: 16px;
+      line-height: 1.66;
+    }
+
+    .pp-light .t-body--ink {
+      color: var(--color-ink);
+    }
+
+    .pp-light .t-caption {
+      color: #4b505d;
+    }
+
+    /* Higher-specificity pastel-wash overrides (placed AFTER base .pp-light rules) */
+    .pp-light.pp-light--dawn .t-eyebrow {
+      color: #373c47;
+    }
+
+    .pp-light.pp-light--dawn .t-muted-tone {
+      color: var(--color-editorial-purple);
+    }
+
+    .pp-light.pp-light--dawn .t-lead {
+      color: #252932;
+    }
+
+    /* Steep Floating White Showcase Window for Light Tables */
+    .pp-light .table-scroll {
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(20, 22, 25, 0.09);
+      border-radius: 26px;
+      box-shadow: var(--shadow-artifact-lg);
+      overflow: hidden;
+    }
+
+    .pp-light .editorial-table thead th {
+      background: rgba(244, 245, 247, 0.92);
+      color: #3f4450;
+      font-weight: 600;
+      border-bottom: 1px solid var(--color-rule);
+      padding: 18px 24px;
+    }
+
+    .pp-light .editorial-table tbody td {
+      color: #373c47;
+      border-bottom: 1px solid var(--color-rule);
+      padding: 20px 24px;
+    }
+
+    .pp-light .editorial-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .pp-light .editorial-table tbody td:first-child {
+      color: var(--color-ink);
+      font-weight: 500;
+    }
+
+    .pp-light .editorial-table tbody tr.is-highlight-row td {
+      background: linear-gradient(90deg, rgba(211, 227, 252, 0.56) 0%, rgba(211, 227, 252, 0.32) 100%);
+      color: var(--color-ink);
+      font-weight: 500;
+    }
+
+    .pp-light .editorial-table tbody tr.is-highlight-row td:first-child {
+      color: var(--color-navy);
+      box-shadow: inset 3.5px 0 0 var(--color-navy);
+    }
+
+    .pp-light .editorial-table .pp-col-highlight {
+      background: rgba(211, 227, 252, 0.28);
+      color: var(--color-ink);
+      font-weight: 450;
+    }
+
+    .pp-light .editorial-table thead th.pp-col-highlight {
+      background: rgba(211, 227, 252, 0.62);
+      color: var(--color-navy);
+      font-weight: 600;
+    }
+
+    /* Section 5 Centerpiece: Bespoke Pillai & Partners Steep Semantic-Style Wireframe
+       Faithful to steep.app model-start.jpg (3-col frosted flow, dark plum-violet bottom
+       glow, fine grain, crisp dotted Bezier connectors, 1-over-3 bento hub, 2-group output card) */
+    .pp-wireframe {
+      position: relative;
+      max-width: 1060px;
+      margin: clamp(36px, 4.4vw, 54px) auto 0;
+      border-radius: 28px;
+      background: #0f0f13;
+      border: 1px solid rgba(20, 22, 25, 0.14);
+      box-shadow: var(--shadow-artifact-lg);
+      overflow: hidden;
+      padding: clamp(30px, 4.5vw, 58px) clamp(20px, 4.2vw, 52px);
+      color: #f4f4f6;
+    }
+
+    .pp-wireframe__glow {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(66% 62% at 50% 108%, rgba(154, 88, 224, 0.52) 0%, rgba(102, 56, 168, 0.28) 42%, transparent 74%),
+        radial-gradient(48% 46% at 14% 98%, rgba(74, 78, 186, 0.36) 0%, transparent 66%),
+        radial-gradient(46% 44% at 88% 98%, rgba(188, 78, 148, 0.34) 0%, transparent 66%);
+    }
+
+    .pp-wireframe .dark-grain {
+      opacity: 0.3;
+      z-index: 1;
+    }
+
+    .pp-wf-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(156px, 184px) minmax(48px, 72px) minmax(248px, 1fr) minmax(48px, 72px) minmax(174px, 206px);
+      align-items: center;
+    }
+
+    .pp-wf-sources {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .pp-wf-pill {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      height: 42px;
+      padding: 0 14px 0 10px;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.065);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      font-size: 13px;
+      font-weight: 450;
+      color: #f4f4f6;
+      white-space: nowrap;
+      transition: background-color 0.25s var(--ease-steep), border-color 0.25s var(--ease-steep), transform 0.25s var(--ease-spring), opacity 0.25s var(--ease-steep);
+    }
+
+    .pp-wf-pill__badge {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .pp-wf-connectors {
+      width: 100%;
+      height: 266px !important;
+      display: block;
+      overflow: visible;
+      filter: drop-shadow(0 0 4px rgba(196, 181, 253, 0.28));
+    }
+
+    .pp-wf-connectors--right {
+      height: 296px !important;
+      margin-top: 28px;
+    }
+
+    .pp-wf-line {
+      stroke: rgba(255, 255, 255, 0.56);
+      stroke-width: 1.65;
+      stroke-linecap: round;
+      stroke-dasharray: 4 6;
+      vector-effect: non-scaling-stroke;
+      fill: none;
+      animation: streamFlow 18s linear infinite;
+      transition: stroke 0.25s var(--ease-steep), stroke-width 0.25s var(--ease-steep), opacity 0.25s var(--ease-steep);
+    }
+
+    .pp-wf-node-dot {
+      fill: rgba(255, 255, 255, 0.68);
+      transition: fill 0.25s var(--ease-steep), opacity 0.25s var(--ease-steep);
+    }
+
+    .pp-wf-v-connector {
+      display: none;
+      width: 120px;
+      height: 36px !important;
+      margin: -4px auto;
+      filter: drop-shadow(0 0 4px rgba(196, 181, 253, 0.28));
+    }
+
+    .pp-wf-hub {
+      position: relative;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.078) 0%, rgba(255, 255, 255, 0.036) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      padding: 28px 24px 26px;
+      box-shadow:
+        0 28px 60px -16px rgba(0, 0, 0, 0.62),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 356px;
+    }
+
+    .pp-wf-brand {
+      display: inline-flex;
+      align-items: baseline;
+      color: #ffffff;
+    }
+
+    .pp-wf-subtitle {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.72);
+      margin-top: 4px;
+      margin-bottom: 24px;
+    }
+
+    .pp-wf-bento {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .pp-wf-bento-top,
+    .pp-wf-bento-cell {
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.065);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #f4f4f6;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.25s var(--ease-steep), border-color 0.25s var(--ease-steep), transform 0.25s var(--ease-spring), box-shadow 0.25s var(--ease-steep);
+    }
+
+    .pp-wf-bento-top {
+      width: 100%;
+      padding: 24px 18px;
+      font-size: 14.5px;
+      font-weight: 480;
+    }
+
+    .pp-wf-bento-tri {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 11px;
+    }
+
+    .pp-wf-bento-cell {
+      padding: 24px 10px;
+      min-height: 92px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 450;
+      line-height: 1.32;
+    }
+
+    .pp-wf-bento-top:hover,
+    .pp-wf-bento-cell:hover,
+    .pp-wf-bento-top.is-active,
+    .pp-wf-bento-cell.is-active {
+      background: rgba(255, 255, 255, 0.13);
+      border-color: rgba(232, 184, 125, 0.58);
+      box-shadow: 0 12px 28px -12px rgba(167, 139, 250, 0.4);
+      color: #ffffff;
+    }
+
+    .pp-wf-right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .pp-wf-right__head {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14.5px;
+      font-weight: 500;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+    }
+
+    .pp-wf-out-card {
+      width: 100%;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.075) 0%, rgba(255, 255, 255, 0.036) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      padding: 18px 16px;
+      box-shadow: 0 24px 48px -16px rgba(0, 0, 0, 0.55);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .pp-wf-out-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 6px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 450;
+      color: #f4f4f6;
+      white-space: nowrap;
+      transition: background-color 0.25s var(--ease-steep), color 0.25s var(--ease-steep), opacity 0.25s var(--ease-steep);
+    }
+
+    .pp-wf-out-item svg {
+      width: 16px;
+      height: 16px;
+      color: rgba(255, 255, 255, 0.78);
+      flex-shrink: 0;
+    }
+
+    .pp-wf-out-sep {
+      height: 1px;
+      background: rgba(255, 255, 255, 0.11);
+      margin: 6px 0;
+    }
+
+    /* Interactive Focus State on Wireframe Filter */
+    .pp-wireframe.is-filtered .pp-wf-pill:not(.is-lit),
+    .pp-wireframe.is-filtered .pp-wf-out-item:not(.is-lit) {
+      opacity: 0.36;
+    }
+
+    .pp-wireframe.is-filtered .pp-wf-pill.is-lit {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(232, 184, 125, 0.55);
+      transform: translateX(3px);
+    }
+
+    .pp-wireframe.is-filtered .pp-wf-out-item.is-lit {
+      background: rgba(255, 255, 255, 0.09);
+      color: #ffffff;
+    }
+
+    .pp-wireframe.is-filtered .pp-wf-out-item.is-lit svg {
+      color: #e8b87d;
+    }
+
+    .pp-wireframe.is-filtered .pp-wf-line.is-lit {
+      stroke: #e8b87d;
+      stroke-width: 2;
+    }
+
+    .pp-wireframe.is-filtered .pp-wf-line:not(.is-lit) {
+      stroke: rgba(255, 255, 255, 0.16);
+    }
+
+    .pp-wireframe.is-filtered .pp-wf-node-dot.is-lit {
+      fill: #e8b87d;
+    }
+
+    .pp-wireframe.is-filtered .pp-wf-node-dot:not(.is-lit) {
+      opacity: 0.25;
+    }
+
+    .pp-wf-caption {
+      position: relative;
+      z-index: 2;
+      margin-top: 26px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px 18px;
+      font-size: 12.5px;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    /* Section 5 Outcomes: Steep Borderless Pastel-Mist Intrinsic Bento Grid */
+    .pp-pillars-top {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+      gap: var(--pp-gap);
+      margin-top: clamp(28px, 3.8vw, 44px);
+    }
+
+    .pp-pillar-card {
+      border-radius: 28px;
+      padding: clamp(28px, 3.2vw, 40px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+      height: 100%;
+      border: 1px solid rgba(20, 22, 25, 0.06);
+      transition: transform 0.35s var(--ease-spring), background-color 0.35s var(--ease-steep), box-shadow 0.35s var(--ease-steep), border-color 0.35s var(--ease-steep);
+    }
+
+    .pp-pillar-card .t-body {
+      color: #2f343e;
+    }
+
+    .pp-pillar-card--sky {
+      background: #f3f7fe;
+    }
+
+    .pp-pillar-card--mint {
+      background: #f2faf5;
+    }
+
+    .pp-pillar-card--peach {
+      background: #fef6f1;
+    }
+
+    .pp-pillar-card--lavender {
+      background: #f6f4fc;
+    }
+
+    .pp-pillar-card--cream {
+      background: #fbf8ec;
+    }
+
+    .pp-pillar-card--teal {
+      background: #effaf8;
+    }
+
+    .pp-pillar-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-artifact);
+    }
+
+    .pp-pillar-card--sky:hover {
+      background: #e4effe;
+      border-color: rgba(25, 65, 104, 0.14);
+    }
+
+    .pp-pillar-card--mint:hover {
+      background: #e2f5e8;
+      border-color: rgba(31, 71, 32, 0.14);
+    }
+
+    .pp-pillar-card--peach:hover {
+      background: #fde9dc;
+      border-color: rgba(93, 42, 26, 0.14);
+    }
+
+    .pp-pillar-card--lavender:hover {
+      background: #ece6fb;
+      border-color: rgba(77, 47, 135, 0.14);
+    }
+
+    .pp-pillar-card--cream:hover {
+      background: #f5eed4;
+      border-color: rgba(93, 42, 26, 0.14);
+    }
+
+    .pp-pillar-card--teal:hover {
+      background: #dcf4f0;
+      border-color: rgba(20, 82, 74, 0.14);
+    }
+
+    .pp-geo-stage {
+      position: relative;
+      height: 98px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 0;
+    }
+
+    .pp-geo-stage svg {
+      width: 100%;
+      height: 100%;
+      max-width: 340px;
+      transition: transform 0.45s var(--ease-expo);
+    }
+
+    .pp-pillar-card:hover .pp-geo-stage svg {
+      transform: translateY(-2px) scale(1.02);
+    }
+
+    .pp-pillar-card__index {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      line-height: 1;
+      color: #484d59;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Section 6: Steep Powder-Blue Principal Editorial Frame + CA Alignment + Pastel Finale */
+    .pp-gov-section {
+      padding: 0;
+      background: var(--color-paper);
+    }
+
+    .pp-gov-upper {
+      padding: clamp(72px, 8.5vw, 120px) 0 clamp(56px, 6.5vw, 88px);
+      background: var(--color-paper);
+      position: relative;
+      z-index: 2;
+    }
+
+    .pp-gov-lower {
+      position: relative;
+      padding: clamp(56px, 6.8vw, 92px) 0 clamp(76px, 9vw, 124px);
+      overflow: hidden;
+      background: #f8f7fa;
+    }
+
+    .pp-gov-lower > .wrap {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Steep Customer-Story Inspired Powder-Blue (#D3E3FC) Principal Showcase Card */
+    .pp-principal-showcase {
+      margin-top: clamp(32px, 4vw, 48px);
+      background: var(--color-sky);
+      border-radius: 32px;
+      padding: clamp(28px, 4.4vw, 56px);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(25, 65, 104, 0.09);
+    }
+
+    .pp-principal-showcase::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(64% 72% at 88% 12%, rgba(255, 255, 255, 0.48) 0%, transparent 68%);
+    }
+
+    .pp-principal-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+      gap: clamp(28px, 5vw, 68px);
+      align-items: center;
+    }
+
+    .pp-principal-showcase .t-body {
+      color: #1d2738;
+    }
+
+    .pp-principal-showcase .t-body--ink {
+      color: var(--color-ink);
+    }
+
+    .pp-portrait-card {
+      position: relative;
+      max-width: 370px;
+      width: 100%;
+      margin-inline: auto;
+    }
+
+    .pp-portrait-media {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #1c1c20;
+      box-shadow: 0 28px 54px -20px rgba(25, 65, 104, 0.34);
+    }
+
+    .pp-portrait-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      aspect-ratio: 4 / 4.6;
+      object-fit: cover;
+      object-position: center 14%;
+      filter: grayscale(100%) contrast(1.06) brightness(0.95);
+    }
+
+    .pp-portrait-caption {
+      padding: 16px 6px 0;
+      text-align: center;
+      font-size: 13.5px;
+      line-height: 1.48;
+      color: var(--color-navy);
+      font-weight: 500;
+    }
+
+    .pp-sub-divider {
+      margin-block: clamp(48px, 6vw, 76px);
+      border: 0;
+      border-top: 1px solid var(--color-rule);
+    }
+
+    /* Non-Overlapping Advisory Circle Architectural Diagram */
+    .pp-advisory-diagram {
+      max-width: 920px;
+      margin: clamp(28px, 3.6vw, 40px) auto 0;
+      background: var(--color-white);
+      border: 1px solid rgba(20, 22, 25, 0.08);
+      border-radius: 26px;
+      padding: clamp(20px, 3vw, 30px);
+      box-shadow: var(--shadow-artifact);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 28px 168px 28px minmax(0, 1fr);
+      gap: 0;
+      align-items: center;
+    }
+
+    .pp-adv-connector {
+      height: 1.5px;
+      width: 100%;
+      background: repeating-linear-gradient(90deg, rgba(20, 22, 25, 0.35) 0 4px, transparent 4px 8px);
+    }
+
+    .pp-adv-box {
+      border-radius: 20px;
+      padding: 24px 22px 22px;
+      border: 1px solid rgba(25, 65, 104, 0.1);
+      background: #f3f7fe;
+      height: 100%;
+    }
+
+    .pp-adv-box--dark {
+      background-color: #141418;
+      background-image:
+        radial-gradient(92% 85% at 50% 112%, rgba(154, 88, 224, 0.34) 0%, rgba(102, 56, 168, 0.14) 46%, transparent 74%),
+        linear-gradient(180deg, #191920 0%, #121216 100%);
+      border-color: #141418;
+      color: #ffffff;
+    }
+
+    .pp-adv-box__title {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      line-height: 1.2;
+      margin-top: 12px;
+      color: var(--color-ink);
+    }
+
+    .pp-adv-box--dark .pp-adv-box__title {
+      color: #ffffff;
+    }
+
+    .pp-adv-list {
+      list-style: none;
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      font-size: 13.5px;
+      line-height: 1.45;
+      color: var(--color-navy);
+    }
+
+    .pp-adv-box--dark .pp-adv-list {
+      color: #d4d6de;
+    }
+
+    .pp-adv-hub {
+      text-align: center;
+      padding: 18px 14px;
+      border-radius: 20px;
+      background: var(--color-white);
+      border: 1.5px solid var(--color-ink);
+      box-shadow: 0 12px 28px -12px rgba(20, 22, 25, 0.18);
+      position: relative;
+    }
+
+    .pp-adv-hub__kicker {
+      display: block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #3f4450;
+    }
+
+    .pp-adv-hub__title {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: 20px;
+      color: var(--color-ink);
+      margin-top: 4px;
+    }
+
+    .pp-adv-hub__sub {
+      display: block;
+      font-size: 12px;
+      color: #3f4450;
+      margin-top: 2px;
+    }
+
+    .pp-note-strip {
+      max-width: 920px;
+      margin: 28px auto 0;
+      padding: 22px 26px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.93);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(20, 22, 25, 0.09);
+      box-shadow: var(--shadow-artifact);
+      font-size: 15.5px;
+      line-height: 1.58;
+      color: var(--color-ink);
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .pp-note-strip--cream {
+      background: var(--color-quote-cream);
+      border-color: rgba(93, 42, 26, 0.14);
+      box-shadow: none;
+    }
+
+    .pp-note-strip__icon {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      color: var(--color-navy);
+      margin-top: 2px;
+    }
+
+    .pp-note-strip--cream .pp-note-strip__icon {
+      color: var(--color-sienna);
+    }
+
+    /* Selective Admission Step Cards (Intrinsic Auto-Fit Grid Floating Over Pastel Backdrop) */
+    .pp-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 275px), 1fr));
+      gap: var(--pp-gap);
+      align-items: stretch;
+    }
+
+    .pp-step-card {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(20, 22, 25, 0.08);
+      border-radius: 26px;
+      padding: clamp(26px, 3vw, 36px);
+      box-shadow: var(--shadow-artifact);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      height: 100%;
+      transition: transform 0.35s var(--ease-spring), background-color 0.3s var(--ease-steep), box-shadow 0.35s var(--ease-steep);
+    }
+
+    .pp-step-card .t-body {
+      color: #2f343e;
+    }
+
+    .pp-step-card:hover {
+      transform: translateY(-4px);
+      background: #ffffff;
+      box-shadow: var(--shadow-artifact-lg);
+    }
+
+    .pp-step-card--mint:hover {
+      background: #eef9f1;
+    }
+
+    .pp-step-card--sky:hover {
+      background: #edf4fe;
+    }
+
+    .pp-step-card__head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+
+    .pp-step-card .ladder-step__num {
+      margin-bottom: 0;
+      color: #484d59;
+    }
+
+    .pp-step-pill {
+      font-size: 11.5px;
+      font-weight: 500;
+      padding: 4px 11px;
+      border-radius: var(--radius-pill);
+      background: rgba(20, 22, 25, 0.06);
+      color: #2f343e;
+      border: 1px solid rgba(20, 22, 25, 0.1);
+    }
+
+    .pp-step-pill--mint {
+      background: var(--color-mint);
+      color: var(--color-forest);
+      border-color: rgba(31, 71, 32, 0.14);
+    }
+
+    .pp-step-pill--sky {
+      background: var(--color-sky);
+      color: var(--color-navy);
+      border-color: rgba(25, 65, 104, 0.14);
+    }
+
+    .pp-step-pill--peach {
+      background: var(--color-peach);
+      color: var(--color-sienna);
+      border-color: rgba(93, 42, 26, 0.14);
+    }
+
+    .pp-step-pill--lavender {
+      background: #ece6fb;
+      color: var(--color-editorial-purple);
+      border-color: rgba(77, 47, 135, 0.14);
+    }
+
+    .pp-step-pill--cream {
+      background: var(--color-quote-cream);
+      color: var(--color-sienna);
+      border-color: rgba(93, 42, 26, 0.16);
+    }
+
+    .pp-step-pill--teal {
+      background: #d7f3ee;
+      color: #14524a;
+      border-color: rgba(20, 82, 74, 0.16);
+    }
+
+    .pp-pricing-band {
+      margin-top: clamp(24px, 3vw, 32px);
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(20, 22, 25, 0.08);
+      border-radius: 26px;
+      box-shadow: var(--shadow-artifact);
+      padding: clamp(26px, 3.2vw, 36px);
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) auto;
+      gap: 20px 32px;
+      align-items: center;
+    }
+
+    .pp-pricing-factors {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pp-pricing-chip {
+      font-size: 12.5px;
+      font-weight: 480;
+      padding: 6px 13px;
+      border-radius: var(--radius-pill);
+      background: var(--color-fog);
+      border: 1px solid var(--color-rule);
+      color: var(--color-ink);
+      white-space: nowrap;
+    }
+
+    /* ------------------------------------------------------------------------
+       ACT III: Dark Obsidian Threshold, Steep 3D Open/Close Starlight Doorway
+       & Private-Office Concierge Zcal Frame
+       ------------------------------------------------------------------------ */
+    .pp-closing {
+      position: relative;
+      background: var(--color-dark-canvas);
+      color: var(--color-dark-heading);
+      overflow: hidden;
+    }
+
+    .pp-closing__glow {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(680px 440px at 50% 16%, rgba(167, 139, 250, 0.16) 0%, transparent 66%),
+        radial-gradient(540px 360px at 50% 42%, rgba(232, 184, 125, 0.1) 0%, transparent 70%);
+    }
+
+    .pp-closing .wrap {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Authentic Steep 3D Open/Close Starlight Doorway (Dark Obsidian Edition) */
+    .pp-door-stage {
+      position: relative;
+      width: 280px;
+      height: 212px;
+      margin: 0 auto 24px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* Minimalist broken/ticked Steep ground horizon line */
+    .pp-door-ground {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 8px;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.34) 14%,
+        rgba(255, 255, 255, 0.34) 24%,
+        transparent 25.5%,
+        rgba(255, 255, 255, 0.52) 27%,
+        rgba(255, 255, 255, 0.52) 73%,
+        transparent 74.5%,
+        rgba(255, 255, 255, 0.34) 76%,
+        rgba(255, 255, 255, 0.34) 86%,
+        transparent 100%
+      );
+      pointer-events: none;
+    }
+
+    /* Subtle starlight threshold ambient halo behind open doorway */
+    .pp-door-halo {
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      bottom: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232, 184, 125, 0.16) 0%, rgba(167, 139, 250, 0.11) 42%, transparent 72%);
+      filter: blur(18px);
+      opacity: 0.35;
+      pointer-events: none;
+      transition: opacity 0.6s var(--ease-steep);
+    }
+
+    .pp-door-stage.is-animated .pp-door-halo {
+      animation: ppDoorHaloPulse 7.8s ease-in-out infinite;
+    }
+
+    .pp-door-stage:hover .pp-door-halo,
+    .pp-door-stage.is-held-open .pp-door-halo {
+      animation: none;
+      opacity: 0.95;
+    }
+
+    @keyframes ppDoorHaloPulse {
+      0%, 14%, 100% { opacity: 0.22; }
+      38%, 62% { opacity: 0.88; }
+    }
+
+    /* 3D Perspective Doorway Aperture + Swinging Architectural Door Leaf */
+    .pp-door-scene {
+      position: relative;
+      width: 102px;
+      height: 184px;
+      margin-bottom: 8px;
+      perspective: 820px;
+      perspective-origin: 42% 52%;
+    }
+
+    /* Fixed Minimalist Hairline Doorframe & Pitch-Black Starlight Cosmos */
+    .pp-door-frame {
+      position: absolute;
+      inset: 0;
+      border: 1.25px solid rgba(255, 255, 255, 0.72);
+      border-bottom: none;
+      background: radial-gradient(85% 90% at 38% 72%, #110c1c 0%, #050508 65%, #020204 100%);
+      overflow: hidden;
+      box-shadow: inset 0 0 24px rgba(167, 139, 250, 0.16);
+    }
+
+    .pp-door-cosmos {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* 3D Swinging Door Leaf hinged on Right Jamb (exact Steep mirrored swing toward viewer!) */
+    .pp-door-leaf {
+      position: absolute;
+      inset: 0;
+      transform-origin: right center;
+      transform-style: preserve-3d;
+      transform: rotateY(0deg);
+      background: linear-gradient(155deg, #17171d 0%, #111115 100%);
+      border: 1.25px solid rgba(255, 255, 255, 0.84);
+      border-bottom: 1.25px solid rgba(255, 255, 255, 0.72);
+      box-shadow: -14px 12px 32px rgba(0, 0, 0, 0.55);
+      transition: transform 0.95s var(--ease-expo);
+      will-change: transform;
+    }
+
+    .pp-door-stage.is-animated .pp-door-leaf {
+      animation: ppSteepDoorSwing 7.8s cubic-bezier(0.45, 0.04, 0.25, 1) infinite;
+    }
+
+    .pp-door-stage:hover .pp-door-leaf,
+    .pp-door-stage.is-held-open .pp-door-leaf {
+      animation: none;
+      transform: rotateY(64deg);
+    }
+
+    @keyframes ppSteepDoorSwing {
+      0%, 12% { transform: rotateY(0deg); }
+      38%, 62% { transform: rotateY(60deg); }
+      88%, 100% { transform: rotateY(0deg); }
+    }
+
+    /* Subtle inner architectural bevel line on door leaf */
+    .pp-door-leaf::before {
+      content: "";
+      position: absolute;
+      inset: 10px 10px 10px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      pointer-events: none;
+    }
+
+    /* Narrow 3D Side Thickness & Rectangular Latch Cutout along Leading Left Edge */
+    .pp-door-edge {
+      position: absolute;
+      top: -1px;
+      bottom: -1px;
+      left: -1px;
+      width: 7px;
+      transform-origin: left center;
+      transform: rotateY(90deg);
+      background: linear-gradient(180deg, #272730 0%, #18181f 100%);
+      border-top: 1.2px solid rgba(255, 255, 255, 0.78);
+      border-bottom: 1.2px solid rgba(255, 255, 255, 0.68);
+      border-right: 1.2px solid rgba(255, 255, 255, 0.72);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pp-door-latch {
+      width: 2.5px;
+      height: 11px;
+      border-radius: 1px;
+      background: rgba(232, 184, 125, 0.65);
+      margin-top: 10px;
+    }
+
+    /* Steep Minimalist Rectangular Backplate + Horizontal Lever Handle */
+    .pp-door-handle {
+      position: absolute;
+      left: 11px;
+      top: 52%;
+      transform: translateY(-50%);
+      width: 7px;
+      height: 20px;
+      border: 1.15px solid rgba(255, 255, 255, 0.82);
+      border-radius: 1.5px;
+      background: #141419;
+    }
+
+    .pp-door-lever {
+      position: absolute;
+      left: 3px;
+      top: 5px;
+      width: 14px;
+      height: 3px;
+      border: 1.15px solid rgba(255, 255, 255, 0.88);
+      border-radius: 1.5px;
+      background: #141419;
+    }
+
+    .pp-zcal-shell {
+      max-width: 780px;
+      margin: clamp(32px, 4vw, 48px) auto 0;
+      background:
+        radial-gradient(70% 65% at 50% 112%, rgba(154, 88, 224, 0.22) 0%, rgba(102, 56, 168, 0.08) 46%, transparent 74%),
+        linear-gradient(180deg, rgba(28, 28, 35, 0.96) 0%, rgba(17, 17, 22, 0.99) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 28px;
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.09) inset,
+        var(--shadow-dark-stage);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Animated subtle top-edge light beam across Zcal Private-Office Shell */
+    .pp-zcal-shell::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 14%;
+      right: 14%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(232, 184, 125, 0.7) 50%, transparent 100%);
+      z-index: 3;
+      pointer-events: none;
+      animation: ppBeamBreath 5s ease-in-out infinite alternate;
+    }
+
+    @keyframes ppBeamBreath {
+      0% { opacity: 0.35; transform: scaleX(0.75); }
+      100% { opacity: 0.95; transform: scaleX(1.06); }
+    }
+
+    .pp-zcal-chrome {
+      padding: 15px 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.02);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--color-dark-secondary);
+    }
+
+    .pp-zcal-chrome .pp-panel__id {
+      padding-bottom: 0;
+    }
+
+    .pp-zcal-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #e8b87d;
+    }
+
+    .pp-zcal-live__dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #2dd4bf;
+      box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.22);
+      animation: ppLivePulse 2.4s ease-in-out infinite;
+    }
+
+    @keyframes ppLivePulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(0.8); }
+    }
+
+    .pp-zcal-prompts {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .pp-zcal-prompt-pill {
+      font-size: 12px;
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--color-dark-secondary);
+    }
+
+    .pp-zcal-mount {
+      padding: clamp(28px, 4.2vw, 46px) clamp(22px, 3.6vw, 42px) clamp(26px, 3.6vw, 38px);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .pp-intake-kicker {
+      font-size: 11.5px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-dark-muted);
+    }
+
+    .pp-intake-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+      gap: 12px;
+      text-align: left;
+    }
+
+    .pp-intake-item {
+      padding: 16px 16px 15px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: border-color 0.25s var(--ease-steep), background-color 0.25s var(--ease-steep), transform 0.25s var(--ease-spring);
+    }
+
+    .pp-intake-item:hover {
+      background: rgba(255, 255, 255, 0.07);
+      border-color: rgba(232, 184, 125, 0.34);
+      transform: translateY(-2px);
+    }
+
+    .pp-intake-item__head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .pp-intake-item__num {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      line-height: 1;
+      color: #e8b87d;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .pp-intake-item__icon {
+      width: 15px;
+      height: 15px;
+      color: rgba(255, 255, 255, 0.52);
+      flex-shrink: 0;
+    }
+
+    .pp-intake-item__title {
+      font-size: 13.5px;
+      font-weight: 500;
+      line-height: 1.38;
+      color: var(--color-dark-heading);
+    }
+
+    .pp-zcal-cta-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      margin-top: 2px;
+    }
+
+    .pp-zcal-cta {
+      height: 52px;
+      padding: 0 30px;
+      font-size: 16px;
+      font-weight: 500;
+      box-shadow: 0 14px 34px -10px rgba(255, 255, 255, 0.22);
+      transition: transform 0.25s var(--ease-spring), box-shadow 0.25s var(--ease-steep), opacity 0.2s var(--ease-steep);
+    }
+
+    .pp-zcal-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 40px -10px rgba(232, 184, 125, 0.34);
+      opacity: 0.96;
+    }
+
+    .pp-zcal-mount__micro {
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--color-dark-secondary);
+      max-width: 520px;
+    }
+
+    .pp-zcal-meta {
+      width: 100%;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 10px 24px;
+      font-size: 12px;
+      color: var(--color-dark-muted);
+    }
+
+    .pp-zcal-meta__item {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .pp-zcal-meta__dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #e8b87d;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 680px) {
+      .pp-intake-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pp-zcal-cta {
+        width: 100%;
+      }
+    }
+
+    /* Standalone Corporate Governance Footer */
+    .pp-footer {
+      background: var(--color-dark-panel);
+      border-top: 1px solid var(--color-dark-edge);
+      padding: clamp(52px, 6.5vw, 80px) 0 calc(clamp(40px, 5vw, 56px) + env(safe-area-inset-bottom, 0px));
+      color: var(--color-dark-secondary);
+    }
+
+    .pp-footer__top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--color-dark-edge);
+    }
+
+    .pp-footer__entity {
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--color-dark-secondary);
+      max-width: 620px;
+    }
+
+    .pp-footer .footer-disclaimer {
+      margin-top: 28px;
+      background: rgba(255, 255, 255, 0.025);
+      border-color: var(--color-dark-edge);
+      color: var(--color-dark-muted);
+    }
+
+    .pp-footer__copy {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid var(--color-dark-edge);
+      font-size: 13px;
+      color: var(--color-dark-muted);
+    }
+
+    /* ------------------------------------------------------------------------
+       Adaptive Native Mobile Action Dock (<= 768px Only, Safe-Area Aware)
+       Mirrors top header Dark Obsidian <-> Alabaster Glass polarity smoothly
+       ------------------------------------------------------------------------ */
+    .pp-mobile-dock {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .pp-mobile-dock {
+        position: fixed;
+        left: max(12px, env(safe-area-inset-left, 0px));
+        right: max(12px, env(safe-area-inset-right, 0px));
+        bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+        z-index: 55;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 10px 10px 10px 16px;
+        border-radius: 9999px;
+        background: rgba(20, 20, 25, 0.9);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.13);
+        box-shadow: 0 18px 38px -8px rgba(0, 0, 0, 0.58);
+        opacity: 0;
+        pointer-events: none;
+        transform: translate3d(0, 22px, 0);
+        transition: opacity 0.3s var(--ease-steep), transform 0.35s var(--ease-expo), background-color 0.3s var(--ease-steep), border-color 0.3s var(--ease-steep);
+      }
+
+      .pp-mobile-dock.is-visible {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translate3d(0, 0, 0);
+      }
+
+      .pp-mobile-dock__meta {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+      }
+
+      .pp-mobile-dock__title {
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 1.2;
+        color: #ffffff;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .pp-mobile-dock__sub {
+        font-size: 11px;
+        line-height: 1.25;
+        color: var(--color-dark-secondary);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .pp-mobile-dock__cta {
+        min-height: 40px;
+        height: 40px;
+        padding: 0 16px;
+        font-size: 13px;
+        font-weight: 500;
+        flex-shrink: 0;
+      }
+
+      .pp-mobile-dock.is-light-surface {
+        background: rgba(255, 255, 255, 0.92);
+        border-color: rgba(20, 22, 25, 0.11);
+        box-shadow: 0 16px 36px -10px rgba(20, 22, 25, 0.22);
+      }
+
+      .pp-mobile-dock.is-light-surface .pp-mobile-dock__title {
+        color: var(--color-ink);
+      }
+
+      .pp-mobile-dock.is-light-surface .pp-mobile-dock__sub {
+        color: #484d59;
+      }
+
+      .pp-mobile-dock.is-light-surface .btn--primary {
+        background: var(--color-ink);
+        color: #ffffff;
+        border-color: var(--color-ink);
+      }
+    }
+
+    /* ------------------------------------------------------------------------
+       Intrinsic Responsive Craft & Native Mobile Ergonomics (320px -> 1920px+)
+       ------------------------------------------------------------------------ */
+    @media (hover: none) {
+      .pp-spotlight-card::after {
+        display: none;
+      }
+
+      .pp-audit-card:hover,
+      .pp-metric-card:hover,
+      .pp-pillar-card:hover,
+      .pp-step-card:hover,
+      .pp-intake-item:hover,
+      .pp-zcal-cta:hover {
+        transform: none;
+      }
+    }
+
+    @media (max-width: 960px) {
+      .pp-panel__pane.is-active,
+      .pp-erosion-grid,
+      .pp-principal-grid,
+      .pp-pricing-band {
+        grid-template-columns: 1fr;
+      }
+
+      .pp-principal-grid .pp-portrait-card {
+        order: -1;
+        max-width: min(280px, 78vw);
+      }
+
+      .pp-erosion-stats {
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding-left: 0;
+        padding-top: 22px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .pp-advisory-diagram {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      /* Transform horizontal CA connector into clean vertical dashed flow on stacked screens */
+      .pp-adv-connector {
+        width: 1.5px;
+        height: 22px;
+        margin: 0 auto;
+        background: repeating-linear-gradient(180deg, rgba(20, 22, 25, 0.36) 0 4px, transparent 4px 8px);
+      }
+    }
+
+    @media (max-width: 920px) {
+      .pp-wf-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .pp-wf-connectors {
+        display: none;
+      }
+
+      .pp-wf-v-connector {
+        display: block;
+      }
+
+      .pp-wf-sources {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .pp-wf-pill {
+        height: 38px;
+        padding: 0 12px 0 8px;
+        font-size: 12.5px;
+      }
+
+      .pp-wf-hub {
+        min-height: auto;
+        padding: clamp(20px, 4vw, 28px) clamp(16px, 3.6vw, 24px);
+      }
+
+      .pp-wf-out-card {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 155px), 1fr));
+        gap: 8px 12px;
+      }
+
+      .pp-wf-out-sep {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .pp-footer {
+        padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+      }
+
+      .pp-panel__bar {
+        padding-bottom: 0;
+      }
+
+      .pp-panel__id {
+        padding-bottom: 4px;
+      }
+
+      .pp-panel__controls {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      /* Native App-Like Touch-Snap Horizontal Tab Rail */
+      .pp-panel__tabs {
+        flex: 1 1 auto;
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x proximity;
+        flex-wrap: nowrap;
+        gap: 18px;
+        padding-bottom: 10px;
+        scrollbar-width: none;
+      }
+
+      .pp-panel__tabs::-webkit-scrollbar {
+        display: none;
+      }
+
+      .pp-panel__tab {
+        white-space: nowrap;
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 2px 10px;
+      }
+
+      .pp-panel__arrows {
+        display: none;
+      }
+
+      /* Native 44px Touch Ergonomics on Interactive Controls */
+      .pp-audit-toggle {
+        min-height: 40px;
+        padding: 8px 14px;
+      }
+
+      .pp-axis-btn {
+        min-height: 40px;
+        padding: 6px 8px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .pp-wf-bento-top,
+      .pp-wf-bento-cell {
+        min-height: 48px;
+      }
+
+      .pp-principal-showcase {
+        border-radius: 24px;
+        padding: clamp(22px, 5vw, 34px);
+      }
+
+      .pp-wireframe {
+        border-radius: 22px;
+        padding: clamp(22px, 5vw, 32px) clamp(16px, 4vw, 24px);
+      }
+
+      /* Ensure light-section stacked mobile tables render crisp elevated cards */
+      .pp-light .table-scroll {
+        background: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .pp-light .editorial-table tbody tr {
+        background: rgba(255, 255, 255, 0.96);
+        border-color: var(--color-rule);
+        box-shadow: 0 10px 24px -14px rgba(0, 0, 0, 0.1);
+      }
+
+      .pp-light .editorial-table tbody tr.is-highlight-row {
+        background: rgba(211, 227, 252, 0.58);
+        border-color: rgba(25, 65, 104, 0.24);
+      }
+
+      .pp-light .editorial-table tbody tr.is-highlight-row td {
+        background: transparent !important;
+        box-shadow: none !important;
+        color: var(--color-ink);
+      }
+
+      .pp-light .editorial-table tbody td {
+        color: #373c47;
+      }
+
+      .pp-light .editorial-table tbody td:first-child {
+        color: var(--color-ink);
+        border-bottom-color: var(--color-rule) !important;
+      }
+
+      .pp-light .editorial-table tbody td::before {
+        color: #484d59;
+      }
+
+      .pp-light .editorial-table .pp-col-highlight {
+        background: transparent !important;
+        color: var(--color-ink);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .pp-hero {
+        padding-top: clamp(92px, 24vw, 114px);
+        padding-bottom: 52px;
+      }
+
+      .pp-hero__copy {
+        text-align: left;
+      }
+
+      .pp-hero__sub,
+      .pp-hero__micro {
+        margin-inline: 0;
+        text-align: left;
+      }
+
+      .pp-closing .centered-lead {
+        text-align: center;
+      }
+
+      .pp-door-stage {
+        width: min(240px, 100%);
+        height: 186px;
+        margin-bottom: 18px;
+      }
+
+      .pp-door-scene {
+        width: 90px;
+        height: 164px;
+      }
+
+      .pp-erosion-stats,
+      .pp-wf-bento-tri {
+        grid-template-columns: 1fr;
+      }
+
+      .pp-wf-bento-cell {
+        min-height: 48px;
+        padding: 13px 12px;
+      }
+
+      .pp-wf-out-item {
+        white-space: normal;
+      }
+
+      .pp-note-strip {
+        padding: 18px 18px;
+        font-size: 14.5px;
+      }
+
+      .pp-zcal-chrome {
+        padding: 14px 18px;
+        font-size: 11px;
+      }
+
+      .pp-zcal-mount {
+        padding: 22px 16px 24px;
+        gap: 20px;
+      }
+
+      .pp-zcal-cta {
+        width: 100%;
+        min-height: 50px;
+        height: auto;
+        padding: 14px 20px;
+        white-space: normal;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .pp-wordmark {
+        gap: 0.26em;
+      }
+
+      .pp-wordmark__script {
+        font-size: 25px;
+      }
+
+      .pp-wordmark__amp {
+        font-size: 13.5px;
+      }
+
+      .pp-wordmark__partners {
+        font-size: 9.5px;
+        letter-spacing: 0.16em;
+      }
+
+      .pp-pricing-chip {
+        white-space: normal;
+      }
+
+      .pp-audit-card,
+      .pp-metric-card,
+      .pp-pillar-card,
+      .pp-step-card,
+      .pp-erosion-card,
+      .pp-perspective-box {
+        padding: 20px 18px;
+        border-radius: 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pp-pastel-bg .hero-orb,
+      .pp-dark-orb,
+      .pp-wf-line,
+      .pp-orbit-slow,
+      .pp-ring-breathe-a,
+      .pp-ring-breathe-b,
+      .pp-beacon-pulse,
+      .pp-eyebrow-pill__dot::after,
+      .pp-door-stage.is-animated .pp-door-leaf,
+      .pp-door-stage.is-animated .pp-door-halo,
+      .pp-zcal-shell::before,
+      .pp-zcal-live__dot {
+        animation: none !important;
+      }
+
+      .pp-door-leaf {
+        transform: rotateY(46deg) !important;
+      }
+
+      .pp-wedge-clip-rect,
+      .pp-data-fill,
+      .pp-profile-bar {
+        transform: scaleX(1) !important;
+      }
+
+      .pp-erosion-caliper {
+        opacity: 1 !important;
+      }
+
+      .pp-data-pillar--coral {
+        background: #eb8080 !important;
+      }
+    }
+  </style>
+
+  <!-- Structured Data: Private Coaching Practice -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "EducationalOrganization",
+        "name": "Pillai & Partners",
+        "description": "India's private one-on-one coaching practice in financial markets for high-earning individuals and business owners. Stop silent portfolio leaks, protect capital across economic cycles, and verify every financial decision yourself with 16-year practitioner Renjith R Pillai.",
+        "parentOrganization": {
+          "@type": "Organization",
+          "name": "The Happiness Company Business Solutions Pvt. Ltd."
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Renjith R Pillai",
+        "jobTitle": "Managing Principal",
+        "worksFor": {
+          "@type": "EducationalOrganization",
+          "name": "Pillai & Partners"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body class="theme-dark pp-page">
+
+  <!-- Standalone Minimal Executive Header -->
+  <header class="site-header pp-header" id="pp-header">
+    <div class="nav-inner">
+      <a href="#top" class="pp-wordmark" aria-label="Pillai and Partners">
+        <span class="pp-wordmark__script">Pillai</span>
+        <span class="pp-wordmark__amp">&amp;</span>
+        <span class="pp-wordmark__partners">Partners</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Page navigation">
+        <a href="#the-problem" data-pp-nav="the-problem">The Problem</a>
+        <a href="#solutions" data-pp-nav="solutions">Solutions</a>
+        <a href="#governance" data-pp-nav="governance">Governance</a>
+        <a href="#schedule" data-pp-nav="schedule">Schedule a Call</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#schedule" class="btn btn--primary btn--sm">Schedule a Call</a>
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open navigation menu" aria-expanded="false"
+          aria-controls="mobile-drawer">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"
+            stroke-linecap="round">
+            <path d="M3 6H17M3 10H17M3 14H17" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Standalone Mobile Navigation Drawer -->
+  <nav id="mobile-drawer" class="mobile-drawer" aria-label="Mobile navigation" aria-hidden="true">
+    <div>
+      <div class="mobile-drawer__top">
+        <a href="#top" class="pp-wordmark" aria-label="Pillai and Partners">
+          <span class="pp-wordmark__script">Pillai</span>
+          <span class="pp-wordmark__amp">&amp;</span>
+          <span class="pp-wordmark__partners">Partners</span>
+        </a>
+        <button id="mobile-close-btn" class="mobile-menu-btn" style="display:inline-flex" aria-label="Close menu">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"
+            stroke-linecap="round">
+            <path d="M5 5L15 15M15 5L5 15" />
+          </svg>
+        </button>
+      </div>
+      <div class="mobile-drawer__links">
+        <a href="#the-problem">The Problem</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#governance">Governance</a>
+        <a href="#schedule">Schedule a Call</a>
+      </div>
+    </div>
+    <div class="mobile-drawer__footer">
+      <a href="#schedule" class="btn btn--primary">Schedule a Call</a>
+      <span class="t-caption">Pillai &amp; Partners &middot; Private Coaching in Financial Markets</span>
+    </div>
+  </nav>
+
+  <main id="top">
+
+    <!-- ====================================================================
+         SECTION 1: HERO + PRIVATE-OFFICE ARCHITECTURAL PANEL (Dark Obsidian)
+         ==================================================================== -->
+    <section class="pp-hero" data-surface="dark">
+      <div class="pp-dark-atmosphere" aria-hidden="true">
+        <span class="pp-dark-orb pp-dark-orb--violet"></span>
+        <span class="pp-dark-orb pp-dark-orb--gold"></span>
+        <span class="pp-dark-orb pp-dark-orb--plum"></span>
+      </div>
+      <div class="atmosphere-light" aria-hidden="true"></div>
+      <div class="pp-grid-backdrop" aria-hidden="true"></div>
+      <div class="dark-grain" aria-hidden="true"></div>
+
+      <div class="wrap pp-hero__inner">
+        <div class="pp-hero__copy">
+          <span class="pp-eyebrow-pill">
+            <span class="pp-eyebrow-pill__dot" aria-hidden="true"></span>
+            <span>Pillai &amp; Partners | Private Coaching in Financial Markets</span>
+          </span>
+
+          <h1 class="t-hero-sharp" data-word-reveal>
+            Own the judgment <span class="t-muted-tone">behind your wealth.</span>
+          </h1>
+
+          <p class="t-hero-support pp-hero__sub">
+            Pillai &amp; Partners is India&rsquo;s private one-on-one coaching practice in financial markets for high-earning individuals and business owners. Led exclusively by 16-year practitioner Renjith R Pillai with zero delegation, built around your calendar for permanent capital self-sufficiency.
+          </p>
+
+          <div class="btn-row pp-hero__actions">
+            <a href="#schedule" class="btn btn--primary">Schedule a confidential 30-minute call</a>
+            <a href="#solutions" class="btn btn--ghost">See the four problems we solve <span class="arrow" aria-hidden="true">&darr;</span></a>
+          </div>
+
+          <p class="pp-hero__micro">
+            12-month flexible mandate. Global live sessions. Selective admission by assessment. Strictly independent education.
+          </p>
+        </div>
+
+        <!-- Visual 1: Steep Sliding-Bar Private-Office Architectural Panel -->
+        <div class="pp-panel pp-spotlight-card reveal" role="region"
+          aria-label="Interactive overview of the three analytical lenses covered inside a private Pillai and Partners mandate.">
+          <div class="pp-panel__bar">
+            <span class="pp-panel__id">
+              <span class="pp-panel__diamond" aria-hidden="true"></span>
+              <span>Private Mandate Architecture</span>
+            </span>
+
+            <div class="pp-panel__controls">
+              <div class="pp-panel__tabs" id="pp-console-tabs" role="tablist" aria-label="Explore analytical lenses">
+                <button type="button" class="pp-panel__tab is-active" role="tab" aria-selected="true" data-pp-console="audit">01 &middot; Portfolio Audit</button>
+                <button type="button" class="pp-panel__tab" role="tab" aria-selected="false" data-pp-console="macro">02 &middot; Economic Cycles</button>
+                <button type="button" class="pp-panel__tab" role="tab" aria-selected="false" data-pp-console="mechanics">03 &middot; Market Mechanics</button>
+                <span class="pp-panel__slider" id="pp-panel-slider" aria-hidden="true"></span>
+              </div>
+
+              <div class="pp-panel__arrows" aria-label="Cycle analytical lenses">
+                <button type="button" class="pp-panel__nav-btn" id="pp-console-prev" aria-label="Previous lens">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 3.5L5 7l3.5 3.5"/></svg>
+                </button>
+                <button type="button" class="pp-panel__nav-btn" id="pp-console-next" aria-label="Next lens">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 3.5L9 7l-3.5 3.5"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="pp-panel__body">
+            <!-- Lens 1: Living Concentric Portfolio Overlap & Cost-Drag Geometry -->
+            <div class="pp-panel__pane is-active" data-pp-pane="audit">
+              <div class="pp-panel__art-stage">
+                <svg viewBox="0 0 460 190" width="100%" height="190" fill="none" aria-hidden="true">
+                  <defs>
+                    <radialGradient id="ppCoreGlow" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#e8b87d" stop-opacity="0.45" />
+                      <stop offset="65%" stop-color="#a78bfa" stop-opacity="0.14" />
+                      <stop offset="100%" stop-color="#111115" stop-opacity="0" />
+                    </radialGradient>
+                  </defs>
+                  <!-- Left cluster: gently breathing overlapping schemes -->
+                  <circle cx="142" cy="95" r="76" fill="url(#ppCoreGlow)" />
+                  <circle class="pp-ring-breathe-a" cx="116" cy="82" r="48" stroke="#eb8080" stroke-opacity="0.55" stroke-width="1.2" />
+                  <circle class="pp-ring-breathe-b" cx="152" cy="76" r="48" stroke="#a78bfa" stroke-opacity="0.58" stroke-width="1.2" />
+                  <circle class="pp-ring-breathe-a" cx="166" cy="108" r="48" stroke="#e8b87d" stroke-opacity="0.58" stroke-width="1.2" />
+                  <circle class="pp-ring-breathe-b" cx="126" cy="114" r="48" stroke="#ffffff" stroke-opacity="0.34" stroke-width="1.15" />
+                  <circle class="pp-beacon-pulse" cx="142" cy="95" r="14" stroke="#eb8080" stroke-opacity="0.55" stroke-width="1.2" />
+                  <circle cx="142" cy="95" r="14" fill="#eb8080" fill-opacity="0.22" stroke="#e8b87d" stroke-width="1.35" />
+                  <circle cx="142" cy="95" r="3.5" fill="#ffffff" />
+
+                  <!-- Flowing optical resolution bridge -->
+                  <line x1="216" y1="95" x2="294" y2="95" stroke="#e8b87d" stroke-opacity="0.78" stroke-width="1.35" stroke-dasharray="4 6" class="dotted-stream" />
+                  <path d="M288 89 L295 95 L288 101" stroke="#e8b87d" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+
+                  <!-- Right structure: precision rotating audited concentric core -->
+                  <circle class="pp-orbit-slow" cx="362" cy="95" r="62" stroke="#2dd4bf" stroke-opacity="0.34" stroke-width="1.1" stroke-dasharray="5 5" />
+                  <circle cx="362" cy="95" r="44" stroke="#2dd4bf" stroke-opacity="0.58" stroke-width="1.25" />
+                  <circle class="pp-beacon-pulse" cx="362" cy="95" r="24" stroke="#2dd4bf" stroke-opacity="0.5" stroke-width="1.2" />
+                  <circle cx="362" cy="95" r="24" fill="#2dd4bf" fill-opacity="0.16" stroke="#2dd4bf" stroke-width="1.45" />
+                  <circle cx="362" cy="95" r="4" fill="#ffffff" />
+                  <line x1="362" y1="22" x2="362" y2="33" stroke="#2dd4bf" stroke-opacity="0.65" stroke-width="1.1" />
+                  <line x1="362" y1="157" x2="362" y2="168" stroke="#2dd4bf" stroke-opacity="0.65" stroke-width="1.1" />
+                </svg>
+                <div class="pp-art-legend">
+                  <span class="pp-legend-item"><span class="pp-legend-swatch" style="background:#eb8080;"></span>Overlapping schemes &amp; fee drag</span>
+                  <span class="pp-legend-item"><span class="pp-legend-swatch" style="background:#2dd4bf;"></span>Audited, low-overlap core</span>
+                </div>
+              </div>
+
+              <div class="pp-panel__readout">
+                <div class="pp-readout-row">
+                  <span class="pp-readout-row__k">Lens 01</span>
+                  <span class="pp-readout-row__v pp-readout-row__v--serif">Mutual Fund &amp; Holding Audits</span>
+                </div>
+                <div class="pp-readout-row">
+                  <span class="pp-readout-row__k">What You Verify Yourself</span>
+                  <span class="pp-readout-row__v">Direct vs. Regular fee drag, hidden stock overlap across multiple schemes, downside risk ratios, and disciplined rebalancing.</span>
+                </div>
+                <div class="pp-readout-row">
+                  <span class="pp-readout-row__k">Governance Boundary</span>
+                  <span class="pp-readout-row__v">Zero product commissions. Tax-sensitive transitions remain coordinated directly with your Chartered Accountant.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Lens 2: Triggered Macroeconomic Cycle Equilibrium Geometry -->
+            <div class="pp-panel__pane" data-pp-pane="macro">
+              <div class="pp-panel__art-stage">
+                <svg viewBox="0 0 460 190" width="100%" height="190" fill="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="ppMacroFill" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.2" />
+                      <stop offset="100%" stop-color="#2dd4bf" stop-opacity="0" />
+                    </linearGradient>
+                  </defs>
+                  <!-- Equilibrium horizon -->
+                  <line x1="20" y1="98" x2="440" y2="98" stroke="rgba(255,255,255,0.16)" stroke-dasharray="3 5" />
+                  <!-- Shaded cycle wave -->
+                  <path d="M20 124 C 82 54, 152 38, 224 94 C 296 150, 368 136, 440 58 L 440 172 L 20 172 Z" fill="url(#ppMacroFill)" />
+                  <!-- Three harmonious triggered cross-asset cycle waves -->
+                  <path id="ppMacroWavePath" class="pp-macro-draw" d="M20 124 C 82 54, 152 38, 224 94 C 296 150, 368 136, 440 58" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round" />
+                  <path class="pp-macro-draw pp-macro-draw--b" d="M20 68 C 94 146, 168 150, 240 94 C 312 38, 374 52, 440 122" stroke="#a78bfa" stroke-width="1.6" stroke-opacity="0.86" stroke-linecap="round" />
+                  <path class="pp-macro-draw pp-macro-draw--c" d="M20 102 C 110 88, 190 124, 280 96 C 352 74, 400 84, 440 82" stroke="#e8b87d" stroke-width="1.45" stroke-dasharray="5 4" stroke-linecap="round" />
+                  <!-- Cycle inflection nodes & live pulse -->
+                  <line x1="224" y1="30" x2="224" y2="164" stroke="rgba(255,255,255,0.18)" />
+                  <circle class="pp-beacon-pulse" cx="224" cy="94" r="14" stroke="#e8b87d" stroke-width="1.3" />
+                  <circle cx="224" cy="94" r="14" fill="rgba(232,184,125,0.14)" stroke="#e8b87d" stroke-width="1.25" />
+                  <circle cx="224" cy="94" r="3.5" fill="#ffffff" />
+                  <circle cx="114" cy="60" r="3.5" fill="#2dd4bf" />
+                  <circle cx="348" cy="128" r="3.5" fill="#2dd4bf" />
+                  <!-- Live gliding macro cycle marker -->
+                  <circle r="4.5" fill="#ffffff" stroke="#2dd4bf" stroke-width="2">
+                    <animateMotion dur="7s" repeatCount="indefinite" path="M20 124 C 82 54, 152 38, 224 94 C 296 150, 368 136, 440 58" />
+                  </circle>
+                </svg>
+                <div class="pp-art-legend">
+                  <span class="pp-legend-item"><span class="pp-legend-swatch" style="background:#2dd4bf;"></span>Growth &amp; equity cycles</span>
+                  <span class="pp-legend-item"><span class="pp-legend-swatch" style="background:#a78bfa;"></span>Rates &amp; yield regimes</span>
+                  <span class="pp-legend-item"><span class="pp-legend-swatch" style="background:#e8b87d;"></span>Gold &amp; FX balance</span>
+                </div>
+              </div>
+
+              <div class="pp-panel__readout">
+                <div class="pp-readout-row">
+                  <span class="pp-readout-row__k">Lens 02</span>
+                  <span class="pp-readout-row__v pp-readout-row__v--serif">Macroeconomic &amp; Business Valuation</span>
+                </div>
+                <div class="pp-readout-row">
+                  <span class="pp-readout-row__k">What You Read Calmly</span>
+                  <span class="pp-readout-row__v">How central bank rates, inflation, bond yields, and currency shifts reshape risk across equities, debt, gold, and business surplus.</span>
+                </div>
+                <div class="pp-readout-row">
+                  <span class="pp-readout-row__k">Long-Term Outcome</span>
+                  <span class="pp-readout-row__v">Purchasing-power defense and structured asset oversight without active day trading.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Lens 3: Cascading Auction Profile & Institutional Order Flow Geometry -->
+            <div class="pp-panel__pane" data-pp-pane="mechanics">
+              <div class="pp-panel__art-stage">
+                <svg viewBox="0 0 460 190" width="100%" height="190" fill="none" aria-hidden="true">
+                  <!-- Fair value shaded zone -->
+                  <rect x="24" y="62" width="412" height="66" rx="6" fill="rgba(167,139,250,0.09)" />
+                  <line x1="24" y1="62" x2="436" y2="62" stroke="rgba(167,139,250,0.38)" stroke-dasharray="4 4" />
+                  <line x1="24" y1="128" x2="436" y2="128" stroke="rgba(45,212,191,0.38)" stroke-dasharray="4 4" />
+                  <!-- Cascading Market Profile Distribution Bars on Left Axis -->
+                  <rect class="pp-profile-bar" style="--i:0;" x="24" y="32" width="26" height="8" rx="3" fill="rgba(255,255,255,0.18)" />
+                  <rect class="pp-profile-bar" style="--i:1;" x="24" y="46" width="48" height="8" rx="3" fill="rgba(255,255,255,0.24)" />
+                  <rect class="pp-profile-bar" style="--i:2;" x="24" y="64" width="76" height="8" rx="3" fill="#a78bfa" fill-opacity="0.56" />
+                  <rect class="pp-profile-bar" style="--i:3;" x="24" y="78" width="104" height="8" rx="3" fill="#a78bfa" fill-opacity="0.7" />
+                  <rect class="pp-profile-bar" style="--i:4;" x="24" y="92" width="136" height="9" rx="3.5" fill="#e8b87d" fill-opacity="0.95" />
+                  <rect class="pp-profile-bar" style="--i:5;" x="24" y="107" width="96" height="8" rx="3" fill="#2dd4bf" fill-opacity="0.6" />
+                  <rect class="pp-profile-bar" style="--i:6;" x="24" y="121" width="66" height="8" rx="3" fill="#2dd4bf" fill-opacity="0.48" />
+                  <rect class="pp-profile-bar" style="--i:7;" x="24" y="139" width="38" height="8" rx="3" fill="rgba(255,255,255,0.22)" />
+                  <rect class="pp-profile-bar" style="--i:8;" x="24" y="153" width="20" height="8" rx="3" fill="rgba(255,255,255,0.15)" />
+                  <!-- Point of Control hairline -->
+                  <line x1="164" y1="96.5" x2="436" y2="96.5" stroke="#e8b87d" stroke-opacity="0.62" stroke-width="1.1" stroke-dasharray="4 6" class="dotted-stream" />
+                  <!-- Triggered Indicator-Free Price Discovery Spline -->
+                  <path class="pp-macro-draw" d="M174 146 C 204 142, 224 126, 250 124 C 278 122, 294 64, 326 62 C 356 60, 374 98, 404 76 C 418 66, 428 50, 436 42" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+                  <circle cx="250" cy="124" r="4.5" fill="#111115" stroke="#2dd4bf" stroke-width="2" />
+                  <circle cx="326" cy="62" r="4.5" fill="#111115" stroke="#a78bfa" stroke-width="2" />
+                  <circle class="pp-beacon-pulse" cx="436" cy="42" r="7" stroke="#e8b87d" stroke-width="1.3" />
+                  <circle cx="436" cy="42" r="4.5" fill="#e8b87d" />
+                </svg>
+                <div class="pp-art-legend">
+                  <span class="pp-legend-item"><span class="pp-legend-swatch" style="background:#e8b87d;"></span>Agreed fair value</span>
+                  <span class="pp-legend-item"><span class="pp-legend-swatch" style="background:#ffffff;"></span>Indicator-free auction path</span>
+                  <span class="pp-legend-item"><span class="pp-legend-swatch" style="background:#2dd4bf;"></span>Value boundaries</span>
+                </div>
+              </div>
+
+              <div class="pp-panel__readout">
+                <div class="pp-readout-row">
+                  <span class="pp-readout-row__k">Lens 03</span>
+                  <span class="pp-readout-row__v pp-readout-row__v--serif">11-Level Market Mechanics</span>
+                </div>
+                <div class="pp-readout-row">
+                  <span class="pp-readout-row__k">What You Master</span>
+                  <span class="pp-readout-row__v">Real exchange orders, supply and demand, fair-value auctions, and institutional inventory without lagging indicators.</span>
+                </div>
+                <div class="pp-readout-row">
+                  <span class="pp-readout-row__k">Compliance Standard</span>
+                  <span class="pp-readout-row__v">All charts and case studies rely strictly on historical market data with a minimum 30-day lag.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 2: THE REAL COST OF BLIND TRUST (Dark Obsidian · #the-problem)
+         ==================================================================== -->
+    <section class="section pp-dark-band pp-anchor" id="the-problem" data-surface="dark">
+      <div class="pp-dark-atmosphere" aria-hidden="true">
+        <span class="pp-dark-orb pp-dark-orb--plum" style="opacity:0.65;"></span>
+        <span class="pp-dark-orb pp-dark-orb--gold" style="opacity:0.5;"></span>
+      </div>
+      <div class="dark-grain" aria-hidden="true"></div>
+
+      <div class="wrap">
+        <div class="centered-lead centered-lead--wide reveal">
+          <span class="t-eyebrow pp-dark-eyebrow">The unspoken problem</span>
+          <h2 class="t-chapter--mid mt-12">Blind trust is the most <span class="t-muted-tone">expensive habit in wealth.</span></h2>
+        </div>
+
+        <div class="prose-narrow mt-24 reveal" style="display:flex;flex-direction:column;gap:16px;text-align:center;">
+          <p class="pp-body-dark pp-body-dark--emphasis">
+            You check every major contract, vendor margin, and critical decision inside your business or profession. Yet when it comes to your own hard-earned surplus, almost every accomplished person falls into the same trap: handing capital to a bank relationship manager, a fund distributor, or occasional guesswork on a mobile app, and hoping it stays safe.
+          </p>
+          <p class="pp-body-dark">
+            Before assuming your money is properly protected, test your own position against four quiet questions:
+          </p>
+        </div>
+
+        <ol class="pp-audit-grid" style="list-style:none;">
+          <!-- Question 01 -->
+          <li class="pp-audit-card pp-spotlight-card reveal reveal-delay-1" data-audit-card="1">
+            <div class="pp-audit-card__top">
+              <div class="pp-audit-card__id">
+                <span class="pp-audit-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 19c5-1 10-5 18-13" />
+                    <path d="M3 19c6 0 12-2 18-6" stroke-dasharray="3 3" opacity="0.65" />
+                  </svg>
+                </span>
+                <span class="pp-audit-card__num" aria-hidden="true">01</span>
+              </div>
+              <button type="button" class="pp-audit-toggle" data-audit-btn="1" aria-pressed="false">
+                <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" /></svg>
+                <span>Mark verified</span>
+              </button>
+            </div>
+            <p class="pp-audit-card__q">
+              Do you know whether your mutual funds sit in Regular or Direct plans, and how much embedded trail commission quietly leaves your portfolio every single year?
+            </p>
+          </li>
+
+          <!-- Question 02 -->
+          <li class="pp-audit-card pp-spotlight-card reveal reveal-delay-2" data-audit-card="2">
+            <div class="pp-audit-card__top">
+              <div class="pp-audit-card__id">
+                <span class="pp-audit-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9.5" cy="12" r="5.5" />
+                    <circle cx="14.5" cy="12" r="5.5" opacity="0.7" />
+                  </svg>
+                </span>
+                <span class="pp-audit-card__num" aria-hidden="true">02</span>
+              </div>
+              <button type="button" class="pp-audit-toggle" data-audit-btn="2" aria-pressed="false">
+                <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" /></svg>
+                <span>Mark verified</span>
+              </button>
+            </div>
+            <p class="pp-audit-card__q">
+              If you hold six or eight schemes, do you know how many own the exact same underlying stocks while charging you multiple fees?
+            </p>
+          </li>
+
+          <!-- Question 03 -->
+          <li class="pp-audit-card pp-spotlight-card reveal reveal-delay-3" data-audit-card="3">
+            <div class="pp-audit-card__top">
+              <div class="pp-audit-card__id">
+                <span class="pp-audit-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3l7 3v5.5c0 4.5-3 8.4-7 9.5-4-1.1-7-5-7-9.5V6l7-3z" />
+                    <path d="M9.2 12.2l1.8 1.8 3.8-4" />
+                  </svg>
+                </span>
+                <span class="pp-audit-card__num" aria-hidden="true">03</span>
+              </div>
+              <button type="button" class="pp-audit-toggle" data-audit-btn="3" aria-pressed="false">
+                <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" /></svg>
+                <span>Mark verified</span>
+              </button>
+            </div>
+            <p class="pp-audit-card__q">
+              When was the last time anyone reviewed your downside risk and removed lagging funds without earning a commission to move your money?
+            </p>
+          </li>
+
+          <!-- Question 04 -->
+          <li class="pp-audit-card pp-spotlight-card reveal reveal-delay-4" data-audit-card="4">
+            <div class="pp-audit-card__top">
+              <div class="pp-audit-card__id">
+                <span class="pp-audit-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="8.5" />
+                    <path d="M3.5 12h17" />
+                    <path d="M12 3.5c2.6 2.5 3.9 5.3 3.9 8.5s-1.3 6-3.9 8.5c-2.6-2.5-3.9-5.3-3.9-8.5s1.3-6 3.9-8.5z" />
+                  </svg>
+                </span>
+                <span class="pp-audit-card__num" aria-hidden="true">04</span>
+              </div>
+              <button type="button" class="pp-audit-toggle" data-audit-btn="4" aria-pressed="false">
+                <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" /></svg>
+                <span>Mark verified</span>
+              </button>
+            </div>
+            <p class="pp-audit-card__q">
+              When interest rates climb, inflation rises, or global currencies shift, do you know how your business surplus, equities, debt, gold, and cross-border savings are exposed?
+            </p>
+          </li>
+        </ol>
+
+        <div class="pp-perspective-box reveal">
+          <div class="pp-audit-meter" aria-live="polite">
+            <span class="pp-audit-meter__label">Private Self-Check: <strong id="pp-audit-count">0 of 4 verified</strong></span>
+            <div class="pp-audit-segments" aria-hidden="true">
+              <span class="pp-audit-seg" data-audit-seg="1"></span>
+              <span class="pp-audit-seg" data-audit-seg="2"></span>
+              <span class="pp-audit-seg" data-audit-seg="3"></span>
+              <span class="pp-audit-seg" data-audit-seg="4"></span>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <p class="pp-body-dark">
+              Bank desks and distributors earn from the products they place, never from your independence. You do not need to become an active trader to protect serious capital, and any tax-sensitive shift from Regular to Direct holdings must always be planned alongside your Chartered Accountant. Yet without your own independent yardstick, you cannot tell whether advice serves your family or someone else&rsquo;s sales target.
+            </p>
+            <p class="pp-body-dark">
+              And when sharp professionals step into equities or active markets directly without understanding how prices actually move, trial and error turns expensive fast. SEBI&rsquo;s own public studies show 91% of individual equity derivatives traders incurred net losses of Rs 1.056 lakh crore in FY2024-25, 93% lost over Rs 1.8 lakh crore across FY2022 to FY2024, and 7 in 10 intraday equity cash traders lost money.
+            </p>
+          </div>
+          <p class="pp-perspective-box__closing">
+            <strong>True financial control begins when you can verify everything.</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3: WHY WAITING COSTS MORE THAN STARTING (Dark Elevated)
+         ==================================================================== -->
+    <section class="section pp-dark-band pp-dark-band--elevated" data-surface="dark">
+      <div class="pp-dark-atmosphere" aria-hidden="true">
+        <span class="pp-dark-orb pp-dark-orb--violet" style="opacity:0.55;top:8%;"></span>
+      </div>
+      <div class="pp-grid-backdrop" aria-hidden="true"></div>
+      <div class="dark-grain" aria-hidden="true"></div>
+
+      <div class="wrap">
+        <div class="centered-lead centered-lead--wide reveal">
+          <span class="t-eyebrow pp-dark-eyebrow">The cost of next year</span>
+          <h2 class="t-chapter--mid mt-12">One private year to <span class="t-muted-tone">command your wealth for life.</span></h2>
+        </div>
+
+        <div class="prose-narrow mt-32 reveal" style="display:flex;flex-direction:column;gap:18px;">
+          <p class="pp-body-dark pp-body-dark--emphasis">
+            Most successful people already know they need independent financial clarity. They postpone it every quarter because the damage is invisible today and their calendar is already full.
+          </p>
+          <p class="pp-body-dark">
+            Waiting is not neutral. Pure arithmetic makes the cost unmistakable: a recurring 1% annual commission or structural fee drag does not cost you 1% over time. Across 20 years, lost compounding alone quietly removes roughly one sixth of your total ending capital, regardless of market direction. Waiting another year simply means letting that silent leak run for twelve more months while leaving idle surplus exposed to inflation and shifting economic cycles.
+          </p>
+          <p class="pp-body-dark">
+            High-earning peers in mature global economies refuse to leave wealth governance on autopilot. Across the United States and the United Kingdom, accomplished professionals treat equity and macroeconomic literacy as basic purchasing-power defense, separating career income from independent capital oversight.
+          </p>
+          <p class="pp-body-dark pp-body-dark--emphasis">
+            Your scarcest asset is uninterrupted time, never access to more opinions. Protecting your wealth should never become a second job. One to two focused private hours a week across 12 flexible months, scheduled strictly around your enterprise, travel, and family calendar, compresses 16 years of live market judgment into clarity you keep for the next thirty years.
+          </p>
+        </div>
+
+        <!-- Centerpiece Visual: Scroll-Triggered + Interactive 20-Year 1% Compounding Fee-Drag Chart -->
+        <div class="pp-erosion-card pp-spotlight-card reveal" id="pp-erosion-card" role="region"
+          aria-label="Mathematical compounding illustration showing how a recurring 1% annual fee drag removes roughly one sixth of total ending capital across 20 years.">
+          <div class="pp-erosion-grid">
+            <div>
+              <div class="pp-erosion-head">
+                <div class="pp-erosion-title">The arithmetic of a 1% annual fee drag across 20 years</div>
+                <span class="t-eyebrow" style="color:#eb8080;">Mathematical Illustration</span>
+              </div>
+
+              <svg viewBox="0 0 640 214" width="100%" height="214" fill="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="ppErosionWedge" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#eb8080" stop-opacity="0.02" />
+                    <stop offset="55%" stop-color="#eb8080" stop-opacity="0.18" />
+                    <stop offset="100%" stop-color="#eb8080" stop-opacity="0.36" />
+                  </linearGradient>
+                  <linearGradient id="ppTealBase" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.14" />
+                    <stop offset="100%" stop-color="#2dd4bf" stop-opacity="0" />
+                  </linearGradient>
+                  <clipPath id="ppWedgeReveal">
+                    <rect class="pp-wedge-clip-rect" x="20" y="0" width="600" height="214" />
+                  </clipPath>
+                </defs>
+
+                <!-- Horizontal hairline grid -->
+                <line x1="20" y1="26" x2="616" y2="26" stroke="rgba(255,255,255,0.06)" />
+                <line x1="20" y1="83" x2="616" y2="83" stroke="rgba(255,255,255,0.06)" />
+                <line x1="20" y1="140" x2="616" y2="140" stroke="rgba(255,255,255,0.06)" />
+                <line x1="20" y1="196" x2="616" y2="196" stroke="rgba(255,255,255,0.16)" />
+
+                <!-- Vertical 5-year milestone hairlines -->
+                <line x1="169" y1="26" x2="169" y2="196" stroke="rgba(255,255,255,0.05)" stroke-dasharray="3 5" />
+                <line x1="318" y1="26" x2="318" y2="196" stroke="rgba(255,255,255,0.05)" stroke-dasharray="3 5" />
+                <line x1="467" y1="26" x2="467" y2="196" stroke="rgba(255,255,255,0.05)" stroke-dasharray="3 5" />
+
+                <!-- Scroll-wiped shaded base & exact 1/6th compounding loss wedge -->
+                <g clip-path="url(#ppWedgeReveal)">
+                  <path d="M20 196 C 110 192, 210 176, 318 155.4 C 420 135.5, 520 98, 616 59.3 L 616 196 Z" fill="url(#ppTealBase)" />
+                  <path d="M20 196 C 110 191, 210 172, 318 148.7 C 420 124, 520 79, 616 26 L 616 59.3 C 520 98, 420 135.5, 318 155.4 C 210 176, 110 192, 20 196 Z" fill="url(#ppErosionWedge)" />
+                </g>
+
+                <!-- Interactive milestone vertical crosshair -->
+                <g class="pp-erosion-crosshair" id="pp-erosion-crosshair" transform="translate(596, 0)">
+                  <line x1="20" y1="20" x2="20" y2="196" stroke="#e8b87d" stroke-opacity="0.45" stroke-width="1.2" stroke-dasharray="3 4" />
+                </g>
+
+                <!-- Upper Curve: Uninterrupted Compounding -->
+                <path class="svg-draw" d="M20 196 C 110 191, 210 172, 318 148.7 C 420 124, 520 79, 616 26" stroke="#2dd4bf" stroke-width="2.2" stroke-linecap="round" />
+
+                <!-- Lower Curve: Recurring 1% Annual Fee Drag -->
+                <path class="svg-draw" d="M20 196 C 110 192, 210 176, 318 155.4 C 420 135.5, 520 98, 616 59.3" stroke="#eb8080" stroke-width="2" stroke-dasharray="5 4" stroke-linecap="round" />
+
+                <!-- Scroll-triggered Year 20 vertical erosion span callout & beacons -->
+                <g class="pp-erosion-caliper">
+                  <line x1="616" y1="26" x2="616" y2="59.3" stroke="#e8b87d" stroke-width="2.4" />
+                  <circle class="pp-beacon-pulse" cx="616" cy="26" r="7" stroke="#2dd4bf" stroke-width="1.2" />
+                  <circle class="pp-beacon-pulse" cx="616" cy="59.3" r="7" stroke="#eb8080" stroke-width="1.2" />
+                  <circle cx="616" cy="26" r="4.5" fill="#2dd4bf" />
+                  <circle cx="616" cy="59.3" r="4.5" fill="#eb8080" />
+                  <circle cx="467" cy="96.5" r="3" fill="#2dd4bf" opacity="0.82" />
+                  <circle cx="467" cy="112.2" r="3" fill="#eb8080" opacity="0.82" />
+                  <circle cx="318" cy="148.7" r="3" fill="#2dd4bf" opacity="0.82" />
+                  <circle cx="318" cy="155.4" r="3" fill="#eb8080" opacity="0.82" />
+                  <circle cx="169" cy="180.5" r="3" fill="#2dd4bf" opacity="0.82" />
+                  <circle cx="169" cy="183.1" r="3" fill="#eb8080" opacity="0.82" />
+                </g>
+              </svg>
+
+              <div class="pp-erosion-axis" role="group" aria-label="Inspect fee drag across compounding horizons">
+                <span>Year 0</span>
+                <button type="button" class="pp-axis-btn" data-erosion-yr="5">Year 5</button>
+                <button type="button" class="pp-axis-btn" data-erosion-yr="10">Year 10</button>
+                <button type="button" class="pp-axis-btn" data-erosion-yr="15">Year 15</button>
+                <button type="button" class="pp-axis-btn is-active" data-erosion-yr="20">Year 20</button>
+              </div>
+            </div>
+
+            <div class="pp-erosion-stats">
+              <div>
+                <span class="pp-erosion-stat__kicker" id="pp-erosion-horizon">Year 20 Horizon</span>
+                <span class="pp-erosion-stat__num" id="pp-erosion-num" style="color:#eb8080;">~1/6th</span>
+                <span class="pp-erosion-stat__label" id="pp-erosion-desc">Of total ending capital quietly removed across 20 years by a recurring 1% annual fee drag alone.</span>
+              </div>
+              <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:18px;">
+                <span class="pp-erosion-stat__num" style="color:#e8b87d;">12 Mos</span>
+                <span class="pp-erosion-stat__label">One to two flexible private hours a week compressing 16 years of judgment for the next 30 years.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pp-erosion-foot">
+            <div style="display:flex;flex-wrap:wrap;gap:10px 22px;">
+              <span class="pp-legend-item"><span class="pp-legend-swatch" style="background:#2dd4bf;"></span>Uninterrupted baseline compounding</span>
+              <span class="pp-legend-item"><span class="pp-legend-swatch" style="background:#eb8080;"></span>Recurring 1% annual fee drag</span>
+            </div>
+            <span>Normalized mathematical compounding illustration only. Not a return projection.</span>
+          </div>
+        </div>
+
+        <!-- Three Verified Institutional Metric Cards (Scroll-Triggered Animated Bars & Pillars) -->
+        <div class="pp-metrics-grid reveal" role="region"
+          aria-label="Verified institutional data from the Federal Reserve, Gallup, and SEBI studies.">
+          <article class="pp-metric-card pp-spotlight-card">
+            <div>
+              <div class="pp-metric-card__num" data-count-to="60" data-count-suffix="%+">60%+</div>
+              <div class="pp-data-bar" aria-hidden="true">
+                <div class="pp-data-track">
+                  <span class="pp-data-fill" style="width:62%;background:#2dd4bf;"></span>
+                  <span class="pp-data-fill" style="width:19%;background:#a78bfa;margin-left:2px;transition-delay:0.42s;"></span>
+                </div>
+                <div class="pp-data-meta">
+                  <span style="color:#2dd4bf;">60%+ All US</span>
+                  <span style="color:#c4b5fd;">80%+ Upper-Income</span>
+                </div>
+              </div>
+              <p class="pp-metric-card__desc">
+                US households hold equity exposure, rising above 80% among upper-income, college-educated professionals.
+              </p>
+            </div>
+            <div class="pp-metric-card__source">Federal Reserve SCF &amp; Gallup</div>
+          </article>
+
+          <article class="pp-metric-card pp-spotlight-card">
+            <div>
+              <div class="pp-metric-card__num" data-count-to="91" data-count-suffix="%">91%</div>
+              <div class="pp-data-bar" aria-hidden="true">
+                <div class="pp-data-track">
+                  <span class="pp-data-fill" style="width:91%;background:#eb8080;"></span>
+                  <span class="pp-data-fill" style="width:8%;background:rgba(255,255,255,0.45);margin-left:2px;transition-delay:0.46s;"></span>
+                </div>
+                <div class="pp-data-meta">
+                  <span style="color:#eb8080;">91% Net Loss, FY24-25</span>
+                  <span>Rs 1.056 lakh cr</span>
+                </div>
+              </div>
+              <p class="pp-metric-card__desc">
+                Individual Indian equity derivatives traders incurred net losses of Rs 1.056 lakh crore in FY2024-25.
+              </p>
+            </div>
+            <div class="pp-metric-card__source">SEBI Study, July 2025</div>
+          </article>
+
+          <article class="pp-metric-card pp-spotlight-card">
+            <div>
+              <div class="pp-metric-card__num">7 in 10</div>
+              <div class="pp-data-bar" aria-hidden="true">
+                <div class="pp-data-pillars">
+                  <span class="pp-data-pillar pp-data-pillar--coral" style="--i:0;"></span>
+                  <span class="pp-data-pillar pp-data-pillar--coral" style="--i:1;"></span>
+                  <span class="pp-data-pillar pp-data-pillar--coral" style="--i:2;"></span>
+                  <span class="pp-data-pillar pp-data-pillar--coral" style="--i:3;"></span>
+                  <span class="pp-data-pillar pp-data-pillar--coral" style="--i:4;"></span>
+                  <span class="pp-data-pillar pp-data-pillar--coral" style="--i:5;"></span>
+                  <span class="pp-data-pillar pp-data-pillar--coral" style="--i:6;"></span>
+                  <span class="pp-data-pillar"></span>
+                  <span class="pp-data-pillar"></span>
+                  <span class="pp-data-pillar"></span>
+                </div>
+                <div class="pp-data-meta">
+                  <span style="color:#eb8080;">7 Loss Accounts</span>
+                  <span>Out of 10 Intraday Cash</span>
+                </div>
+              </div>
+              <p class="pp-metric-card__desc">
+                Individual intraday equity cash traders lost money when entering active markets unguided.
+              </p>
+            </div>
+            <div class="pp-metric-card__source">SEBI Study, July 2024</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 4: THE CATEGORY-OF-ONE CONTRAST (Animated Steep Pastel Dawn)
+         ==================================================================== -->
+    <section class="section pp-light pp-light--dawn" data-surface="light">
+      <div class="pp-pastel-bg" aria-hidden="true">
+        <span class="hero-orb hero-orb--coral"></span>
+        <span class="hero-orb hero-orb--rose"></span>
+        <span class="hero-orb hero-orb--lavender"></span>
+        <span class="hero-orb hero-orb--periwinkle"></span>
+        <span class="hero-orb hero-orb--champagne"></span>
+      </div>
+      <div class="grain-overlay grain-overlay--steep" aria-hidden="true"></div>
+      <div class="pp-pastel-fade-bottom" aria-hidden="true"></div>
+
+      <div class="wrap">
+        <div class="centered-lead centered-lead--wide reveal">
+          <span class="t-eyebrow">Why Pillai &amp; Partners</span>
+          <h2 class="t-chapter--mid mt-12">Every other option in India <span class="t-muted-tone">either wastes your time or sells you a product.</span></h2>
+          <p class="t-lead mt-20">
+            When an accomplished business owner or senior professional finally decides to take direct control of their wealth, they hit an empty gap. Every existing door in the market is built for someone else.
+          </p>
+        </div>
+
+        <div class="table-scroll reveal" style="max-width:1020px;margin-inline:auto;">
+          <table class="editorial-table">
+            <thead>
+              <tr>
+                <th style="width:240px;">Existing Option</th>
+                <th>How It Actually Works</th>
+                <th>Why It Fails Serious Principals</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Mass Retail Training</strong></td>
+                <td>Crowded batches, fixed schedules, junior trainers, public chat groups</td>
+                <td>Built for volume, exposing your privacy and teaching fragile shortcuts</td>
+              </tr>
+              <tr>
+                <td><strong>Private Banks &amp; Distributors</strong></td>
+                <td>Polished relationship managers handling paperwork with zero effort from you</td>
+                <td>Paid through commissions and product placement, keeping you permanently dependent</td>
+              </tr>
+              <tr>
+                <td><strong>DIY Videos, Apps &amp; Tips</strong></td>
+                <td>Endless free commentary, scattered rules, and trial and error</td>
+                <td>Drains your limited evenings and costs real capital when market cycles change</td>
+              </tr>
+              <tr class="is-highlight-row">
+                <td><strong>Pillai &amp; Partners</strong></td>
+                <td><strong>India&rsquo;s private one-on-one B2P coaching in financial markets</strong></td>
+                <td><strong>Zero conflict, zero delegation, complete privacy, built entirely around your calendar</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pp-note-strip reveal" style="max-width:1020px;">
+          <svg class="pp-note-strip__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2L4 5.5v6c0 5 3.4 9.5 8 10.5 4.6-1 8-5.5 8-10.5v-6L12 2z" />
+            <path d="M9.5 12l1.8 1.8L15 10" />
+          </svg>
+          <span>When you want peak physical performance, you hire a dedicated personal specialist, never a crowded hall. Your surplus capital and family wealth deserve the exact same unconflicted standard.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 5: THE FOUR PROBLEMS PERMANENTLY SOLVED (#solutions)
+         Crisp Paper Canvas + Bespoke Steep Semantic-Style Wireframe + Pastel Bento
+         ==================================================================== -->
+    <section class="section pp-light pp-anchor" id="solutions" data-surface="light">
+      <div class="wrap">
+        <div class="centered-lead centered-lead--wide reveal">
+          <span class="t-eyebrow">What changes for you</span>
+          <h2 class="t-chapter--mid mt-12">Solve the real problems once. <span class="t-muted-tone">Keep the clarity for life.</span></h2>
+          <p class="t-lead mt-20">
+            We do not force busy professionals through a rigid, one-size-fits-all program or hand out fragile setups that break when markets shift. Everything calibrates privately from day one around your exact baseline and capital priorities, backed by our structured 11-level analytical architecture covering mutual funds, macroeconomics, business valuation, and live institutional market behavior.
+          </p>
+        </div>
+
+        <!-- Centerpiece Wireframe: Steep Semantic-Platform Style 3-Column Frosted Architecture -->
+        <div class="pp-wireframe reveal" id="pp-wireframe" role="region"
+          aria-label="Interactive architectural flow illustrating how Pillai and Partners transforms fragmented wealth holdings into independent financial command.">
+          <div class="pp-wireframe__glow" aria-hidden="true"></div>
+          <div class="dark-grain" aria-hidden="true"></div>
+
+          <div class="pp-wf-grid">
+            <!-- Left Column: 5 Capital Exposure Pills -->
+            <div class="pp-wf-sources" aria-label="Your capital inputs">
+              <div class="pp-wf-pill" data-wf-tags="all,audit">
+                <span class="pp-wf-pill__badge" style="background:rgba(125,180,255,0.18);color:#93c5fd;" aria-hidden="true">
+                  <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6.5" cy="8" r="3.5"/><circle cx="10" cy="8" r="3.5"/></svg>
+                </span>
+                <span>Mutual Funds</span>
+              </div>
+              <div class="pp-wf-pill" data-wf-tags="all,macro,audit">
+                <span class="pp-wf-pill__badge" style="background:rgba(232,184,125,0.2);color:#e8b87d;" aria-hidden="true">
+                  <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M2.5 6.5L8 3.5l5.5 3v6H2.5v-6z"/><path d="M6 12.5V9h4v3.5"/></svg>
+                </span>
+                <span>Business Surplus</span>
+              </div>
+              <div class="pp-wf-pill" data-wf-tags="all,mechanics,audit">
+                <span class="pp-wf-pill__badge" style="background:rgba(45,212,191,0.18);color:#2dd4bf;" aria-hidden="true">
+                  <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2.5 11.5L6 8l2.5 2L13.5 4.5"/></svg>
+                </span>
+                <span>Direct Equities</span>
+              </div>
+              <div class="pp-wf-pill" data-wf-tags="all,macro">
+                <span class="pp-wf-pill__badge" style="background:rgba(167,139,250,0.2);color:#c4b5fd;" aria-hidden="true">
+                  <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="8,2.5 13,5.5 8,8.5 3,5.5"/><path d="M3 9.5l5 3 5-3"/></svg>
+                </span>
+                <span>Debt &amp; Gold</span>
+              </div>
+              <div class="pp-wf-pill" data-wf-tags="all,macro,mechanics">
+                <span class="pp-wf-pill__badge" style="background:rgba(235,128,128,0.2);color:#eb8080;" aria-hidden="true">
+                  <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="8" cy="8" r="5.5"/><path d="M2.5 8h11M8 2.5c1.8 1.6 2.6 3.5 2.6 5.5S9.8 11.9 8 13.5C6.2 11.9 5.4 10 5.4 8S6.2 4.1 8 2.5z"/></svg>
+                </span>
+                <span>Global FX</span>
+              </div>
+            </div>
+
+            <!-- Left Dotted Bezier Connectors (Crisp Vector-Effect Non-Scaling Strokes + Anchors) -->
+            <svg class="pp-wf-connectors" width="72" height="266" viewBox="0 0 72 266" preserveAspectRatio="none" aria-hidden="true">
+              <path class="pp-wf-line" data-wf-tags="all,audit" d="M 3 21 C 34 21, 36 109, 69 109" />
+              <path class="pp-wf-line" data-wf-tags="all,macro,audit" d="M 3 77 C 34 77, 36 121, 69 121" />
+              <path class="pp-wf-line" data-wf-tags="all,mechanics,audit" d="M 3 133 C 28 133, 44 133, 69 133" />
+              <path class="pp-wf-line" data-wf-tags="all,macro" d="M 3 189 C 34 189, 36 145, 69 145" />
+              <path class="pp-wf-line" data-wf-tags="all,macro,mechanics" d="M 3 245 C 34 245, 36 157, 69 157" />
+              <circle class="pp-wf-node-dot" data-wf-tags="all,audit" cx="3" cy="21" r="2.2" />
+              <circle class="pp-wf-node-dot" data-wf-tags="all,macro,audit" cx="3" cy="77" r="2.2" />
+              <circle class="pp-wf-node-dot" data-wf-tags="all,mechanics,audit" cx="3" cy="133" r="2.2" />
+              <circle class="pp-wf-node-dot" data-wf-tags="all,macro" cx="3" cy="189" r="2.2" />
+              <circle class="pp-wf-node-dot" data-wf-tags="all,macro,mechanics" cx="3" cy="245" r="2.2" />
+            </svg>
+
+            <!-- Mobile Vertical Dotted Connector 1 -->
+            <svg class="pp-wf-v-connector" width="120" height="36" viewBox="0 0 120 36" fill="none" aria-hidden="true">
+              <path class="pp-wf-line" data-wf-tags="all,audit" d="M 20 2 C 20 18, 52 18, 52 34" />
+              <path class="pp-wf-line" data-wf-tags="all,macro,audit,mechanics" d="M 60 2 L 60 34" />
+              <path class="pp-wf-line" data-wf-tags="all,macro,mechanics" d="M 100 2 C 100 18, 68 18, 68 34" />
+            </svg>
+
+            <!-- Center Frosted Glass Hub (Exact Steep 1-over-3 Bento Geometry) -->
+            <div class="pp-wf-hub">
+              <div>
+                <div class="pp-wf-brand">
+                  <span class="pp-wordmark pp-wordmark--compact">
+                    <span class="pp-wordmark__script">Pillai</span>
+                    <span class="pp-wordmark__amp">&amp;</span>
+                    <span class="pp-wordmark__partners">Partners</span>
+                  </span>
+                </div>
+                <div class="pp-wf-subtitle">Private coaching architecture</div>
+              </div>
+
+              <div class="pp-wf-bento" role="group" aria-label="Filter architectural lenses">
+                <button type="button" class="pp-wf-bento-top is-active" data-wf-filter="all" aria-pressed="true">
+                  11-Level Market Framework
+                </button>
+                <div class="pp-wf-bento-tri">
+                  <button type="button" class="pp-wf-bento-cell" data-wf-filter="audit" aria-pressed="false">Portfolio Audits</button>
+                  <button type="button" class="pp-wf-bento-cell" data-wf-filter="macro" aria-pressed="false">Macro Cycles</button>
+                  <button type="button" class="pp-wf-bento-cell" data-wf-filter="mechanics" aria-pressed="false">Order Flow</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mobile Vertical Dotted Connector 2 -->
+            <svg class="pp-wf-v-connector" width="120" height="36" viewBox="0 0 120 36" fill="none" aria-hidden="true">
+              <path class="pp-wf-line" data-wf-tags="all,audit" d="M 52 2 C 52 18, 20 18, 20 34" />
+              <path class="pp-wf-line" data-wf-tags="all,macro,audit,mechanics" d="M 60 2 L 60 34" />
+              <path class="pp-wf-line" data-wf-tags="all,macro,mechanics" d="M 68 2 C 68 18, 100 18, 100 34" />
+            </svg>
+
+            <!-- Right Dotted Bezier Connectors (Crisp Vector-Effect Non-Scaling Strokes + Anchors) -->
+            <svg class="pp-wf-connectors pp-wf-connectors--right" width="72" height="296" viewBox="0 0 72 296" preserveAspectRatio="none" aria-hidden="true">
+              <path class="pp-wf-line" data-wf-tags="all,audit" d="M 3 118 C 36 118, 38 36, 69 36" />
+              <path class="pp-wf-line" data-wf-tags="all,macro" d="M 3 130 C 36 130, 38 78, 69 78" />
+              <path class="pp-wf-line" data-wf-tags="all,audit,macro" d="M 3 142 C 36 142, 38 120, 69 120" />
+              <path class="pp-wf-line" data-wf-tags="all,mechanics" d="M 3 154 C 36 154, 38 176, 69 176" />
+              <path class="pp-wf-line" data-wf-tags="all,audit,mechanics" d="M 3 166 C 36 166, 38 218, 69 218" />
+              <path class="pp-wf-line" data-wf-tags="all,audit,macro,mechanics" d="M 3 178 C 36 178, 38 260, 69 260" />
+              <circle class="pp-wf-node-dot" data-wf-tags="all,audit" cx="69" cy="36" r="2.2" />
+              <circle class="pp-wf-node-dot" data-wf-tags="all,macro" cx="69" cy="78" r="2.2" />
+              <circle class="pp-wf-node-dot" data-wf-tags="all,audit,macro" cx="69" cy="120" r="2.2" />
+              <circle class="pp-wf-node-dot" data-wf-tags="all,mechanics" cx="69" cy="176" r="2.2" />
+              <circle class="pp-wf-node-dot" data-wf-tags="all,audit,mechanics" cx="69" cy="218" r="2.2" />
+              <circle class="pp-wf-node-dot" data-wf-tags="all,audit,macro,mechanics" cx="69" cy="260" r="2.2" />
+            </svg>
+
+            <!-- Right Column: Floating Brand Header + 2-Group Outcome Card -->
+            <div class="pp-wf-right" aria-label="Permanent principal outcomes">
+              <div class="pp-wf-right__head">
+                <span class="pp-panel__diamond" aria-hidden="true"></span>
+                <span>Principal Outcomes</span>
+              </div>
+
+              <div class="pp-wf-out-card">
+                <div class="pp-wf-out-item" data-wf-tags="all,audit">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="5.5"/><path d="M13.5 13.5L17 17"/></svg>
+                  <span>30-Min Self-Audit</span>
+                </div>
+                <div class="pp-wf-out-item" data-wf-tags="all,macro">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2.5L4 5v4.8c0 3.8 2.6 7.1 6 8.2 3.4-1.1 6-4.4 6-8.2V5l-6-2.5z"/></svg>
+                  <span>Cycle Defense</span>
+                </div>
+                <div class="pp-wf-out-item" data-wf-tags="all,audit,macro">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14.5h14M5 10.5l3.5-3.5 3 2.5L15.5 5"/></svg>
+                  <span>Clean Rebalancing</span>
+                </div>
+
+                <div class="pp-wf-out-sep" aria-hidden="true"></div>
+
+                <div class="pp-wf-out-item" data-wf-tags="all,mechanics">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14V9M8 14V6M12 14V10M16 14V4"/></svg>
+                  <span>Auction Mechanics</span>
+                </div>
+                <div class="pp-wf-out-item" data-wf-tags="all,audit,mechanics">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="4.5" width="13" height="11" rx="2"/><path d="M7 9h6M7 12h4"/></svg>
+                  <span>Business Valuation</span>
+                </div>
+                <div class="pp-wf-out-item" data-wf-tags="all,audit,macro,mechanics">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="M7.5 10l1.8 1.8 3.5-3.6"/></svg>
+                  <span>Quiet Command</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pp-wf-caption">
+            <span>Select any analytical module inside the hub to inspect how holdings map to independent judgment.</span>
+            <span style="color:#e8b87d;">1-on-1 Calibrated &middot; Zero Delegation</span>
+          </div>
+        </div>
+
+        <!-- Four Permanent Outcomes: Steep Borderless Pastel-Mist Editorial Bento -->
+        <div class="pp-pillars-top reveal">
+          <!-- Outcome 01: Concentric Overlap Resolution Geometry -->
+          <article class="pp-pillar-card pp-pillar-card--sky">
+            <div>
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+                <span class="pp-pillar-card__index" aria-hidden="true">01</span>
+                <span class="pp-step-pill pp-step-pill--sky">Portfolio Audit</span>
+              </div>
+              <div class="pp-geo-stage" aria-hidden="true">
+                <svg viewBox="0 0 360 84" fill="none">
+                  <circle cx="80" cy="42" r="24" stroke="#9497a1" stroke-width="1.25" />
+                  <circle cx="98" cy="36" r="24" stroke="#194168" stroke-opacity="0.58" stroke-width="1.25" />
+                  <circle cx="104" cy="48" r="24" stroke="#5d2a1a" stroke-opacity="0.48" stroke-width="1.25" />
+                  <circle cx="94" cy="42" r="8" fill="#fbe1d1" stroke="#5d2a1a" stroke-width="1.25" />
+                  <line x1="146" y1="42" x2="214" y2="42" stroke="#194168" stroke-opacity="0.42" stroke-width="1.25" stroke-dasharray="3 4" />
+                  <path d="M209 37 L215 42 L209 47" stroke="#194168" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" />
+                  <circle cx="272" cy="42" r="29" stroke="#194168" stroke-opacity="0.25" stroke-width="1.1" stroke-dasharray="3 4" />
+                  <circle cx="272" cy="42" r="20" fill="#d3e3fc" fill-opacity="0.85" stroke="#194168" stroke-width="1.35" />
+                  <circle cx="272" cy="42" r="8" fill="#194168" />
+                  <circle cx="272" cy="42" r="2.5" fill="#ffffff" />
+                </svg>
+              </div>
+              <h3 class="t-feature-title mt-20">01. Stop silent leaks across your mutual funds and holdings</h3>
+              <p class="t-body mt-12">
+                Audit any portfolio calmly in under 30 minutes. Separate Regular versus Direct cost structures, expose hidden stock overlap across multiple schemes, check downside risk ratios, inspect the real businesses inside your funds, and rebalance laggards without relying on commissioned sales pitches.
+              </p>
+            </div>
+          </article>
+
+          <!-- Outcome 02: Macro Cycle Equilibrium Geometry -->
+          <article class="pp-pillar-card pp-pillar-card--mint">
+            <div>
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+                <span class="pp-pillar-card__index" aria-hidden="true">02</span>
+                <span class="pp-step-pill pp-step-pill--mint">Economic Cycles</span>
+              </div>
+              <div class="pp-geo-stage" aria-hidden="true">
+                <svg viewBox="0 0 360 84" fill="none">
+                  <line x1="20" y1="42" x2="340" y2="42" stroke="#1f4720" stroke-opacity="0.16" stroke-dasharray="3 4" />
+                  <circle cx="180" cy="42" r="31" stroke="#1f4720" stroke-opacity="0.16" stroke-width="1.1" />
+                  <circle cx="180" cy="42" r="19" fill="#d8efdf" fill-opacity="0.9" stroke="#1f4720" stroke-opacity="0.52" stroke-width="1.25" />
+                  <path d="M24 58 C 76 12, 128 12, 180 42 C 232 72, 284 72, 336 26" stroke="#1f4720" stroke-width="1.75" stroke-linecap="round" />
+                  <path d="M24 26 C 76 72, 128 72, 180 42 C 232 12, 284 12, 336 58" stroke="#194168" stroke-opacity="0.55" stroke-width="1.35" stroke-dasharray="4 4" stroke-linecap="round" />
+                  <circle cx="180" cy="42" r="4.5" fill="#1f4720" />
+                  <circle cx="96" cy="24" r="3.5" fill="#ffffff" stroke="#1f4720" stroke-width="1.6" />
+                  <circle cx="264" cy="60" r="3.5" fill="#ffffff" stroke="#1f4720" stroke-width="1.6" />
+                </svg>
+              </div>
+              <h3 class="t-feature-title mt-20">02. Protect business surplus and family wealth across economic cycles</h3>
+              <p class="t-body mt-12">
+                Stop guessing when central banks raise rates, inflation erodes idle cash, bond yields move, or global currencies fluctuate. Read the macroeconomic forces governing equities, debt, gold, real assets, and cross-border savings before committing capital.
+              </p>
+            </div>
+          </article>
+
+          <!-- Outcome 03: Clean Order-Book Profile & Auction Discovery Geometry -->
+          <article class="pp-pillar-card pp-pillar-card--peach">
+            <div>
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+                <span class="pp-pillar-card__index" aria-hidden="true">03</span>
+                <span class="pp-step-pill pp-step-pill--peach">Market Mechanics</span>
+              </div>
+              <div class="pp-geo-stage" aria-hidden="true">
+                <svg viewBox="0 0 360 84" fill="none">
+                  <rect x="28" y="24" width="304" height="36" rx="6" fill="#fbe1d1" fill-opacity="0.65" />
+                  <rect x="28" y="14" width="24" height="5" rx="2.5" fill="#5d2a1a" fill-opacity="0.28" />
+                  <rect x="28" y="24" width="52" height="5" rx="2.5" fill="#5d2a1a" fill-opacity="0.45" />
+                  <rect x="28" y="34" width="76" height="5" rx="2.5" fill="#5d2a1a" fill-opacity="0.65" />
+                  <rect x="28" y="44" width="96" height="6" rx="3" fill="#5d2a1a" />
+                  <rect x="28" y="55" width="60" height="5" rx="2.5" fill="#5d2a1a" fill-opacity="0.48" />
+                  <rect x="28" y="65" width="32" height="5" rx="2.5" fill="#5d2a1a" fill-opacity="0.28" />
+                  <line x1="128" y1="47" x2="332" y2="47" stroke="#5d2a1a" stroke-opacity="0.24" stroke-dasharray="3 4" />
+                  <path d="M138 66 C 164 62, 180 54, 204 54 C 228 54, 240 24, 266 24 C 292 24, 304 42, 332 16" stroke="#141619" stroke-width="1.8" stroke-linecap="round" />
+                  <circle cx="204" cy="54" r="3.5" fill="#ffffff" stroke="#5d2a1a" stroke-width="1.7" />
+                  <circle cx="266" cy="24" r="3.5" fill="#ffffff" stroke="#5d2a1a" stroke-width="1.7" />
+                  <circle cx="332" cy="16" r="3.5" fill="#5d2a1a" />
+                </svg>
+              </div>
+              <h3 class="t-feature-title mt-20">03. Read real financial markets instead of chasing noise</h3>
+              <p class="t-body mt-12">
+                Whether you remain a long-term capital allocator or choose to engage equities directly, understand how real exchange orders, supply and demand, and large institutional money move prices rather than reacting late to headlines or lagging indicators.
+              </p>
+            </div>
+          </article>
+
+          <!-- Outcome 04: Optical Noise-to-Signal Command Geometry -->
+          <article class="pp-pillar-card pp-pillar-card--lavender">
+            <div>
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+                <span class="pp-pillar-card__index" aria-hidden="true">04</span>
+                <span class="pp-step-pill pp-step-pill--lavender">Quiet Command</span>
+              </div>
+              <div class="pp-geo-stage" aria-hidden="true">
+                <svg viewBox="0 0 360 84" fill="none">
+                  <path d="M24 18 C 60 8, 92 34, 134 22 C 154 16, 166 36, 180 42" stroke="#4d2f87" stroke-opacity="0.35" stroke-width="1.15" />
+                  <path d="M24 34 C 58 46, 98 16, 136 38 C 156 48, 166 40, 180 42" stroke="#4d2f87" stroke-opacity="0.45" stroke-width="1.2" />
+                  <path d="M24 52 C 62 36, 98 68, 136 48 C 154 38, 168 44, 180 42" stroke="#4d2f87" stroke-opacity="0.45" stroke-width="1.2" />
+                  <path d="M24 68 C 64 78, 96 48, 136 62 C 156 68, 168 48, 180 42" stroke="#4d2f87" stroke-opacity="0.35" stroke-width="1.15" />
+                  <rect x="174" y="10" width="12" height="64" rx="6" fill="#ece6fb" stroke="#4d2f87" stroke-width="1.3" />
+                  <line x1="186" y1="42" x2="328" y2="42" stroke="#141619" stroke-width="2" stroke-linecap="round" />
+                  <circle cx="328" cy="42" r="5" fill="#4d2f87" />
+                  <circle cx="328" cy="42" r="11" stroke="#4d2f87" stroke-opacity="0.24" stroke-width="1.2" />
+                </svg>
+              </div>
+              <h3 class="t-feature-title mt-20">04. Walk into every financial room with quiet command</h3>
+              <p class="t-body mt-12">
+                True financial fluency changes how you sit in every room. Whether you are facing a bank wealth pitch, evaluating a private investment proposal, or sitting across from peers discussing markets, you immediately recognize real substance and filter out hollow noise.
+              </p>
+            </div>
+          </article>
+
+          <!-- Outcome 05: Personal Balance-Sheet Ledger & Equilibrium Geometry -->
+          <article class="pp-pillar-card pp-pillar-card--cream">
+            <div>
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+                <span class="pp-pillar-card__index" aria-hidden="true">05</span>
+                <span class="pp-step-pill pp-step-pill--cream">Balance-Sheet Control</span>
+              </div>
+              <div class="pp-geo-stage" aria-hidden="true">
+                <svg viewBox="0 0 360 84" fill="none">
+                  <!-- Structured left personal ledger column -->
+                  <rect x="34" y="14" width="96" height="56" rx="8" fill="#f8f5e2" stroke="#5d2a1a" stroke-opacity="0.45" stroke-width="1.25" />
+                  <line x1="48" y1="28" x2="96" y2="28" stroke="#5d2a1a" stroke-width="1.6" stroke-linecap="round" />
+                  <line x1="48" y1="42" x2="116" y2="42" stroke="#5d2a1a" stroke-opacity="0.45" stroke-width="1.35" stroke-linecap="round" />
+                  <line x1="48" y1="56" x2="104" y2="56" stroke="#5d2a1a" stroke-opacity="0.45" stroke-width="1.35" stroke-linecap="round" />
+                  <circle cx="116" cy="28" r="3" fill="#5d2a1a" />
+                  <!-- Precision connection bridge -->
+                  <line x1="138" y1="42" x2="188" y2="42" stroke="#5d2a1a" stroke-opacity="0.38" stroke-width="1.25" stroke-dasharray="3 4" />
+                  <!-- Balanced asset-liability equilibrium beam on right -->
+                  <line x1="258" y1="18" x2="258" y2="68" stroke="#141619" stroke-width="1.5" stroke-linecap="round" />
+                  <line x1="234" y1="68" x2="282" y2="68" stroke="#141619" stroke-width="1.6" stroke-linecap="round" />
+                  <line x1="202" y1="30" x2="314" y2="30" stroke="#141619" stroke-width="1.65" stroke-linecap="round" />
+                  <circle cx="258" cy="30" r="4.5" fill="#141619" />
+                  <!-- Balanced left & right allocation pans -->
+                  <rect x="194" y="38" width="42" height="16" rx="5" fill="#fbe1d1" stroke="#5d2a1a" stroke-width="1.25" />
+                  <rect x="280" y="38" width="42" height="16" rx="5" fill="#d8efdf" stroke="#1f4720" stroke-width="1.25" />
+                  <line x1="215" y1="30" x2="215" y2="38" stroke="#5d2a1a" stroke-width="1.2" />
+                  <line x1="301" y1="30" x2="301" y2="38" stroke="#1f4720" stroke-width="1.2" />
+                </svg>
+              </div>
+              <h3 class="t-feature-title mt-20">05. Plan your own finances with Chartered Accountant discipline</h3>
+              <p class="t-body mt-12">
+                Know your exact financial picture without asking someone else to decode it. Map your assets, liabilities, cash reserves, and protection cleanly so you stay in full control and sit beside your Chartered Accountant as an informed equal.
+              </p>
+            </div>
+          </article>
+
+          <!-- Outcome 06: Enterprise Cashflow Governance & Diversification Geometry -->
+          <article class="pp-pillar-card pp-pillar-card--teal">
+            <div>
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+                <span class="pp-pillar-card__index" aria-hidden="true">06</span>
+                <span class="pp-step-pill pp-step-pill--teal">Business Cashflow</span>
+              </div>
+              <div class="pp-geo-stage" aria-hidden="true">
+                <svg viewBox="0 0 360 84" fill="none">
+                  <!-- Core operating business reservoir on left -->
+                  <rect x="28" y="24" width="64" height="36" rx="8" fill="#141619" />
+                  <rect x="38" y="34" width="44" height="5" rx="2.5" fill="#2dd4bf" />
+                  <rect x="38" y="45" width="30" height="5" rx="2.5" fill="#ffffff" fill-opacity="0.55" />
+                  <!-- Controlled cashflow distribution hub -->
+                  <line x1="92" y1="42" x2="146" y2="42" stroke="#14524a" stroke-width="1.65" />
+                  <circle cx="152" cy="42" r="8" fill="#d7f3ee" stroke="#14524a" stroke-width="1.4" />
+                  <circle cx="152" cy="42" r="3" fill="#14524a" />
+                  <!-- Diversified treasury & multi-asset outward streams -->
+                  <path d="M160 42 C 194 42, 206 18, 248 18" stroke="#14524a" stroke-width="1.45" stroke-linecap="round" />
+                  <path d="M160 42 L 248 42" stroke="#194168" stroke-width="1.45" stroke-linecap="round" stroke-dasharray="4 4" />
+                  <path d="M160 42 C 194 42, 206 66, 248 66" stroke="#1f4720" stroke-width="1.45" stroke-linecap="round" />
+                  <!-- Diversified capital pillars on right -->
+                  <rect x="252" y="10" width="76" height="16" rx="5" fill="#d7f3ee" stroke="#14524a" stroke-width="1.25" />
+                  <rect x="252" y="34" width="62" height="16" rx="5" fill="#d3e3fc" stroke="#194168" stroke-width="1.25" />
+                  <rect x="252" y="58" width="70" height="16" rx="5" fill="#d8efdf" stroke="#1f4720" stroke-width="1.25" />
+                  <circle cx="248" cy="18" r="3" fill="#14524a" />
+                  <circle cx="248" cy="42" r="3" fill="#194168" />
+                  <circle cx="248" cy="66" r="3" fill="#1f4720" />
+                </svg>
+              </div>
+              <h3 class="t-feature-title mt-20">06. Master business cashflow management and capital diversification</h3>
+              <p class="t-body mt-12">
+                Never let your family&rsquo;s future ride on a single business cycle. Separate daily working capital from true surplus, build steady cashflow discipline, and move excess profits calmly into diversified liquid assets outside your main enterprise.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 6: PEDIGREE, CA ALIGNMENT & VETTED ENTRY (#governance)
+         Steep Powder-Blue Principal Story + Crisp CA Matrix + Animated Pastel Finale
+         ==================================================================== -->
+    <section class="pp-light pp-gov-section pp-anchor" id="governance" data-surface="light">
+      <div class="pp-gov-upper">
+        <div class="wrap">
+          <div class="centered-lead centered-lead--wide reveal">
+            <span class="t-eyebrow">Principal-led governance</span>
+            <h2 class="t-chapter--mid mt-12">One 16-year principal. <span class="t-muted-tone">Built to sit cleanly beside your Chartered Accountant.</span></h2>
+          </div>
+
+          <!-- Part A: Steep Powder-Blue (#D3E3FC) Principal Editorial Showcase + Monochrome Portrait -->
+          <div class="pp-principal-showcase reveal">
+            <div class="pp-principal-grid">
+              <div style="display:flex;flex-direction:column;gap:20px;">
+                <p class="t-body t-body--ink" style="font-size:17.5px;line-height:1.66;">
+                  Most advisory firms introduce a senior partner on day one and hand you to junior staff the next week. By strict policy, Pillai &amp; Partners operates with zero delegation. Every diagnostic assessment and every private session is led personally by Managing Principal Renjith R Pillai, bringing 16 years of live market experience starting as a stock market research analyst before evolving into an independent professional trader who built his own analytical methods.
+                </p>
+                <p class="t-body" style="font-size:15.5px;">
+                  Formal mandate agreements, corporate invoicing, compliance standards, and confidentiality are governed by The Happiness Company Business Solutions Pvt. Ltd.
+                </p>
+              </div>
+
+              <!-- Preserved Monochrome Dummy Portrait Placeholder (Borderless Steep Editorial Crop) -->
+              <figure class="pp-portrait-card">
+                <div class="pp-portrait-media">
+                  <img src="assets/mentor-portrait.png"
+                    alt="Monochrome portrait of Renjith R Pillai, Managing Principal at Pillai & Partners."
+                    class="pp-portrait-img" width="800" height="920" loading="lazy">
+                </div>
+                <figcaption class="pp-portrait-caption">
+                  Renjith R Pillai | Managing Principal, 16 Years in Financial Markets
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <hr class="pp-sub-divider">
+
+          <!-- Part B: Equal-Peer Boundary With Your Chartered Accountant -->
+          <div class="prose-narrow reveal">
+            <p class="t-body t-body--ink" style="font-size:17px;">
+              A cardiologist never asks an orthopedic surgeon to read an angiogram. Both hold equal authority, and their domains never collide. Your Chartered Accountant protects your tax architecture, statutory audits, and compliance. Pillai &amp; Partners builds your independent judgment across mutual fund audits, macroeconomics, and live market mechanics. Any tax-sensitive transitions, including Regular-to-Direct planning, exit loads, or capital gains timing, always remain coordinated directly with your Chartered Accountant.
+            </p>
+          </div>
+
+          <!-- Responsive Non-Overlapping Advisory Circle Infographic -->
+          <div class="pp-advisory-diagram reveal" role="region"
+            aria-label="Complementary non-overlapping domains of your Chartered Accountant and Pillai and Partners.">
+            <div class="pp-adv-box">
+              <span class="pp-step-pill pp-step-pill--sky">Your Chartered Accountant</span>
+              <div class="pp-adv-box__title">Tax &amp; Statutory Shield</div>
+              <ul class="pp-adv-list">
+                <li>&bull; Tax structure &amp; balance sheets</li>
+                <li>&bull; Exit loads &amp; capital gains timing</li>
+                <li>&bull; Statutory audits &amp; compliance</li>
+              </ul>
+            </div>
+
+            <div class="pp-adv-connector" aria-hidden="true"></div>
+
+            <div class="pp-adv-hub" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#141619" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 6px;">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M8.5 12h7M12 8.5v7" />
+              </svg>
+              <span class="pp-adv-hub__kicker">Zero Collision</span>
+              <span class="pp-adv-hub__title">You</span>
+              <span class="pp-adv-hub__sub">Informed Owner</span>
+            </div>
+
+            <div class="pp-adv-connector" aria-hidden="true"></div>
+
+            <div class="pp-adv-box pp-adv-box--dark">
+              <span class="pp-step-pill" style="background:rgba(232,184,125,0.15);border-color:rgba(232,184,125,0.4);color:#e8b87d;">Pillai &amp; Partners</span>
+              <div class="pp-adv-box__title">Independent Judgment</div>
+              <ul class="pp-adv-list">
+                <li>&bull; Mutual fund audits &amp; macro reasoning</li>
+                <li>&bull; Live market mechanics &amp; durability</li>
+                <li style="color:#2dd4bf;">&bull; Zero tips, zero broker ties, zero commissions</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Specialist Comparison Table -->
+          <div class="table-scroll reveal" style="max-width:920px;margin-inline:auto;">
+            <table class="editorial-table">
+              <thead>
+                <tr>
+                  <th style="width:210px;">Domain</th>
+                  <th>Your Chartered Accountant</th>
+                  <th class="pp-col-highlight">Pillai &amp; Partners</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Primary responsibility</td>
+                  <td>Tax structure, balance sheets, and statutory compliance</td>
+                  <td class="pp-col-highlight">Mutual fund audit clarity, macroeconomic reasoning, and live market judgment</td>
+                </tr>
+                <tr>
+                  <td>Portfolio transitions</td>
+                  <td>Planning exit loads, capital gains timing, and tax efficiency</td>
+                  <td class="pp-col-highlight">Equipping you to evaluate cost drag, overlap, ratios, and business durability</td>
+                </tr>
+                <tr>
+                  <td>Financial alignment</td>
+                  <td>Zero overlap with market coaching</td>
+                  <td class="pp-col-highlight">Strictly independent education with zero tips, zero broker ties, and zero commissions</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Gatekeeper Brief Note (Warm Steep Editorial Cream) -->
+          <div class="pp-note-strip pp-note-strip--cream reveal">
+            <svg class="pp-note-strip__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="8" y1="13" x2="16" y2="13" />
+              <line x1="8" y1="17" x2="13" y2="17" />
+            </svg>
+            <span>A concise one-page Governance and Risk Brief is available to share directly with your Chartered Accountant or spouse before making any decision.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Part C: Selective Admission, Private Mandate & Discretion on Animated Steep Pastel Wash -->
+      <div class="pp-gov-lower">
+        <div class="pp-pastel-bg pp-pastel-bg--soft" aria-hidden="true">
+          <span class="hero-orb hero-orb--lavender"></span>
+          <span class="hero-orb hero-orb--periwinkle"></span>
+          <span class="hero-orb hero-orb--champagne"></span>
+          <span class="hero-orb hero-orb--rose"></span>
+        </div>
+        <div class="grain-overlay grain-overlay--steep" aria-hidden="true"></div>
+        <div class="pp-pastel-fade-top" aria-hidden="true"></div>
+
+        <div class="wrap">
+          <ol class="pp-steps-grid reveal" style="list-style:none;">
+            <li class="pp-step-card">
+              <div class="pp-step-card__head">
+                <span class="ladder-step__num" aria-hidden="true">01</span>
+                <span class="pp-step-pill">Direct via Zcal</span>
+              </div>
+              <h3 class="t-feature-title">Confidential 30-minute conversation</h3>
+              <p class="t-body">
+                Speak directly with Renjith R Pillai via Zcal to review your priorities, confirm global time-zone convenience, and receive clear written terms.
+              </p>
+            </li>
+
+            <li class="pp-step-card pp-step-card--mint">
+              <div class="pp-step-card__head">
+                <span class="ladder-step__num" aria-hidden="true">02</span>
+                <span class="pp-step-pill pp-step-pill--mint">100% Clean Exit Gate</span>
+              </div>
+              <h3 class="t-feature-title">Selective diagnostic assessment and clean exit</h3>
+              <p class="t-body">
+                Admission is selective and granted only after initial assessment sessions confirm your starting baseline and mutual fit. We decline engagements that do not align. If you choose not to proceed immediately after the assessment sessions, 100% of your fee is refunded cleanly. Once formal coaching continues beyond assessment, no refunds apply.
+              </p>
+            </li>
+
+            <li class="pp-step-card pp-step-card--sky">
+              <div class="pp-step-card__head">
+                <span class="ladder-step__num" aria-hidden="true">03</span>
+                <span class="pp-step-pill pp-step-pill--sky">12 Flexible Months</span>
+              </div>
+              <h3 class="t-feature-title">Your 12-month private mandate</h3>
+              <p class="t-body">
+                Work one on one at your pace, applying structured portfolio audits, macroeconomic frameworks, compliant historical case studies with a minimum 30-day data lag, and simulated decision logs before live capital decisions are made.
+              </p>
+            </li>
+          </ol>
+
+          <!-- Mandate Scoping & Discretion Band -->
+          <div class="pp-pricing-band reveal">
+            <p class="t-body t-body--ink" style="font-size:16px;">
+              Like senior specialist counsel, mandate fees are scoped individually based on your starting baseline, mandate scope, and Principal calendar priority, with exact written terms confirmed before any commitment. We maintain zero group chats, zero public client lists, and zero published testimonials. Coaching builds independent judgment and disciplined risk habits; it never eliminates market uncertainty or prevents financial loss.
+            </p>
+            <div class="pp-pricing-factors" aria-hidden="true">
+              <span class="pp-pricing-chip">Starting Baseline</span>
+              <span class="pp-pricing-chip">Mandate Scope</span>
+              <span class="pp-pricing-chip">Principal Calendar</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 7: DIRECT ACCESS & ZCAL SCHEDULER (Dark Obsidian · #schedule)
+         Authentic Steep 3D Open/Close Starlight Doorway + Concierge Zcal Frame
+         ==================================================================== -->
+    <section class="section pp-closing pp-anchor" id="schedule" data-surface="dark">
+      <div class="pp-dark-atmosphere" aria-hidden="true">
+        <span class="pp-dark-orb pp-dark-orb--violet" style="top:-10%;opacity:0.75;"></span>
+        <span class="pp-dark-orb pp-dark-orb--gold" style="top:24%;opacity:0.6;"></span>
+      </div>
+      <div class="pp-closing__glow" aria-hidden="true"></div>
+      <div class="pp-grid-backdrop" aria-hidden="true"></div>
+      <div class="dark-grain" aria-hidden="true"></div>
+
+      <div class="wrap">
+        <div class="centered-lead centered-lead--wide reveal">
+          <!-- Authentic Steep 3D Open/Close Starlight Doorway -->
+          <div class="pp-door-stage" id="pp-steep-door" role="img"
+            aria-label="Minimalist architectural doorway swinging open into a twinkling starlight threshold."
+            title="Hover or click to hold doorway open">
+            <div class="pp-door-halo" aria-hidden="true"></div>
+            <div class="pp-door-ground" aria-hidden="true"></div>
+
+            <div class="pp-door-scene" aria-hidden="true">
+              <div class="pp-door-frame">
+                <svg class="pp-door-cosmos" viewBox="0 0 102 184" fill="none">
+                  <!-- Soft ambient starlight motes & pinpoints -->
+                  <circle class="door-star" cx="22" cy="36" r="1.4" fill="#e8b87d" />
+                  <circle class="door-star door-star--2" cx="44" cy="54" r="1.1" fill="#ffffff" />
+                  <circle class="door-star door-star--3" cx="28" cy="78" r="1.3" fill="#d3e3fc" />
+                  <circle class="door-star door-star--4" cx="56" cy="96" r="1" fill="#a78bfa" />
+                  <circle class="door-star door-star--5" cx="18" cy="116" r="1.5" fill="#ffffff" />
+                  <circle class="door-star door-star--2" cx="38" cy="134" r="1.2" fill="#e8b87d" />
+                  <circle class="door-star door-star--3" cx="62" cy="42" r="1.1" fill="#d3e3fc" />
+                  <circle class="door-star" cx="48" cy="158" r="1" fill="#ffffff" />
+                  <!-- Steep Signature Lower-Threshold Starburst -->
+                  <g class="door-star door-star--4">
+                    <path d="M26 144 L27.6 150.2 L33.8 151.8 L27.6 153.4 L26 159.6 L24.4 153.4 L18.2 151.8 L24.4 150.2 Z" fill="#ffffff" />
+                    <circle cx="26" cy="151.8" r="7" fill="#e8b87d" fill-opacity="0.22" />
+                  </g>
+                  <!-- Subtle upper-left champagne star glint -->
+                  <path class="door-star door-star--2" d="M36 22 L37 25.5 L40.5 26.5 L37 27.5 L36 31 L35 27.5 L31.5 26.5 L35 25.5 Z" fill="#e8b87d" />
+                </svg>
+              </div>
+
+              <!-- 3D Perspective Swinging Architectural Door Leaf -->
+              <div class="pp-door-leaf">
+                <div class="pp-door-edge">
+                  <span class="pp-door-latch"></span>
+                </div>
+                <div class="pp-door-handle">
+                  <span class="pp-door-lever"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <span class="t-eyebrow pp-dark-eyebrow">Begin privately</span>
+          <h2 class="t-chapter--mid mt-12">Thirty private minutes <span class="t-muted-tone">to decide if this belongs in your calendar.</span></h2>
+          <p class="t-lead pp-lead-dark mt-20">
+            Because every mandate is led personally by Renjith R Pillai with zero delegation, concurrent seats remain strictly capped and open only as active mandates conclude. Select an available 30-minute window below for a quiet, direct conversation with Renjith to examine what is holding your wealth governance back and decide calmly whether a private 12-month mandate fits your life.
+          </p>
+        </div>
+
+        <div class="pp-zcal-shell pp-spotlight-card reveal">
+          <div class="pp-zcal-chrome">
+            <span class="pp-panel__id">
+              <span class="pp-panel__diamond" aria-hidden="true"></span>
+              <span>Managing Principal &middot; Direct 1-on-1 Calendar</span>
+            </span>
+            <span class="pp-zcal-live">
+              <span class="pp-zcal-live__dot" aria-hidden="true"></span>
+              <span>30 Minutes &middot; Global Time Zones</span>
+            </span>
+          </div>
+
+          <div class="pp-zcal-mount" id="zcal-pillai-scheduler">
+            <span class="pp-intake-kicker">Three quick prompts before selecting your slot</span>
+
+            <div class="pp-intake-grid" aria-label="Three quick intake prompts">
+              <div class="pp-intake-item">
+                <div class="pp-intake-item__head">
+                  <span class="pp-intake-item__num" aria-hidden="true">01</span>
+                  <svg class="pp-intake-item__icon" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2.5" y="5" width="13" height="10" rx="2" />
+                    <path d="M6.5 5V3.8A1.3 1.3 0 0 1 7.8 2.5h2.4a1.3 1.3 0 0 1 1.3 1.3V5" />
+                  </svg>
+                </div>
+                <span class="pp-intake-item__title">Role or Business</span>
+              </div>
+
+              <div class="pp-intake-item">
+                <div class="pp-intake-item__head">
+                  <span class="pp-intake-item__num" aria-hidden="true">02</span>
+                  <svg class="pp-intake-item__icon" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M2.5 13.5L6.5 9.5L9.5 11.8L15.5 5.5" />
+                    <path d="M12 5.5h3.5V9" />
+                  </svg>
+                </div>
+                <span class="pp-intake-item__title">Current Investment Familiarity</span>
+              </div>
+
+              <div class="pp-intake-item">
+                <div class="pp-intake-item__head">
+                  <span class="pp-intake-item__num" aria-hidden="true">03</span>
+                  <svg class="pp-intake-item__icon" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="9" cy="9" r="6.5" />
+                    <circle cx="9" cy="9" r="2.2" />
+                  </svg>
+                </div>
+                <span class="pp-intake-item__title">Primary Goal</span>
+              </div>
+            </div>
+
+            <div class="pp-zcal-cta-wrap">
+              <a href="https://zcal.co/i/RupuAWcS" target="_blank" rel="noopener noreferrer" class="btn btn--primary pp-zcal-cta">
+                <span>Open Zcal appointment calendar</span>
+                <span class="arrow" aria-hidden="true">&rarr;</span>
+              </a>
+              <p class="pp-zcal-mount__micro">
+                Direct 30-minute conversation with Renjith R Pillai. Complete discretion. Zero obligation.
+              </p>
+            </div>
+
+            <div class="pp-zcal-meta" aria-hidden="true">
+              <span class="pp-zcal-meta__item"><span class="pp-zcal-meta__dot"></span>Opens in a new private tab</span>
+              <span class="pp-zcal-meta__item"><span class="pp-zcal-meta__dot"></span>Instant calendar invite</span>
+              <span class="pp-zcal-meta__item"><span class="pp-zcal-meta__dot"></span>Zero sales staff</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Standalone Corporate Governance & Disclaimer Footer -->
+  <footer class="pp-footer" data-surface="dark">
+    <div class="wrap">
+      <div class="pp-footer__top">
+        <span class="pp-wordmark pp-wordmark--footer">
+          <span class="pp-wordmark__script">Pillai</span>
+          <span class="pp-wordmark__amp">&amp;</span>
+          <span class="pp-wordmark__partners">Partners</span>
+        </span>
+        <p class="pp-footer__entity">
+          Pillai &amp; Partners is a Private Coaching Practice in Financial Markets of The Happiness Company Business Solutions Pvt. Ltd.
+        </p>
+      </div>
+
+      <div class="footer-disclaimer" role="note" aria-label="Regulatory and Risk Disclaimer">
+        Investments and trading in securities markets carry a real risk of capital loss and are not suitable for every individual. Pillai &amp; Partners and The Happiness Company Business Solutions Pvt. Ltd. provide financial education and analytical coaching only. We are not a SEBI-registered Investment Adviser, Research Analyst, Portfolio Manager, or Stock Broker. Nothing on this website or inside any private session constitutes investment advice, portfolio management, mutual fund recommendations, stock tips, buy or sell calls, or assurances of financial return. All charts and case studies presented use historical data strictly for educational illustration. Assess your personal financial position carefully and consult a SEBI-registered Investment Adviser before making live investment decisions.
+      </div>
+
+      <div class="pp-footer__copy">
+        Copyright 2026 The Happiness Company Business Solutions Pvt. Ltd. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Adaptive Native Mobile Action Dock (<= 768px) -->
+  <div class="pp-mobile-dock" id="pp-mobile-dock" role="region" aria-label="Quick scheduling shortcut">
+    <div class="pp-mobile-dock__meta">
+      <span class="pp-mobile-dock__title">Pillai &amp; Partners</span>
+      <span class="pp-mobile-dock__sub">Direct 30-min call with Renjith</span>
+    </div>
+    <a href="#schedule" class="btn btn--primary pp-mobile-dock__cta">Schedule a Call</a>
+  </div>
+
+  <script src="js/scripts.js"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      /* 1. Adaptive Header & Mobile Dock Polarity (Dark <-> White) + Active Section Tracking */
+      var header = document.getElementById('pp-header');
+      var mobileDock = document.getElementById('pp-mobile-dock');
+      var mobileDrawer = document.getElementById('mobile-drawer');
+      var scheduleSection = document.getElementById('schedule');
+      var surfaces = Array.from(document.querySelectorAll('[data-surface]'));
+      var navLinks = Array.from(document.querySelectorAll('[data-pp-nav]'));
+      var anchors = ['the-problem', 'solutions', 'governance', 'schedule']
+        .map(function (id) { return document.getElementById(id); })
+        .filter(Boolean);
+
+      var ticking = false;
+      function syncHeaderAndNav() {
+        ticking = false;
+        var probeY = 36;
+        if (header && surfaces.length) {
+          var isLight = false;
+          for (var i = 0; i < surfaces.length; i++) {
+            var rect = surfaces[i].getBoundingClientRect();
+            if (rect.top <= probeY && rect.bottom > probeY) {
+              isLight = surfaces[i].getAttribute('data-surface') === 'light';
+              break;
+            }
+          }
+          header.classList.toggle('is-light-surface', isLight);
+        }
+
+        if (mobileDock && surfaces.length) {
+          var vh = window.innerHeight || 800;
+          var dockProbeY = vh - 44;
+          var dockLight = false;
+          for (var d = 0; d < surfaces.length; d++) {
+            var dRect = surfaces[d].getBoundingClientRect();
+            if (dRect.top <= dockProbeY && dRect.bottom > dockProbeY) {
+              dockLight = surfaces[d].getAttribute('data-surface') === 'light';
+              break;
+            }
+          }
+          var pastHero = (window.scrollY || 0) > 420;
+          var inSchedule = scheduleSection ? scheduleSection.getBoundingClientRect().top < vh * 0.78 : false;
+          var drawerOpen = mobileDrawer ? mobileDrawer.classList.contains('is-open') : false;
+          mobileDock.classList.toggle('is-light-surface', dockLight);
+          mobileDock.classList.toggle('is-visible', pastHero && !inSchedule && !drawerOpen);
+        }
+
+        if (navLinks.length && anchors.length) {
+          var currentId = '';
+          var offset = 160;
+          for (var j = 0; j < anchors.length; j++) {
+            if (anchors[j].getBoundingClientRect().top <= offset) {
+              currentId = anchors[j].id;
+            }
+          }
+          navLinks.forEach(function (link) {
+            link.classList.toggle('is-current', link.getAttribute('data-pp-nav') === currentId);
+          });
+        }
+      }
+
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          requestAnimationFrame(syncHeaderAndNav);
+          ticking = true;
+        }
+      }, { passive: true });
+      window.addEventListener('resize', syncHeaderAndNav, { passive: true });
+      var mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      var mobileCloseBtn = document.getElementById('mobile-close-btn');
+      if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', function () { setTimeout(syncHeaderAndNav, 20); });
+      if (mobileCloseBtn) mobileCloseBtn.addEventListener('click', function () { setTimeout(syncHeaderAndNav, 20); });
+      syncHeaderAndNav();
+
+      /* 2. Interactive Steep Sliding-Bar Hero Architectural Panel */
+      var consoleTabs = Array.from(document.querySelectorAll('[data-pp-console]'));
+      var consolePanes = Array.from(document.querySelectorAll('[data-pp-pane]'));
+      var panelSlider = document.getElementById('pp-panel-slider');
+      var prevBtn = document.getElementById('pp-console-prev');
+      var nextBtn = document.getElementById('pp-console-next');
+      var activeConsoleIdx = 0;
+
+      function syncPanelSlider() {
+        var activeTab = consoleTabs[activeConsoleIdx];
+        if (panelSlider && activeTab) {
+          panelSlider.style.width = activeTab.offsetWidth + 'px';
+          panelSlider.style.transform = 'translateX(' + activeTab.offsetLeft + 'px)';
+        }
+      }
+
+      function activateConsole(idx) {
+        if (!consoleTabs.length) return;
+        activeConsoleIdx = (idx + consoleTabs.length) % consoleTabs.length;
+        var key = consoleTabs[activeConsoleIdx].getAttribute('data-pp-console');
+        consoleTabs.forEach(function (t, i) {
+          var active = i === activeConsoleIdx;
+          t.classList.toggle('is-active', active);
+          t.setAttribute('aria-selected', String(active));
+        });
+        consolePanes.forEach(function (pane) {
+          pane.classList.toggle('is-active', pane.getAttribute('data-pp-pane') === key);
+        });
+        syncPanelSlider();
+      }
+
+      consoleTabs.forEach(function (tab, idx) {
+        tab.addEventListener('click', function () { activateConsole(idx); });
+      });
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function () { activateConsole(activeConsoleIdx - 1); });
+      }
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function () { activateConsole(activeConsoleIdx + 1); });
+      }
+      window.addEventListener('resize', syncPanelSlider, { passive: true });
+      requestAnimationFrame(syncPanelSlider);
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(syncPanelSlider);
+      }
+
+      /* 3. Interactive Private Diagnostic Self-Check Ledger */
+      var auditButtons = Array.from(document.querySelectorAll('[data-audit-btn]'));
+      var auditCountEl = document.getElementById('pp-audit-count');
+      var auditSegments = Array.from(document.querySelectorAll('[data-audit-seg]'));
+      var verifiedSet = {};
+
+      function updateAuditMeter() {
+        var count = Object.keys(verifiedSet).length;
+        if (auditCountEl) {
+          auditCountEl.textContent = count + ' of 4 verified';
+        }
+        auditSegments.forEach(function (seg, idx) {
+          seg.classList.toggle('is-lit', idx < count);
+        });
+      }
+
+      auditButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var id = btn.getAttribute('data-audit-btn');
+          var card = btn.closest('[data-audit-card]');
+          var label = btn.querySelector('span');
+          if (verifiedSet[id]) {
+            delete verifiedSet[id];
+            if (card) card.classList.remove('is-verified');
+            btn.setAttribute('aria-pressed', 'false');
+            if (label) label.textContent = 'Mark verified';
+          } else {
+            verifiedSet[id] = true;
+            if (card) card.classList.add('is-verified');
+            btn.setAttribute('aria-pressed', 'true');
+            if (label) label.textContent = 'Verified';
+          }
+          updateAuditMeter();
+        });
+      });
+
+      /* 4. Interactive Steep Semantic-Style Wireframe Module Highlight */
+      var wfStage = document.getElementById('pp-wireframe');
+      if (wfStage) {
+        var wfButtons = Array.from(wfStage.querySelectorAll('[data-wf-filter]'));
+        var wfTargets = Array.from(wfStage.querySelectorAll('[data-wf-tags]'));
+
+        function setWireframeFilter(key) {
+          wfButtons.forEach(function (b) {
+            var active = b.getAttribute('data-wf-filter') === key;
+            b.classList.toggle('is-active', active);
+            b.setAttribute('aria-pressed', String(active));
+          });
+          var isFiltered = key !== 'all';
+          wfStage.classList.toggle('is-filtered', isFiltered);
+          wfTargets.forEach(function (el) {
+            var tags = (el.getAttribute('data-wf-tags') || '').split(',');
+            el.classList.toggle('is-lit', !isFiltered || tags.indexOf(key) !== -1);
+          });
+        }
+
+        wfButtons.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            setWireframeFilter(btn.getAttribute('data-wf-filter'));
+          });
+        });
+      }
+
+      /* 5. Interactive 20-Year Fee-Drag Milestone Crosshair (Pure Mathematical Ratios) */
+      var erosionBtns = Array.from(document.querySelectorAll('[data-erosion-yr]'));
+      var erosionCrosshair = document.getElementById('pp-erosion-crosshair');
+      var erosionHorizonEl = document.getElementById('pp-erosion-horizon');
+      var erosionNumEl = document.getElementById('pp-erosion-num');
+      var erosionDescEl = document.getElementById('pp-erosion-desc');
+      var erosionMap = {
+        '5': {
+          tx: 149,
+          horizon: 'Year 5 Horizon',
+          num: '~4.5%',
+          desc: 'Early silent compounding drag after 5 years of a recurring 1% annual fee. Barely noticeable on quarterly statements.'
+        },
+        '10': {
+          tx: 298,
+          horizon: 'Year 10 Horizon',
+          num: '~8.8%',
+          desc: 'By year 10, recurring annual fee drag widens quietly into nearly one eleventh of ending compounding.'
+        },
+        '15': {
+          tx: 447,
+          horizon: 'Year 15 Horizon',
+          num: '~12.8%',
+          desc: 'Across 15 years, lost compounding accelerates steadily regardless of broader market direction.'
+        },
+        '20': {
+          tx: 596,
+          horizon: 'Year 20 Horizon',
+          num: '~1/6th',
+          desc: 'Of total ending capital quietly removed across 20 years by a recurring 1% annual fee drag alone.'
+        }
+      };
+
+      erosionBtns.forEach(function (btn) {
+        function selectYr() {
+          var yr = btn.getAttribute('data-erosion-yr');
+          var info = erosionMap[yr];
+          if (!info) return;
+          erosionBtns.forEach(function (b) { b.classList.toggle('is-active', b === btn); });
+          if (erosionCrosshair) erosionCrosshair.setAttribute('transform', 'translate(' + info.tx + ', 0)');
+          if (erosionHorizonEl) erosionHorizonEl.textContent = info.horizon;
+          if (erosionNumEl) erosionNumEl.textContent = info.num;
+          if (erosionDescEl) erosionDescEl.textContent = info.desc;
+        }
+        btn.addEventListener('click', selectYr);
+        btn.addEventListener('mouseenter', selectYr);
+      });
+
+      /* 6. Scroll-Triggered Steep 3D Open/Close Starlight Doorway */
+      var steepDoor = document.getElementById('pp-steep-door');
+      if (steepDoor) {
+        if ('IntersectionObserver' in window) {
+          var doorObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              steepDoor.classList.toggle('is-animated', entry.isIntersecting);
+            });
+          }, { threshold: 0.25 });
+          doorObs.observe(steepDoor);
+        } else {
+          steepDoor.classList.add('is-animated');
+        }
+        steepDoor.addEventListener('click', function () {
+          steepDoor.classList.toggle('is-held-open');
+        });
+      }
+
+      /* 7. Cursor-Tracking Ambient Spotlight on Dark Executive Surfaces */
+      if (window.matchMedia && window.matchMedia('(pointer: fine)').matches) {
+        var spotlightCards = Array.from(document.querySelectorAll('.pp-spotlight-card'));
+        spotlightCards.forEach(function (card) {
+          card.addEventListener('mousemove', function (e) {
+            var rect = card.getBoundingClientRect();
+            card.style.setProperty('--mx', (e.clientX - rect.left).toFixed(1) + 'px');
+            card.style.setProperty('--my', (e.clientY - rect.top).toFixed(1) + 'px');
+          }, { passive: true });
+        });
+      }
+    })();
+  </script>
+</body>
+
+</html>
