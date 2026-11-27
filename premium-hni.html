@@ -608,38 +608,304 @@
     }
 
     /* Living Triggered Motion Inside Hero Panel Artworks */
-    .pp-orbit-slow {
-      transform-box: fill-box;
-      transform-origin: center;
-      animation: slowSpin 28s linear infinite;
-    }
-
-    .pp-ring-breathe-a {
-      transform-box: fill-box;
-      transform-origin: center;
-      animation: ppRingDriftA 6.5s ease-in-out infinite alternate;
-    }
-
-    .pp-ring-breathe-b {
-      transform-box: fill-box;
-      transform-origin: center;
-      animation: ppRingDriftB 7.2s ease-in-out infinite alternate;
-    }
-
     .pp-beacon-pulse {
       transform-box: fill-box;
       transform-origin: center;
       animation: ppBeaconPulse 2.8s ease-out infinite;
     }
 
-    @keyframes ppRingDriftA {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(4px, -3px); }
+    /* Institutional Corporate Mutual Fund Watchlist & Audit Monitor (Lens 01) */
+    .pp-mf-monitor {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      font-variant-numeric: tabular-nums;
     }
 
-    @keyframes ppRingDriftB {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(-4px, 3px); }
+    .pp-mf-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 6px 12px;
+      padding-bottom: 9px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .pp-mf-head__title {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: #e4e7ee;
+    }
+
+    .pp-mf-status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #2dd4bf;
+      box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.16);
+      flex-shrink: 0;
+    }
+
+    .pp-mf-head__meta {
+      font-size: 9.5px;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: #9398a6;
+    }
+
+    .pp-mf-body {
+      display: grid;
+      grid-template-columns: minmax(0, 1.44fr) minmax(0, 0.86fr);
+      gap: 11px;
+      align-items: stretch;
+    }
+
+    .pp-mf-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      min-width: 0;
+    }
+
+    .pp-mf-cols {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 38px 35px 54px;
+      align-items: center;
+      gap: 6px;
+      padding: 0 8px 2px;
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #7d8392;
+    }
+
+    .pp-mf-cols span:nth-child(2),
+    .pp-mf-cols span:nth-child(3) {
+      text-align: right;
+    }
+
+    .pp-mf-cols span:last-child {
+      text-align: right;
+    }
+
+    .pp-mf-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 38px 35px 54px;
+      align-items: center;
+      gap: 6px;
+      padding: 6.5px 8px;
+      border-radius: 9px;
+      background: rgba(255, 255, 255, 0.026);
+      border: 1px solid rgba(255, 255, 255, 0.065);
+      transition: background-color 0.2s var(--ease-steep), border-color 0.2s var(--ease-steep);
+      opacity: 0;
+      transform: translateY(4px);
+    }
+
+    .pp-panel__pane.is-active .pp-mf-row {
+      animation: ppMfRowIn 0.45s var(--ease-expo) calc(var(--r, 0) * 60ms) forwards;
+    }
+
+    @keyframes ppMfRowIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .pp-mf-row:hover {
+      background: rgba(255, 255, 255, 0.048);
+      border-color: rgba(255, 255, 255, 0.13);
+    }
+
+    .pp-mf-row--flag {
+      background: rgba(235, 128, 128, 0.045);
+      border-color: rgba(235, 128, 128, 0.16);
+    }
+
+    .pp-mf-row--warn {
+      background: rgba(232, 184, 125, 0.04);
+      border-color: rgba(232, 184, 125, 0.15);
+    }
+
+    .pp-mf-name {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .pp-mf-name__main {
+      font-size: 10.5px;
+      font-weight: 500;
+      color: #f0f2f7;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.2;
+    }
+
+    .pp-mf-name__sub {
+      font-size: 8.5px;
+      color: #8b909e;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.15;
+    }
+
+    .pp-mf-spark {
+      width: 38px;
+      height: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-shrink: 0;
+    }
+
+    .pp-panel__art-stage .pp-mf-spark svg {
+      width: 38px;
+      height: 14px;
+      display: block;
+    }
+
+    .pp-mf-ter {
+      font-size: 10px;
+      font-weight: 600;
+      text-align: right;
+      line-height: 1;
+    }
+
+    .pp-mf-ter--clean { color: #2dd4bf; }
+    .pp-mf-ter--drag { color: #eb8080; }
+    .pp-mf-ter--warn { color: #e8b87d; }
+
+    .pp-mf-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 18px;
+      padding: 0 5px;
+      border-radius: 5px;
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: 0.025em;
+      white-space: nowrap;
+      justify-self: end;
+    }
+
+    .pp-mf-badge--clean {
+      color: #2dd4bf;
+      background: rgba(45, 212, 191, 0.11);
+      border: 1px solid rgba(45, 212, 191, 0.24);
+    }
+
+    .pp-mf-badge--drag {
+      color: #f29d9d;
+      background: rgba(235, 128, 128, 0.13);
+      border: 1px solid rgba(235, 128, 128, 0.28);
+    }
+
+    .pp-mf-badge--warn {
+      color: #ecc38e;
+      background: rgba(232, 184, 125, 0.12);
+      border: 1px solid rgba(232, 184, 125, 0.28);
+    }
+
+    .pp-mf-insight {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 10px 11px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid rgba(255, 255, 255, 0.075);
+      min-width: 0;
+    }
+
+    .pp-mf-chart-block {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .pp-mf-chart-wipe {
+      transform-box: fill-box;
+      transform-origin: left center;
+      transform: scaleX(0);
+    }
+
+    .pp-panel__pane.is-active .pp-mf-chart-wipe {
+      animation: ppBarExtend 0.95s var(--ease-expo) 0.12s forwards;
+    }
+
+    .pp-mf-mini-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 6px;
+    }
+
+    .pp-mf-mini-head__k {
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: #8f95a3;
+      white-space: nowrap;
+    }
+
+    .pp-mf-mini-head__v {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .pp-mf-overlap-block {
+      padding-top: 9px;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .pp-mf-meter {
+      display: flex;
+      width: 100%;
+      height: 7px;
+      border-radius: 4px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.06);
+      gap: 2px;
+    }
+
+    .pp-mf-meter__seg {
+      height: 100%;
+      border-radius: 2px;
+      transform-origin: left center;
+      transform: scaleX(0);
+    }
+
+    .pp-panel__pane.is-active .pp-mf-meter__seg {
+      animation: ppBarExtend 0.72s var(--ease-expo) calc(var(--i, 0) * 90ms) forwards;
+    }
+
+    .pp-mf-overlap-note {
+      font-size: 9px;
+      line-height: 1.3;
+      color: #868b99;
     }
 
     @keyframes ppBeaconPulse {
@@ -3022,8 +3288,20 @@
       }
 
       .pp-erosion-stats,
-      .pp-wf-bento-tri {
+      .pp-wf-bento-tri,
+      .pp-mf-body {
         grid-template-columns: 1fr;
+      }
+
+      .pp-mf-cols,
+      .pp-mf-row {
+        grid-template-columns: minmax(0, 1fr) 36px 34px 52px;
+        gap: 6px;
+      }
+
+      .pp-panel__art-stage .pp-mf-spark svg,
+      .pp-mf-spark {
+        width: 36px;
       }
 
       .pp-wf-bento-cell {
@@ -3096,9 +3374,6 @@
       .pp-pastel-bg .hero-orb,
       .pp-dark-orb,
       .pp-wf-line,
-      .pp-orbit-slow,
-      .pp-ring-breathe-a,
-      .pp-ring-breathe-b,
       .pp-beacon-pulse,
       .pp-eyebrow-pill__dot::after,
       .pp-door-stage.is-animated .pp-door-leaf,
@@ -3108,13 +3383,21 @@
         animation: none !important;
       }
 
+      .pp-mf-row {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+      }
+
       .pp-door-leaf {
         transform: rotateY(46deg) !important;
       }
 
       .pp-wedge-clip-rect,
       .pp-data-fill,
-      .pp-profile-bar {
+      .pp-profile-bar,
+      .pp-mf-meter__seg,
+      .pp-mf-chart-wipe {
         transform: scaleX(1) !important;
       }
 
@@ -3285,43 +3568,149 @@
           </div>
 
           <div class="pp-panel__body">
-            <!-- Lens 1: Living Concentric Portfolio Overlap & Cost-Drag Geometry -->
+            <!-- Lens 1: Institutional Mutual Fund Watchlist & Portfolio Audit Monitor -->
             <div class="pp-panel__pane is-active" data-pp-pane="audit">
               <div class="pp-panel__art-stage">
-                <svg viewBox="0 0 460 190" width="100%" height="190" fill="none" aria-hidden="true">
-                  <defs>
-                    <radialGradient id="ppCoreGlow" cx="50%" cy="50%" r="50%">
-                      <stop offset="0%" stop-color="#e8b87d" stop-opacity="0.45" />
-                      <stop offset="65%" stop-color="#a78bfa" stop-opacity="0.14" />
-                      <stop offset="100%" stop-color="#111115" stop-opacity="0" />
-                    </radialGradient>
-                  </defs>
-                  <!-- Left cluster: gently breathing overlapping schemes -->
-                  <circle cx="142" cy="95" r="76" fill="url(#ppCoreGlow)" />
-                  <circle class="pp-ring-breathe-a" cx="116" cy="82" r="48" stroke="#eb8080" stroke-opacity="0.55" stroke-width="1.2" />
-                  <circle class="pp-ring-breathe-b" cx="152" cy="76" r="48" stroke="#a78bfa" stroke-opacity="0.58" stroke-width="1.2" />
-                  <circle class="pp-ring-breathe-a" cx="166" cy="108" r="48" stroke="#e8b87d" stroke-opacity="0.58" stroke-width="1.2" />
-                  <circle class="pp-ring-breathe-b" cx="126" cy="114" r="48" stroke="#ffffff" stroke-opacity="0.34" stroke-width="1.15" />
-                  <circle class="pp-beacon-pulse" cx="142" cy="95" r="14" stroke="#eb8080" stroke-opacity="0.55" stroke-width="1.2" />
-                  <circle cx="142" cy="95" r="14" fill="#eb8080" fill-opacity="0.22" stroke="#e8b87d" stroke-width="1.35" />
-                  <circle cx="142" cy="95" r="3.5" fill="#ffffff" />
+                <div class="pp-mf-monitor" aria-hidden="true">
+                  <div class="pp-mf-head">
+                    <span class="pp-mf-head__title">
+                      <span class="pp-mf-status-dot"></span>
+                      <span>Mutual Fund Watchlist</span>
+                    </span>
+                    <span class="pp-mf-head__meta">4 Schemes &middot; Direct vs. Regular</span>
+                  </div>
 
-                  <!-- Flowing optical resolution bridge -->
-                  <line x1="216" y1="95" x2="294" y2="95" stroke="#e8b87d" stroke-opacity="0.78" stroke-width="1.35" stroke-dasharray="4 6" class="dotted-stream" />
-                  <path d="M288 89 L295 95 L288 101" stroke="#e8b87d" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                  <div class="pp-mf-body">
+                    <!-- Left: Corporate Fund Surveillance Table -->
+                    <div class="pp-mf-list">
+                      <div class="pp-mf-cols">
+                        <span>Scheme</span>
+                        <span>NAV</span>
+                        <span>TER</span>
+                        <span>Audit</span>
+                      </div>
 
-                  <!-- Right structure: precision rotating audited concentric core -->
-                  <circle class="pp-orbit-slow" cx="362" cy="95" r="62" stroke="#2dd4bf" stroke-opacity="0.34" stroke-width="1.1" stroke-dasharray="5 5" />
-                  <circle cx="362" cy="95" r="44" stroke="#2dd4bf" stroke-opacity="0.58" stroke-width="1.25" />
-                  <circle class="pp-beacon-pulse" cx="362" cy="95" r="24" stroke="#2dd4bf" stroke-opacity="0.5" stroke-width="1.2" />
-                  <circle cx="362" cy="95" r="24" fill="#2dd4bf" fill-opacity="0.16" stroke="#2dd4bf" stroke-width="1.45" />
-                  <circle cx="362" cy="95" r="4" fill="#ffffff" />
-                  <line x1="362" y1="22" x2="362" y2="33" stroke="#2dd4bf" stroke-opacity="0.65" stroke-width="1.1" />
-                  <line x1="362" y1="157" x2="362" y2="168" stroke="#2dd4bf" stroke-opacity="0.65" stroke-width="1.1" />
-                </svg>
+                      <div class="pp-mf-row" style="--r:0;">
+                        <div class="pp-mf-name">
+                          <span class="pp-mf-name__main">Large Cap Core</span>
+                          <span class="pp-mf-name__sub">Direct &middot; Growth</span>
+                        </div>
+                        <span class="pp-mf-spark">
+                          <svg viewBox="0 0 44 16" fill="none">
+                            <path d="M1 13 L9 11.5 L16 12 L24 8.5 L33 6 L43 2.5" stroke="#2dd4bf" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <circle cx="43" cy="2.5" r="1.6" fill="#2dd4bf" />
+                          </svg>
+                        </span>
+                        <span class="pp-mf-ter pp-mf-ter--clean">0.45%</span>
+                        <span class="pp-mf-badge pp-mf-badge--clean">Direct</span>
+                      </div>
+
+                      <div class="pp-mf-row pp-mf-row--flag" style="--r:1;">
+                        <div class="pp-mf-name">
+                          <span class="pp-mf-name__main">Flexi Cap Growth</span>
+                          <span class="pp-mf-name__sub">Regular &middot; Trail Fee</span>
+                        </div>
+                        <span class="pp-mf-spark">
+                          <svg viewBox="0 0 44 16" fill="none">
+                            <path d="M1 12.5 L14 9.5 L28 6.5 L43 3" stroke="rgba(255,255,255,0.22)" stroke-width="1" stroke-dasharray="2 2" />
+                            <path d="M1 13 L10 11.5 L19 11 L29 9.5 L43 8.2" stroke="#eb8080" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <circle cx="43" cy="8.2" r="1.6" fill="#eb8080" />
+                          </svg>
+                        </span>
+                        <span class="pp-mf-ter pp-mf-ter--drag">1.92%</span>
+                        <span class="pp-mf-badge pp-mf-badge--drag">Fee Drag</span>
+                      </div>
+
+                      <div class="pp-mf-row pp-mf-row--warn" style="--r:2;">
+                        <div class="pp-mf-name">
+                          <span class="pp-mf-name__main">Bluechip Equity</span>
+                          <span class="pp-mf-name__sub">Regular &middot; Duplicate</span>
+                        </div>
+                        <span class="pp-mf-spark">
+                          <svg viewBox="0 0 44 16" fill="none">
+                            <path d="M1 13 L10 11.2 L18 11.6 L27 8.4 L35 6.4 L43 4.8" stroke="#e8b87d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <circle cx="43" cy="4.8" r="1.6" fill="#e8b87d" />
+                          </svg>
+                        </span>
+                        <span class="pp-mf-ter pp-mf-ter--warn">1.78%</span>
+                        <span class="pp-mf-badge pp-mf-badge--warn">Overlap</span>
+                      </div>
+
+                      <div class="pp-mf-row" style="--r:3;">
+                        <div class="pp-mf-name">
+                          <span class="pp-mf-name__main">Mid-Cap Select</span>
+                          <span class="pp-mf-name__sub">Direct &middot; Core</span>
+                        </div>
+                        <span class="pp-mf-spark">
+                          <svg viewBox="0 0 44 16" fill="none">
+                            <path d="M1 13.5 L11 10.5 L19 11.4 L28 7.2 L36 5.2 L43 2" stroke="#2dd4bf" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <circle cx="43" cy="2" r="1.6" fill="#2dd4bf" />
+                          </svg>
+                        </span>
+                        <span class="pp-mf-ter pp-mf-ter--clean">0.62%</span>
+                        <span class="pp-mf-badge pp-mf-badge--clean">Direct</span>
+                      </div>
+                    </div>
+
+                    <!-- Right: Direct vs Regular NAV Inspection & Overlap Meter -->
+                    <div class="pp-mf-insight">
+                      <div class="pp-mf-chart-block">
+                        <div class="pp-mf-mini-head">
+                          <span class="pp-mf-mini-head__k">NAV Divergence</span>
+                          <span class="pp-mf-mini-head__v" style="color:#eb8080;">1.34% gap</span>
+                        </div>
+                        <svg viewBox="0 0 180 68" width="100%" height="68" fill="none">
+                          <defs>
+                            <linearGradient id="ppMfDragWedge" x1="0" y1="0" x2="1" y2="0">
+                              <stop offset="0%" stop-color="#eb8080" stop-opacity="0.02" />
+                              <stop offset="100%" stop-color="#eb8080" stop-opacity="0.3" />
+                            </linearGradient>
+                            <linearGradient id="ppMfDirectFill" x1="0" y1="0" x2="0" y2="1">
+                              <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.16" />
+                              <stop offset="100%" stop-color="#2dd4bf" stop-opacity="0" />
+                            </linearGradient>
+                            <clipPath id="ppMfCurveClip">
+                              <rect class="pp-mf-chart-wipe" x="0" y="0" width="180" height="68" />
+                            </clipPath>
+                          </defs>
+                          <line x1="4" y1="14" x2="174" y2="14" stroke="rgba(255,255,255,0.06)" />
+                          <line x1="4" y1="38" x2="174" y2="38" stroke="rgba(255,255,255,0.06)" />
+                          <line x1="4" y1="62" x2="174" y2="62" stroke="rgba(255,255,255,0.12)" />
+                          <g clip-path="url(#ppMfCurveClip)">
+                            <!-- Shaded area & widening cost wedge -->
+                            <path d="M6 56 C 42 52, 78 44, 118 33 C 142 26, 158 19, 172 12 L 172 62 L 6 62 Z" fill="url(#ppMfDirectFill)" />
+                            <path d="M6 56 C 42 52, 78 44, 118 33 C 142 26, 158 19, 172 12 L 172 28 C 158 33, 142 38, 118 43 C 78 50, 42 54, 6 56 Z" fill="url(#ppMfDragWedge)" />
+                            <!-- Direct vs Regular NAV curves -->
+                            <path d="M6 56 C 42 52, 78 44, 118 33 C 142 26, 158 19, 172 12" stroke="#2dd4bf" stroke-width="1.8" stroke-linecap="round" />
+                            <path d="M6 56 C 42 54, 78 50, 118 43 C 142 38, 158 33, 172 28" stroke="#eb8080" stroke-width="1.6" stroke-dasharray="3.5 3" stroke-linecap="round" />
+                            <!-- Fee gap vertical caliper -->
+                            <line x1="172" y1="12" x2="172" y2="28" stroke="#e8b87d" stroke-width="1.6" />
+                            <circle cx="172" cy="12" r="2.8" fill="#2dd4bf" />
+                            <circle cx="172" cy="28" r="2.8" fill="#eb8080" />
+                          </g>
+                        </svg>
+                      </div>
+
+                      <div class="pp-mf-overlap-block">
+                        <div class="pp-mf-mini-head">
+                          <span class="pp-mf-mini-head__k">Stock Overlap</span>
+                          <span class="pp-mf-mini-head__v" style="color:#e8b87d;">68% overlap</span>
+                        </div>
+                        <div class="pp-mf-meter">
+                          <span class="pp-mf-meter__seg" style="width:42%;background:#eb8080;--i:0;"></span>
+                          <span class="pp-mf-meter__seg" style="width:26%;background:#e8b87d;--i:1;"></span>
+                          <span class="pp-mf-meter__seg" style="width:32%;background:#2dd4bf;--i:2;"></span>
+                        </div>
+                        <span class="pp-mf-overlap-note">Illustrative audit across top 50 underlying stocks</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 <div class="pp-art-legend">
-                  <span class="pp-legend-item"><span class="pp-legend-swatch" style="background:#eb8080;"></span>Overlapping schemes &amp; fee drag</span>
-                  <span class="pp-legend-item"><span class="pp-legend-swatch" style="background:#2dd4bf;"></span>Audited, low-overlap core</span>
+                  <span class="pp-legend-item"><span class="pp-legend-swatch" style="background:#2dd4bf;"></span>Direct core holdings</span>
+                  <span class="pp-legend-item"><span class="pp-legend-swatch" style="background:#eb8080;"></span>Regular plan fee drag</span>
+                  <span class="pp-legend-item"><span class="pp-legend-swatch" style="background:#e8b87d;"></span>Hidden stock overlap</span>
                 </div>
               </div>
 
