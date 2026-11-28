@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#121212">
-  <title>Pillai &amp; Partners | Private Coaching in Financial Markets</title>
+  <title>RRP &amp; Partners | Private Coaching in Financial Markets</title>
   <meta name="description"
     content="India's private one-on-one coaching practice in financial markets for high-earning individuals and business owners. Stop silent portfolio leaks, protect capital across economic cycles, and verify every financial decision yourself with 16-year practitioner Renjith R Pillai.">
   <link rel="icon"
@@ -19,7 +19,7 @@
   <!-- Scoped Tier-1 Private-Office Visual Architecture -->
   <style>
     /* ========================================================================
-       Pillai & Partners: Tier-1 Executive Architecture & Data Visualization
+       RRP & Partners: Tier-1 Executive Architecture & Data Visualization
        100% Inherited TRADE SCHOOL / Steep Tokens. Zero External Colors.
        Dark Obsidian (#121212) -> Luminous Paper (#ffffff) -> Dark Obsidian
        ======================================================================== */
@@ -87,7 +87,7 @@
       transition: background-color 0.35s var(--ease-steep), border-color 0.35s var(--ease-steep);
     }
 
-    /* Bespoke Heritage Wordmark: Handwritten Signature "Pillai" + Editorial "&" + Architectural "PARTNERS" */
+    /* Bespoke Heritage Wordmark: Handwritten Signature "RRP" + Editorial "&" + Architectural "PARTNERS" */
     .pp-wordmark {
       display: inline-flex;
       align-items: baseline;
@@ -102,11 +102,12 @@
     .pp-wordmark__script {
       font-family: "Allura", "Snell Roundhand", "Brush Script MT", cursive;
       font-weight: 400;
-      font-size: clamp(28px, 2.4vw, 35px);
-      line-height: 0.85;
-      letter-spacing: 0.01em;
+      font-size: clamp(24px, 2.15vw, 31px);
+      line-height: 0.88;
+      letter-spacing: 0.055em;
+      padding-right: 0.08em;
       color: inherit;
-      transform: translateY(2px);
+      transform: translateY(1px);
     }
 
     .pp-wordmark__amp {
@@ -131,7 +132,7 @@
     }
 
     .pp-wordmark--compact .pp-wordmark__script {
-      font-size: 27px;
+      font-size: 24px;
     }
 
     .pp-wordmark--compact .pp-wordmark__amp {
@@ -144,7 +145,7 @@
     }
 
     .pp-wordmark--footer .pp-wordmark__script {
-      font-size: clamp(32px, 3vw, 40px);
+      font-size: clamp(28px, 2.6vw, 35px);
     }
 
     .pp-wordmark--footer .pp-wordmark__amp {
@@ -455,26 +456,52 @@
     .pp-panel__bar {
       position: relative;
       z-index: 2;
-      padding: 16px clamp(18px, 2.6vw, 30px) 0;
+      padding: 13px clamp(16px, 2.4vw, 26px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.09);
-      background: rgba(255, 255, 255, 0.015);
+      background: rgba(255, 255, 255, 0.018);
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      gap: 12px 20px;
+      gap: 12px 16px;
+    }
+
+    .pp-panel__progress {
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      height: 1.5px;
+      width: 100%;
+      background: linear-gradient(90deg, rgba(232, 184, 125, 0.15) 0%, #e8b87d 60%, #2dd4bf 100%);
+      transform-origin: left center;
+      transform: scaleX(0);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .pp-panel.is-autoplay .pp-panel__progress {
+      opacity: 0.85;
+      animation: ppAutoProgress 6.5s linear forwards;
+    }
+
+    .pp-panel.is-paused .pp-panel__progress {
+      animation-play-state: paused;
+    }
+
+    @keyframes ppAutoProgress {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
     }
 
     .pp-panel__id {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      font-size: 11.5px;
+      gap: 9px;
+      font-size: 11px;
       font-weight: 500;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.085em;
       text-transform: uppercase;
       color: var(--color-dark-secondary);
-      padding-bottom: 16px;
     }
 
     .pp-panel__diamond {
@@ -488,49 +515,78 @@
     .pp-panel__controls {
       display: flex;
       align-items: center;
-      gap: 18px;
+      gap: 12px;
       flex-wrap: nowrap;
       max-width: 100%;
     }
 
-    /* Steep Authentic Horizontal Sliding-Bar Tabs */
+    /* Tactile Segmented Pill Tab Switcher (Unmistakable Interactive Affordance) */
     .pp-panel__tabs {
       position: relative;
       display: inline-flex;
       align-items: center;
-      gap: 20px;
-      padding-bottom: 14px;
+      gap: 4px;
+      padding: 4px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset;
     }
 
     .pp-panel__tab {
       position: relative;
-      padding: 4px 2px 6px;
-      font-size: 13.5px;
-      font-weight: 450;
-      color: rgba(255, 255, 255, 0.5);
-      transition: color 0.22s var(--ease-steep);
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 13px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.68);
+      transition: color 0.22s var(--ease-steep), background-color 0.22s var(--ease-steep);
       white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .pp-tab-num {
+      font-size: 10.5px;
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+      color: rgba(232, 184, 125, 0.68);
+      transition: color 0.22s var(--ease-steep);
     }
 
     .pp-panel__tab:hover {
-      color: rgba(255, 255, 255, 0.85);
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .pp-panel__tab:hover .pp-tab-num,
+    .pp-panel__tab.is-active .pp-tab-num {
+      color: #e8b87d;
     }
 
     .pp-panel__tab.is-active {
       color: #ffffff;
-      font-weight: 500;
+      background: transparent;
     }
 
     .pp-panel__slider {
       position: absolute;
+      z-index: 1;
       left: 0;
-      bottom: -1px;
-      height: 2px;
-      width: 120px;
-      background: #ffffff;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.45);
-      transform: translateX(0);
-      transition: transform 0.35s var(--ease-expo), width 0.35s var(--ease-expo);
+      top: 4px;
+      bottom: 4px;
+      width: 140px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.16) inset,
+        0 6px 16px -6px rgba(0, 0, 0, 0.65);
+      transform: translateX(4px);
+      transition: transform 0.38s var(--ease-expo), width 0.38s var(--ease-expo);
       pointer-events: none;
     }
 
@@ -538,27 +594,39 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding-bottom: 14px;
       flex-shrink: 0;
+    }
+
+    .pp-panel__step-count {
+      font-size: 11px;
+      font-weight: 500;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0.06em;
+      color: rgba(255, 255, 255, 0.62);
+      min-width: 30px;
+      text-align: center;
+      user-select: none;
     }
 
     .pp-panel__nav-btn {
       width: 30px;
       height: 30px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: rgba(255, 255, 255, 0.72);
+      background: rgba(255, 255, 255, 0.055);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: rgba(255, 255, 255, 0.8);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      transition: background-color 0.2s var(--ease-steep), color 0.2s var(--ease-steep), border-color 0.2s var(--ease-steep);
+      cursor: pointer;
+      transition: background-color 0.2s var(--ease-steep), color 0.2s var(--ease-steep), border-color 0.2s var(--ease-steep), transform 0.2s var(--ease-steep);
     }
 
     .pp-panel__nav-btn:hover {
-      background: rgba(255, 255, 255, 0.12);
-      border-color: rgba(255, 255, 255, 0.24);
+      background: rgba(255, 255, 255, 0.14);
+      border-color: rgba(232, 184, 125, 0.45);
       color: #ffffff;
+      transform: scale(1.04);
     }
 
     .pp-panel__body {
@@ -614,298 +682,43 @@
       animation: ppBeaconPulse 2.8s ease-out infinite;
     }
 
-    /* Institutional Corporate Mutual Fund Watchlist & Audit Monitor (Lens 01) */
-    .pp-mf-monitor {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      gap: 11px;
-      font-variant-numeric: tabular-nums;
+    /* Airy Institutional Portfolio Audit X-Ray & NAV Trajectory Motion (Lens 01) */
+    .pp-audit-col {
+      transform-box: fill-box;
+      transform-origin: center bottom;
+      transform: scaleY(0);
     }
 
-    .pp-mf-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 6px 12px;
-      padding-bottom: 9px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    .pp-panel__pane.is-active .pp-audit-col {
+      animation: ppColRise 0.8s var(--ease-expo) calc(var(--i, 0) * 75ms) forwards;
     }
 
-    .pp-mf-head__title {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: #e4e7ee;
+    @keyframes ppColRise {
+      from { transform: scaleY(0); opacity: 0.2; }
+      to { transform: scaleY(1); opacity: 1; }
     }
 
-    .pp-mf-status-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #2dd4bf;
-      box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.16);
-      flex-shrink: 0;
-    }
-
-    .pp-mf-head__meta {
-      font-size: 9.5px;
-      font-weight: 500;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: #9398a6;
-    }
-
-    .pp-mf-body {
-      display: grid;
-      grid-template-columns: minmax(0, 1.44fr) minmax(0, 0.86fr);
-      gap: 11px;
-      align-items: stretch;
-    }
-
-    .pp-mf-list {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      min-width: 0;
-    }
-
-    .pp-mf-cols {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 38px 35px 54px;
-      align-items: center;
-      gap: 6px;
-      padding: 0 8px 2px;
-      font-size: 8.5px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #7d8392;
-    }
-
-    .pp-mf-cols span:nth-child(2),
-    .pp-mf-cols span:nth-child(3) {
-      text-align: right;
-    }
-
-    .pp-mf-cols span:last-child {
-      text-align: right;
-    }
-
-    .pp-mf-row {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 38px 35px 54px;
-      align-items: center;
-      gap: 6px;
-      padding: 6.5px 8px;
-      border-radius: 9px;
-      background: rgba(255, 255, 255, 0.026);
-      border: 1px solid rgba(255, 255, 255, 0.065);
-      transition: background-color 0.2s var(--ease-steep), border-color 0.2s var(--ease-steep);
-      opacity: 0;
-      transform: translateY(4px);
-    }
-
-    .pp-panel__pane.is-active .pp-mf-row {
-      animation: ppMfRowIn 0.45s var(--ease-expo) calc(var(--r, 0) * 60ms) forwards;
-    }
-
-    @keyframes ppMfRowIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .pp-mf-row:hover {
-      background: rgba(255, 255, 255, 0.048);
-      border-color: rgba(255, 255, 255, 0.13);
-    }
-
-    .pp-mf-row--flag {
-      background: rgba(235, 128, 128, 0.045);
-      border-color: rgba(235, 128, 128, 0.16);
-    }
-
-    .pp-mf-row--warn {
-      background: rgba(232, 184, 125, 0.04);
-      border-color: rgba(232, 184, 125, 0.15);
-    }
-
-    .pp-mf-name {
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
-    }
-
-    .pp-mf-name__main {
-      font-size: 10.5px;
-      font-weight: 500;
-      color: #f0f2f7;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      line-height: 1.2;
-    }
-
-    .pp-mf-name__sub {
-      font-size: 8.5px;
-      color: #8b909e;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      line-height: 1.15;
-    }
-
-    .pp-mf-spark {
-      width: 38px;
-      height: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      flex-shrink: 0;
-    }
-
-    .pp-panel__art-stage .pp-mf-spark svg {
-      width: 38px;
-      height: 14px;
-      display: block;
-    }
-
-    .pp-mf-ter {
-      font-size: 10px;
-      font-weight: 600;
-      text-align: right;
-      line-height: 1;
-    }
-
-    .pp-mf-ter--clean { color: #2dd4bf; }
-    .pp-mf-ter--drag { color: #eb8080; }
-    .pp-mf-ter--warn { color: #e8b87d; }
-
-    .pp-mf-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      height: 18px;
-      padding: 0 5px;
-      border-radius: 5px;
-      font-size: 8px;
-      font-weight: 600;
-      letter-spacing: 0.025em;
-      white-space: nowrap;
-      justify-self: end;
-    }
-
-    .pp-mf-badge--clean {
-      color: #2dd4bf;
-      background: rgba(45, 212, 191, 0.11);
-      border: 1px solid rgba(45, 212, 191, 0.24);
-    }
-
-    .pp-mf-badge--drag {
-      color: #f29d9d;
-      background: rgba(235, 128, 128, 0.13);
-      border: 1px solid rgba(235, 128, 128, 0.28);
-    }
-
-    .pp-mf-badge--warn {
-      color: #ecc38e;
-      background: rgba(232, 184, 125, 0.12);
-      border: 1px solid rgba(232, 184, 125, 0.28);
-    }
-
-    .pp-mf-insight {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 10px;
-      padding: 10px 11px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.025);
-      border: 1px solid rgba(255, 255, 255, 0.075);
-      min-width: 0;
-    }
-
-    .pp-mf-chart-block {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .pp-mf-chart-wipe {
+    .pp-audit-wipe {
       transform-box: fill-box;
       transform-origin: left center;
       transform: scaleX(0);
     }
 
-    .pp-panel__pane.is-active .pp-mf-chart-wipe {
-      animation: ppBarExtend 0.95s var(--ease-expo) 0.12s forwards;
+    .pp-panel__pane.is-active .pp-audit-wipe {
+      animation: ppBarExtend 1.05s var(--ease-expo) 0.14s forwards;
     }
 
-    .pp-mf-mini-head {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 6px;
+    .pp-audit-scan {
+      opacity: 0;
     }
 
-    .pp-mf-mini-head__k {
-      font-size: 8.5px;
-      font-weight: 600;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: #8f95a3;
-      white-space: nowrap;
+    .pp-panel__pane.is-active .pp-audit-scan {
+      animation: ppScanReveal 0.75s var(--ease-expo) 0.22s forwards;
     }
 
-    .pp-mf-mini-head__v {
-      font-size: 9px;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      white-space: nowrap;
-    }
-
-    .pp-mf-overlap-block {
-      padding-top: 9px;
-      border-top: 1px solid rgba(255, 255, 255, 0.07);
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .pp-mf-meter {
-      display: flex;
-      width: 100%;
-      height: 7px;
-      border-radius: 4px;
-      overflow: hidden;
-      background: rgba(255, 255, 255, 0.06);
-      gap: 2px;
-    }
-
-    .pp-mf-meter__seg {
-      height: 100%;
-      border-radius: 2px;
-      transform-origin: left center;
-      transform: scaleX(0);
-    }
-
-    .pp-panel__pane.is-active .pp-mf-meter__seg {
-      animation: ppBarExtend 0.72s var(--ease-expo) calc(var(--i, 0) * 90ms) forwards;
-    }
-
-    .pp-mf-overlap-note {
-      font-size: 9px;
-      line-height: 1.3;
-      color: #868b99;
+    @keyframes ppScanReveal {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes ppBeaconPulse {
@@ -1678,7 +1491,7 @@
       font-weight: 600;
     }
 
-    /* Section 5 Centerpiece: Bespoke Pillai & Partners Steep Semantic-Style Wireframe
+    /* Section 5 Centerpiece: Bespoke RRP & Partners Steep Semantic-Style Wireframe
        Faithful to steep.app model-start.jpg (3-col frosted flow, dark plum-violet bottom
        glow, fine grain, crisp dotted Bezier connectors, 1-over-3 bento hub, 2-group output card) */
     .pp-wireframe {
@@ -3138,28 +2951,32 @@
       }
 
       .pp-panel__bar {
-        padding-bottom: 0;
+        padding: 12px 14px;
+        gap: 10px 8px;
       }
 
       .pp-panel__id {
-        padding-bottom: 4px;
+        width: auto;
+        font-size: 9.5px;
+        letter-spacing: 0.055em;
+        gap: 7px;
       }
 
       .pp-panel__controls {
-        width: 100%;
-        justify-content: space-between;
+        display: contents;
       }
 
-      /* Native App-Like Touch-Snap Horizontal Tab Rail */
+      /* Native App-Like Touch-Snap Segmented Pill Rail */
       .pp-panel__tabs {
-        flex: 1 1 auto;
+        order: 3;
+        width: 100%;
         justify-content: flex-start;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         scroll-snap-type: x proximity;
         flex-wrap: nowrap;
-        gap: 18px;
-        padding-bottom: 10px;
+        gap: 4px;
+        padding: 4px;
         scrollbar-width: none;
       }
 
@@ -3171,14 +2988,27 @@
         white-space: nowrap;
         flex: 0 0 auto;
         scroll-snap-align: start;
-        min-height: 44px;
+        min-height: 36px;
         display: inline-flex;
         align-items: center;
-        padding: 8px 2px 10px;
+        padding: 7px 12px;
+        font-size: 12px;
       }
 
       .pp-panel__arrows {
-        display: none;
+        display: inline-flex;
+        order: 2;
+        gap: 4px;
+      }
+
+      .pp-panel__nav-btn {
+        width: 26px;
+        height: 26px;
+      }
+
+      .pp-panel__step-count {
+        font-size: 10px;
+        min-width: 26px;
       }
 
       /* Native 44px Touch Ergonomics on Interactive Controls */
@@ -3288,20 +3118,8 @@
       }
 
       .pp-erosion-stats,
-      .pp-wf-bento-tri,
-      .pp-mf-body {
+      .pp-wf-bento-tri {
         grid-template-columns: 1fr;
-      }
-
-      .pp-mf-cols,
-      .pp-mf-row {
-        grid-template-columns: minmax(0, 1fr) 36px 34px 52px;
-        gap: 6px;
-      }
-
-      .pp-panel__art-stage .pp-mf-spark svg,
-      .pp-mf-spark {
-        width: 36px;
       }
 
       .pp-wf-bento-cell {
@@ -3343,7 +3161,7 @@
       }
 
       .pp-wordmark__script {
-        font-size: 25px;
+        font-size: 22px;
       }
 
       .pp-wordmark__amp {
@@ -3383,7 +3201,12 @@
         animation: none !important;
       }
 
-      .pp-mf-row {
+      .pp-panel.is-autoplay .pp-panel__progress {
+        animation: none !important;
+        opacity: 0 !important;
+      }
+
+      .pp-audit-scan {
         opacity: 1 !important;
         transform: none !important;
         animation: none !important;
@@ -3396,9 +3219,13 @@
       .pp-wedge-clip-rect,
       .pp-data-fill,
       .pp-profile-bar,
-      .pp-mf-meter__seg,
-      .pp-mf-chart-wipe {
+      .pp-audit-wipe {
         transform: scaleX(1) !important;
+      }
+
+      .pp-audit-col {
+        transform: scaleY(1) !important;
+        opacity: 1 !important;
       }
 
       .pp-erosion-caliper {
@@ -3418,7 +3245,7 @@
     "@graph": [
       {
         "@type": "EducationalOrganization",
-        "name": "Pillai & Partners",
+        "name": "RRP & Partners",
         "description": "India's private one-on-one coaching practice in financial markets for high-earning individuals and business owners. Stop silent portfolio leaks, protect capital across economic cycles, and verify every financial decision yourself with 16-year practitioner Renjith R Pillai.",
         "parentOrganization": {
           "@type": "Organization",
@@ -3431,7 +3258,7 @@
         "jobTitle": "Managing Principal",
         "worksFor": {
           "@type": "EducationalOrganization",
-          "name": "Pillai & Partners"
+          "name": "RRP & Partners"
         }
       }
     ]
@@ -3444,8 +3271,8 @@
   <!-- Standalone Minimal Executive Header -->
   <header class="site-header pp-header" id="pp-header">
     <div class="nav-inner">
-      <a href="#top" class="pp-wordmark" aria-label="Pillai and Partners">
-        <span class="pp-wordmark__script">Pillai</span>
+      <a href="#top" class="pp-wordmark" aria-label="RRP and Partners">
+        <span class="pp-wordmark__script">RRP</span>
         <span class="pp-wordmark__amp">&amp;</span>
         <span class="pp-wordmark__partners">Partners</span>
       </a>
@@ -3474,8 +3301,8 @@
   <nav id="mobile-drawer" class="mobile-drawer" aria-label="Mobile navigation" aria-hidden="true">
     <div>
       <div class="mobile-drawer__top">
-        <a href="#top" class="pp-wordmark" aria-label="Pillai and Partners">
-          <span class="pp-wordmark__script">Pillai</span>
+        <a href="#top" class="pp-wordmark" aria-label="RRP and Partners">
+          <span class="pp-wordmark__script">RRP</span>
           <span class="pp-wordmark__amp">&amp;</span>
           <span class="pp-wordmark__partners">Partners</span>
         </a>
@@ -3495,7 +3322,7 @@
     </div>
     <div class="mobile-drawer__footer">
       <a href="#schedule" class="btn btn--primary">Schedule a Call</a>
-      <span class="t-caption">Pillai &amp; Partners &middot; Private Coaching in Financial Markets</span>
+      <span class="t-caption">RRP &amp; Partners &middot; Private Coaching in Financial Markets</span>
     </div>
   </nav>
 
@@ -3518,7 +3345,7 @@
         <div class="pp-hero__copy">
           <span class="pp-eyebrow-pill">
             <span class="pp-eyebrow-pill__dot" aria-hidden="true"></span>
-            <span>Pillai &amp; Partners | Private Coaching in Financial Markets</span>
+            <span>RRP &amp; Partners | Private Coaching in Financial Markets</span>
           </span>
 
           <h1 class="t-hero-sharp" data-word-reveal>
@@ -3526,12 +3353,12 @@
           </h1>
 
           <p class="t-hero-support pp-hero__sub">
-            Pillai &amp; Partners is India&rsquo;s private one-on-one coaching practice in financial markets for high-earning individuals and business owners. Led exclusively by 16-year practitioner Renjith R Pillai with zero delegation, built around your calendar for permanent capital self-sufficiency.
+            RRP &amp; Partners is India&rsquo;s private one-on-one coaching practice in financial markets for high-earning individuals and business owners. Led exclusively by 16-year practitioner Renjith R Pillai with zero delegation, built around your calendar for permanent capital self-sufficiency.
           </p>
 
           <div class="btn-row pp-hero__actions">
             <a href="#schedule" class="btn btn--primary">Schedule a confidential 30-minute call</a>
-            <a href="#solutions" class="btn btn--ghost">See the four problems we solve <span class="arrow" aria-hidden="true">&darr;</span></a>
+            <a href="#solutions" class="btn btn--ghost">See the Problems We Solve <span class="arrow" aria-hidden="true">&darr;</span></a>
           </div>
 
           <p class="pp-hero__micro">
@@ -3540,8 +3367,8 @@
         </div>
 
         <!-- Visual 1: Steep Sliding-Bar Private-Office Architectural Panel -->
-        <div class="pp-panel pp-spotlight-card reveal" role="region"
-          aria-label="Interactive overview of the three analytical lenses covered inside a private Pillai and Partners mandate.">
+        <div class="pp-panel pp-spotlight-card reveal" id="pp-console-panel" role="region"
+          aria-label="Interactive overview of the three analytical lenses covered inside a private RRP and Partners mandate.">
           <div class="pp-panel__bar">
             <span class="pp-panel__id">
               <span class="pp-panel__diamond" aria-hidden="true"></span>
@@ -3550,9 +3377,9 @@
 
             <div class="pp-panel__controls">
               <div class="pp-panel__tabs" id="pp-console-tabs" role="tablist" aria-label="Explore analytical lenses">
-                <button type="button" class="pp-panel__tab is-active" role="tab" aria-selected="true" data-pp-console="audit">01 &middot; Portfolio Audit</button>
-                <button type="button" class="pp-panel__tab" role="tab" aria-selected="false" data-pp-console="macro">02 &middot; Economic Cycles</button>
-                <button type="button" class="pp-panel__tab" role="tab" aria-selected="false" data-pp-console="mechanics">03 &middot; Market Mechanics</button>
+                <button type="button" class="pp-panel__tab is-active" role="tab" aria-selected="true" data-pp-console="audit"><span class="pp-tab-num">01</span><span>Portfolio Audit</span></button>
+                <button type="button" class="pp-panel__tab" role="tab" aria-selected="false" data-pp-console="macro"><span class="pp-tab-num">02</span><span>Economic Cycles</span></button>
+                <button type="button" class="pp-panel__tab" role="tab" aria-selected="false" data-pp-console="mechanics"><span class="pp-tab-num">03</span><span>Market Mechanics</span></button>
                 <span class="pp-panel__slider" id="pp-panel-slider" aria-hidden="true"></span>
               </div>
 
@@ -3560,156 +3387,105 @@
                 <button type="button" class="pp-panel__nav-btn" id="pp-console-prev" aria-label="Previous lens">
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 3.5L5 7l3.5 3.5"/></svg>
                 </button>
+                <span class="pp-panel__step-count" id="pp-console-count" aria-live="polite">1 / 3</span>
                 <button type="button" class="pp-panel__nav-btn" id="pp-console-next" aria-label="Next lens">
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 3.5L9 7l-3.5 3.5"/></svg>
                 </button>
               </div>
             </div>
+            <span class="pp-panel__progress" id="pp-console-progress" aria-hidden="true"></span>
           </div>
 
           <div class="pp-panel__body">
-            <!-- Lens 1: Institutional Mutual Fund Watchlist & Portfolio Audit Monitor -->
+            <!-- Lens 1: Airy Institutional Portfolio X-Ray & Direct NAV Growth Geometry -->
             <div class="pp-panel__pane is-active" data-pp-pane="audit">
               <div class="pp-panel__art-stage">
-                <div class="pp-mf-monitor" aria-hidden="true">
-                  <div class="pp-mf-head">
-                    <span class="pp-mf-head__title">
-                      <span class="pp-mf-status-dot"></span>
-                      <span>Mutual Fund Watchlist</span>
-                    </span>
-                    <span class="pp-mf-head__meta">4 Schemes &middot; Direct vs. Regular</span>
-                  </div>
+                <svg viewBox="0 0 460 190" width="100%" height="190" fill="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="ppAuditOverlapBeam" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#e8b87d" stop-opacity="0.16" />
+                      <stop offset="50%" stop-color="#e8b87d" stop-opacity="0.06" />
+                      <stop offset="100%" stop-color="#e8b87d" stop-opacity="0.14" />
+                    </linearGradient>
+                    <linearGradient id="ppAuditColGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.22" />
+                      <stop offset="100%" stop-color="#2dd4bf" stop-opacity="0.02" />
+                    </linearGradient>
+                    <linearGradient id="ppAuditDirectFill" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.18" />
+                      <stop offset="100%" stop-color="#2dd4bf" stop-opacity="0" />
+                    </linearGradient>
+                    <linearGradient id="ppAuditDragWedge" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stop-color="#eb8080" stop-opacity="0.02" />
+                      <stop offset="55%" stop-color="#eb8080" stop-opacity="0.16" />
+                      <stop offset="100%" stop-color="#eb8080" stop-opacity="0.34" />
+                    </linearGradient>
+                    <clipPath id="ppAuditChartClip">
+                      <rect class="pp-audit-wipe" x="236" y="14" width="212" height="156" />
+                    </clipPath>
+                  </defs>
 
-                  <div class="pp-mf-body">
-                    <!-- Left: Corporate Fund Surveillance Table -->
-                    <div class="pp-mf-list">
-                      <div class="pp-mf-cols">
-                        <span>Scheme</span>
-                        <span>NAV</span>
-                        <span>TER</span>
-                        <span>Audit</span>
-                      </div>
+                  <!-- Left Zone: 4 Mutual Fund Allocation Strips (Zero text clutter) -->
+                  <rect x="20" y="34" width="150" height="20" rx="5" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.085)" />
+                  <rect class="pp-profile-bar" style="--i:0;" x="25" y="39" width="104" height="10" rx="3" fill="#2dd4bf" fill-opacity="0.62" />
+                  <rect class="pp-profile-bar" style="--i:1;" x="133" y="39" width="32" height="10" rx="3" fill="rgba(255,255,255,0.16)" />
 
-                      <div class="pp-mf-row" style="--r:0;">
-                        <div class="pp-mf-name">
-                          <span class="pp-mf-name__main">Large Cap Core</span>
-                          <span class="pp-mf-name__sub">Direct &middot; Growth</span>
-                        </div>
-                        <span class="pp-mf-spark">
-                          <svg viewBox="0 0 44 16" fill="none">
-                            <path d="M1 13 L9 11.5 L16 12 L24 8.5 L33 6 L43 2.5" stroke="#2dd4bf" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            <circle cx="43" cy="2.5" r="1.6" fill="#2dd4bf" />
-                          </svg>
-                        </span>
-                        <span class="pp-mf-ter pp-mf-ter--clean">0.45%</span>
-                        <span class="pp-mf-badge pp-mf-badge--clean">Direct</span>
-                      </div>
+                  <rect x="20" y="65" width="150" height="20" rx="5" fill="rgba(255,255,255,0.03)" stroke="rgba(235,128,128,0.22)" />
+                  <rect class="pp-profile-bar" style="--i:1;" x="25" y="70" width="44" height="10" rx="3" fill="rgba(255,255,255,0.16)" />
+                  <rect class="pp-profile-bar" style="--i:2;" x="73" y="70" width="40" height="10" rx="3" fill="#e8b87d" fill-opacity="0.82" />
+                  <rect class="pp-profile-bar" style="--i:3;" x="117" y="70" width="48" height="10" rx="3" fill="#eb8080" fill-opacity="0.72" />
 
-                      <div class="pp-mf-row pp-mf-row--flag" style="--r:1;">
-                        <div class="pp-mf-name">
-                          <span class="pp-mf-name__main">Flexi Cap Growth</span>
-                          <span class="pp-mf-name__sub">Regular &middot; Trail Fee</span>
-                        </div>
-                        <span class="pp-mf-spark">
-                          <svg viewBox="0 0 44 16" fill="none">
-                            <path d="M1 12.5 L14 9.5 L28 6.5 L43 3" stroke="rgba(255,255,255,0.22)" stroke-width="1" stroke-dasharray="2 2" />
-                            <path d="M1 13 L10 11.5 L19 11 L29 9.5 L43 8.2" stroke="#eb8080" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            <circle cx="43" cy="8.2" r="1.6" fill="#eb8080" />
-                          </svg>
-                        </span>
-                        <span class="pp-mf-ter pp-mf-ter--drag">1.92%</span>
-                        <span class="pp-mf-badge pp-mf-badge--drag">Fee Drag</span>
-                      </div>
+                  <rect x="20" y="96" width="150" height="20" rx="5" fill="rgba(255,255,255,0.03)" stroke="rgba(232,184,125,0.22)" />
+                  <rect class="pp-profile-bar" style="--i:2;" x="25" y="101" width="44" height="10" rx="3" fill="rgba(255,255,255,0.14)" />
+                  <rect class="pp-profile-bar" style="--i:3;" x="73" y="101" width="40" height="10" rx="3" fill="#e8b87d" fill-opacity="0.82" />
+                  <rect class="pp-profile-bar" style="--i:4;" x="117" y="101" width="34" height="10" rx="3" fill="#eb8080" fill-opacity="0.58" />
 
-                      <div class="pp-mf-row pp-mf-row--warn" style="--r:2;">
-                        <div class="pp-mf-name">
-                          <span class="pp-mf-name__main">Bluechip Equity</span>
-                          <span class="pp-mf-name__sub">Regular &middot; Duplicate</span>
-                        </div>
-                        <span class="pp-mf-spark">
-                          <svg viewBox="0 0 44 16" fill="none">
-                            <path d="M1 13 L10 11.2 L18 11.6 L27 8.4 L35 6.4 L43 4.8" stroke="#e8b87d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            <circle cx="43" cy="4.8" r="1.6" fill="#e8b87d" />
-                          </svg>
-                        </span>
-                        <span class="pp-mf-ter pp-mf-ter--warn">1.78%</span>
-                        <span class="pp-mf-badge pp-mf-badge--warn">Overlap</span>
-                      </div>
+                  <rect x="20" y="127" width="150" height="20" rx="5" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.085)" />
+                  <rect class="pp-profile-bar" style="--i:3;" x="25" y="132" width="90" height="10" rx="3" fill="#2dd4bf" fill-opacity="0.48" />
+                  <rect class="pp-profile-bar" style="--i:4;" x="119" y="132" width="42" height="10" rx="3" fill="#a78bfa" fill-opacity="0.44" />
 
-                      <div class="pp-mf-row" style="--r:3;">
-                        <div class="pp-mf-name">
-                          <span class="pp-mf-name__main">Mid-Cap Select</span>
-                          <span class="pp-mf-name__sub">Direct &middot; Core</span>
-                        </div>
-                        <span class="pp-mf-spark">
-                          <svg viewBox="0 0 44 16" fill="none">
-                            <path d="M1 13.5 L11 10.5 L19 11.4 L28 7.2 L36 5.2 L43 2" stroke="#2dd4bf" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            <circle cx="43" cy="2" r="1.6" fill="#2dd4bf" />
-                          </svg>
-                        </span>
-                        <span class="pp-mf-ter pp-mf-ter--clean">0.62%</span>
-                        <span class="pp-mf-badge pp-mf-badge--clean">Direct</span>
-                      </div>
-                    </div>
+                  <!-- Vertical X-Ray Overlap Scanner Frame -->
+                  <g class="pp-audit-scan">
+                    <rect x="69" y="22" width="48" height="138" rx="7" fill="url(#ppAuditOverlapBeam)" stroke="#e8b87d" stroke-opacity="0.46" stroke-width="1.1" stroke-dasharray="3 3" />
+                    <circle cx="93" cy="22" r="2.6" fill="#e8b87d" />
+                    <circle cx="93" cy="160" r="2.6" fill="#e8b87d" />
+                  </g>
 
-                    <!-- Right: Direct vs Regular NAV Inspection & Overlap Meter -->
-                    <div class="pp-mf-insight">
-                      <div class="pp-mf-chart-block">
-                        <div class="pp-mf-mini-head">
-                          <span class="pp-mf-mini-head__k">NAV Divergence</span>
-                          <span class="pp-mf-mini-head__v" style="color:#eb8080;">1.34% gap</span>
-                        </div>
-                        <svg viewBox="0 0 180 68" width="100%" height="68" fill="none">
-                          <defs>
-                            <linearGradient id="ppMfDragWedge" x1="0" y1="0" x2="1" y2="0">
-                              <stop offset="0%" stop-color="#eb8080" stop-opacity="0.02" />
-                              <stop offset="100%" stop-color="#eb8080" stop-opacity="0.3" />
-                            </linearGradient>
-                            <linearGradient id="ppMfDirectFill" x1="0" y1="0" x2="0" y2="1">
-                              <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.16" />
-                              <stop offset="100%" stop-color="#2dd4bf" stop-opacity="0" />
-                            </linearGradient>
-                            <clipPath id="ppMfCurveClip">
-                              <rect class="pp-mf-chart-wipe" x="0" y="0" width="180" height="68" />
-                            </clipPath>
-                          </defs>
-                          <line x1="4" y1="14" x2="174" y2="14" stroke="rgba(255,255,255,0.06)" />
-                          <line x1="4" y1="38" x2="174" y2="38" stroke="rgba(255,255,255,0.06)" />
-                          <line x1="4" y1="62" x2="174" y2="62" stroke="rgba(255,255,255,0.12)" />
-                          <g clip-path="url(#ppMfCurveClip)">
-                            <!-- Shaded area & widening cost wedge -->
-                            <path d="M6 56 C 42 52, 78 44, 118 33 C 142 26, 158 19, 172 12 L 172 62 L 6 62 Z" fill="url(#ppMfDirectFill)" />
-                            <path d="M6 56 C 42 52, 78 44, 118 33 C 142 26, 158 19, 172 12 L 172 28 C 158 33, 142 38, 118 43 C 78 50, 42 54, 6 56 Z" fill="url(#ppMfDragWedge)" />
-                            <!-- Direct vs Regular NAV curves -->
-                            <path d="M6 56 C 42 52, 78 44, 118 33 C 142 26, 158 19, 172 12" stroke="#2dd4bf" stroke-width="1.8" stroke-linecap="round" />
-                            <path d="M6 56 C 42 54, 78 50, 118 43 C 142 38, 158 33, 172 28" stroke="#eb8080" stroke-width="1.6" stroke-dasharray="3.5 3" stroke-linecap="round" />
-                            <!-- Fee gap vertical caliper -->
-                            <line x1="172" y1="12" x2="172" y2="28" stroke="#e8b87d" stroke-width="1.6" />
-                            <circle cx="172" cy="12" r="2.8" fill="#2dd4bf" />
-                            <circle cx="172" cy="28" r="2.8" fill="#eb8080" />
-                          </g>
-                        </svg>
-                      </div>
+                  <!-- Clean Optical Bridge -->
+                  <line x1="184" y1="91" x2="224" y2="91" stroke="#e8b87d" stroke-opacity="0.72" stroke-width="1.35" stroke-dasharray="4 5" class="dotted-stream" />
+                  <path d="M219 86 L225 91 L219 96" stroke="#e8b87d" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
 
-                      <div class="pp-mf-overlap-block">
-                        <div class="pp-mf-mini-head">
-                          <span class="pp-mf-mini-head__k">Stock Overlap</span>
-                          <span class="pp-mf-mini-head__v" style="color:#e8b87d;">68% overlap</span>
-                        </div>
-                        <div class="pp-mf-meter">
-                          <span class="pp-mf-meter__seg" style="width:42%;background:#eb8080;--i:0;"></span>
-                          <span class="pp-mf-meter__seg" style="width:26%;background:#e8b87d;--i:1;"></span>
-                          <span class="pp-mf-meter__seg" style="width:32%;background:#2dd4bf;--i:2;"></span>
-                        </div>
-                        <span class="pp-mf-overlap-note">Illustrative audit across top 50 underlying stocks</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  <!-- Right Zone: Institutional Mutual Fund Growth & Fee-Drag Chart -->
+                  <line x1="242" y1="36" x2="438" y2="36" stroke="rgba(255,255,255,0.06)" />
+                  <line x1="242" y1="77" x2="438" y2="77" stroke="rgba(255,255,255,0.06)" />
+                  <line x1="242" y1="118" x2="438" y2="118" stroke="rgba(255,255,255,0.06)" />
+                  <line x1="242" y1="159" x2="438" y2="159" stroke="rgba(255,255,255,0.16)" />
+
+                  <!-- Quiet Stepped Portfolio Allocation / AUM Columns -->
+                  <rect class="pp-audit-col" style="--i:0;" x="254" y="135" width="18" height="24" rx="3" fill="url(#ppAuditColGrad)" />
+                  <rect class="pp-audit-col" style="--i:1;" x="292" y="121" width="18" height="38" rx="3" fill="url(#ppAuditColGrad)" />
+                  <rect class="pp-audit-col" style="--i:2;" x="330" y="102" width="18" height="57" rx="3" fill="url(#ppAuditColGrad)" />
+                  <rect class="pp-audit-col" style="--i:3;" x="368" y="79" width="18" height="80" rx="3" fill="url(#ppAuditColGrad)" />
+                  <rect class="pp-audit-col" style="--i:4;" x="406" y="54" width="18" height="105" rx="3" fill="url(#ppAuditColGrad)" />
+
+                  <!-- Direct Core vs Regular Fee-Drag Curves & Erosion Gap -->
+                  <g clip-path="url(#ppAuditChartClip)">
+                    <path d="M244 152 C 292 145, 340 120, 386 80 C 406 62, 420 46, 434 33 L 434 159 L 244 159 Z" fill="url(#ppAuditDirectFill)" />
+                    <path d="M244 152 C 292 145, 340 120, 386 80 C 406 62, 420 46, 434 33 L 434 74 C 420 84, 406 94, 386 106 C 340 132, 292 147, 244 152 Z" fill="url(#ppAuditDragWedge)" />
+                    <path d="M244 152 C 292 145, 340 120, 386 80 C 406 62, 420 46, 434 33" stroke="#2dd4bf" stroke-width="2.2" stroke-linecap="round" />
+                    <path d="M244 152 C 292 147, 340 132, 386 106 C 406 94, 420 84, 434 74" stroke="#eb8080" stroke-width="1.8" stroke-dasharray="4.5 3.5" stroke-linecap="round" />
+                    <!-- Retained-Wealth Caliper Span -->
+                    <line x1="434" y1="33" x2="434" y2="74" stroke="#e8b87d" stroke-width="1.8" />
+                    <circle class="pp-beacon-pulse" cx="434" cy="33" r="6.5" stroke="#2dd4bf" stroke-width="1.2" />
+                    <circle cx="434" cy="33" r="4" fill="#2dd4bf" />
+                    <circle cx="434" cy="33" r="1.6" fill="#ffffff" />
+                    <circle cx="434" cy="74" r="3.6" fill="#eb8080" />
+                  </g>
+                </svg>
 
                 <div class="pp-art-legend">
-                  <span class="pp-legend-item"><span class="pp-legend-swatch" style="background:#2dd4bf;"></span>Direct core holdings</span>
-                  <span class="pp-legend-item"><span class="pp-legend-swatch" style="background:#eb8080;"></span>Regular plan fee drag</span>
+                  <span class="pp-legend-item"><span class="pp-legend-swatch" style="background:#2dd4bf;"></span>Audited Direct core</span>
+                  <span class="pp-legend-item"><span class="pp-legend-swatch" style="background:#eb8080;"></span>Regular fee drag</span>
                   <span class="pp-legend-item"><span class="pp-legend-swatch" style="background:#e8b87d;"></span>Hidden stock overlap</span>
                 </div>
               </div>
@@ -4201,7 +3977,7 @@
 
       <div class="wrap">
         <div class="centered-lead centered-lead--wide reveal">
-          <span class="t-eyebrow">Why Pillai &amp; Partners</span>
+          <span class="t-eyebrow">Why RRP &amp; Partners</span>
           <h2 class="t-chapter--mid mt-12">Every other option in India <span class="t-muted-tone">either wastes your time or sells you a product.</span></h2>
           <p class="t-lead mt-20">
             When an accomplished business owner or senior professional finally decides to take direct control of their wealth, they hit an empty gap. Every existing door in the market is built for someone else.
@@ -4234,7 +4010,7 @@
                 <td>Drains your limited evenings and costs real capital when market cycles change</td>
               </tr>
               <tr class="is-highlight-row">
-                <td><strong>Pillai &amp; Partners</strong></td>
+                <td><strong>RRP &amp; Partners</strong></td>
                 <td><strong>India&rsquo;s private one-on-one B2P coaching in financial markets</strong></td>
                 <td><strong>Zero conflict, zero delegation, complete privacy, built entirely around your calendar</strong></td>
               </tr>
@@ -4268,7 +4044,7 @@
 
         <!-- Centerpiece Wireframe: Steep Semantic-Platform Style 3-Column Frosted Architecture -->
         <div class="pp-wireframe reveal" id="pp-wireframe" role="region"
-          aria-label="Interactive architectural flow illustrating how Pillai and Partners transforms fragmented wealth holdings into independent financial command.">
+          aria-label="Interactive architectural flow illustrating how RRP and Partners transforms fragmented wealth holdings into independent financial command.">
           <div class="pp-wireframe__glow" aria-hidden="true"></div>
           <div class="dark-grain" aria-hidden="true"></div>
 
@@ -4333,7 +4109,7 @@
               <div>
                 <div class="pp-wf-brand">
                   <span class="pp-wordmark pp-wordmark--compact">
-                    <span class="pp-wordmark__script">Pillai</span>
+                    <span class="pp-wordmark__script">RRP</span>
                     <span class="pp-wordmark__amp">&amp;</span>
                     <span class="pp-wordmark__partners">Partners</span>
                   </span>
@@ -4626,7 +4402,7 @@
             <div class="pp-principal-grid">
               <div style="display:flex;flex-direction:column;gap:20px;">
                 <p class="t-body t-body--ink" style="font-size:17.5px;line-height:1.66;">
-                  Most advisory firms introduce a senior partner on day one and hand you to junior staff the next week. By strict policy, Pillai &amp; Partners operates with zero delegation. Every diagnostic assessment and every private session is led personally by Managing Principal Renjith R Pillai, bringing 16 years of live market experience starting as a stock market research analyst before evolving into an independent professional trader who built his own analytical methods.
+                  Most advisory firms introduce a senior partner on day one and hand you to junior staff the next week. By strict policy, RRP &amp; Partners operates with zero delegation. Every diagnostic assessment and every private session is led personally by Managing Principal Renjith R Pillai, bringing 16 years of live market experience starting as a stock market research analyst before evolving into an independent professional trader who built his own analytical methods.
                 </p>
                 <p class="t-body" style="font-size:15.5px;">
                   Formal mandate agreements, corporate invoicing, compliance standards, and confidentiality are governed by The Happiness Company Business Solutions Pvt. Ltd.
@@ -4637,7 +4413,7 @@
               <figure class="pp-portrait-card">
                 <div class="pp-portrait-media">
                   <img src="assets/mentor-portrait.png"
-                    alt="Monochrome portrait of Renjith R Pillai, Managing Principal at Pillai & Partners."
+                    alt="Monochrome portrait of Renjith R Pillai, Managing Principal at RRP & Partners."
                     class="pp-portrait-img" width="800" height="920" loading="lazy">
                 </div>
                 <figcaption class="pp-portrait-caption">
@@ -4652,13 +4428,13 @@
           <!-- Part B: Equal-Peer Boundary With Your Chartered Accountant -->
           <div class="prose-narrow reveal">
             <p class="t-body t-body--ink" style="font-size:17px;">
-              A cardiologist never asks an orthopedic surgeon to read an angiogram. Both hold equal authority, and their domains never collide. Your Chartered Accountant protects your tax architecture, statutory audits, and compliance. Pillai &amp; Partners builds your independent judgment across mutual fund audits, macroeconomics, and live market mechanics. Any tax-sensitive transitions, including Regular-to-Direct planning, exit loads, or capital gains timing, always remain coordinated directly with your Chartered Accountant.
+              A cardiologist never asks an orthopedic surgeon to read an angiogram. Both hold equal authority, and their domains never collide. Your Chartered Accountant protects your tax architecture, statutory audits, and compliance. RRP &amp; Partners builds your independent judgment across mutual fund audits, macroeconomics, and live market mechanics. Any tax-sensitive transitions, including Regular-to-Direct planning, exit loads, or capital gains timing, always remain coordinated directly with your Chartered Accountant.
             </p>
           </div>
 
           <!-- Responsive Non-Overlapping Advisory Circle Infographic -->
           <div class="pp-advisory-diagram reveal" role="region"
-            aria-label="Complementary non-overlapping domains of your Chartered Accountant and Pillai and Partners.">
+            aria-label="Complementary non-overlapping domains of your Chartered Accountant and RRP and Partners.">
             <div class="pp-adv-box">
               <span class="pp-step-pill pp-step-pill--sky">Your Chartered Accountant</span>
               <div class="pp-adv-box__title">Tax &amp; Statutory Shield</div>
@@ -4684,7 +4460,7 @@
             <div class="pp-adv-connector" aria-hidden="true"></div>
 
             <div class="pp-adv-box pp-adv-box--dark">
-              <span class="pp-step-pill" style="background:rgba(232,184,125,0.15);border-color:rgba(232,184,125,0.4);color:#e8b87d;">Pillai &amp; Partners</span>
+              <span class="pp-step-pill" style="background:rgba(232,184,125,0.15);border-color:rgba(232,184,125,0.4);color:#e8b87d;">RRP &amp; Partners</span>
               <div class="pp-adv-box__title">Independent Judgment</div>
               <ul class="pp-adv-list">
                 <li>&bull; Mutual fund audits &amp; macro reasoning</li>
@@ -4701,7 +4477,7 @@
                 <tr>
                   <th style="width:210px;">Domain</th>
                   <th>Your Chartered Accountant</th>
-                  <th class="pp-col-highlight">Pillai &amp; Partners</th>
+                  <th class="pp-col-highlight">RRP &amp; Partners</th>
                 </tr>
               </thead>
               <tbody>
@@ -4939,17 +4715,17 @@
     <div class="wrap">
       <div class="pp-footer__top">
         <span class="pp-wordmark pp-wordmark--footer">
-          <span class="pp-wordmark__script">Pillai</span>
+          <span class="pp-wordmark__script">RRP</span>
           <span class="pp-wordmark__amp">&amp;</span>
           <span class="pp-wordmark__partners">Partners</span>
         </span>
         <p class="pp-footer__entity">
-          Pillai &amp; Partners is a Private Coaching Practice in Financial Markets of The Happiness Company Business Solutions Pvt. Ltd.
+          RRP &amp; Partners is a Private Coaching Practice in Financial Markets of The Happiness Company Business Solutions Pvt. Ltd.
         </p>
       </div>
 
       <div class="footer-disclaimer" role="note" aria-label="Regulatory and Risk Disclaimer">
-        Investments and trading in securities markets carry a real risk of capital loss and are not suitable for every individual. Pillai &amp; Partners and The Happiness Company Business Solutions Pvt. Ltd. provide financial education and analytical coaching only. We are not a SEBI-registered Investment Adviser, Research Analyst, Portfolio Manager, or Stock Broker. Nothing on this website or inside any private session constitutes investment advice, portfolio management, mutual fund recommendations, stock tips, buy or sell calls, or assurances of financial return. All charts and case studies presented use historical data strictly for educational illustration. Assess your personal financial position carefully and consult a SEBI-registered Investment Adviser before making live investment decisions.
+        Investments and trading in securities markets carry a real risk of capital loss and are not suitable for every individual. RRP &amp; Partners and The Happiness Company Business Solutions Pvt. Ltd. provide financial education and analytical coaching only. We are not a SEBI-registered Investment Adviser, Research Analyst, Portfolio Manager, or Stock Broker. Nothing on this website or inside any private session constitutes investment advice, portfolio management, mutual fund recommendations, stock tips, buy or sell calls, or assurances of financial return. All charts and case studies presented use historical data strictly for educational illustration. Assess your personal financial position carefully and consult a SEBI-registered Investment Adviser before making live investment decisions.
       </div>
 
       <div class="pp-footer__copy">
@@ -4961,7 +4737,7 @@
   <!-- Adaptive Native Mobile Action Dock (<= 768px) -->
   <div class="pp-mobile-dock" id="pp-mobile-dock" role="region" aria-label="Quick scheduling shortcut">
     <div class="pp-mobile-dock__meta">
-      <span class="pp-mobile-dock__title">Pillai &amp; Partners</span>
+      <span class="pp-mobile-dock__title">RRP &amp; Partners</span>
       <span class="pp-mobile-dock__sub">Direct 30-min call with Renjith</span>
     </div>
     <a href="#schedule" class="btn btn--primary pp-mobile-dock__cta">Schedule a Call</a>
@@ -5044,13 +4820,20 @@
       if (mobileCloseBtn) mobileCloseBtn.addEventListener('click', function () { setTimeout(syncHeaderAndNav, 20); });
       syncHeaderAndNav();
 
-      /* 2. Interactive Steep Sliding-Bar Hero Architectural Panel */
+      /* 2. Interactive Steep Segmented-Pill Hero Architectural Panel + Gentle Auto-Showcase */
+      var consolePanel = document.getElementById('pp-console-panel');
       var consoleTabs = Array.from(document.querySelectorAll('[data-pp-console]'));
       var consolePanes = Array.from(document.querySelectorAll('[data-pp-pane]'));
       var panelSlider = document.getElementById('pp-panel-slider');
       var prevBtn = document.getElementById('pp-console-prev');
       var nextBtn = document.getElementById('pp-console-next');
+      var countEl = document.getElementById('pp-console-count');
+      var progressEl = document.getElementById('pp-console-progress');
       var activeConsoleIdx = 0;
+      var autoCycleEnabled = !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+      var autoTimer = null;
+      var autoPaused = false;
+      var AUTO_DELAY_MS = 6500;
 
       function syncPanelSlider() {
         var activeTab = consoleTabs[activeConsoleIdx];
@@ -5060,8 +4843,40 @@
         }
       }
 
-      function activateConsole(idx) {
+      function stopAutoCycle() {
+        autoCycleEnabled = false;
+        if (autoTimer) {
+          clearTimeout(autoTimer);
+          autoTimer = null;
+        }
+        if (consolePanel) {
+          consolePanel.classList.remove('is-autoplay', 'is-paused');
+        }
+      }
+
+      function restartAutoCycle() {
+        if (autoTimer) {
+          clearTimeout(autoTimer);
+          autoTimer = null;
+        }
+        if (!autoCycleEnabled || !consolePanel || autoPaused) return;
+        consolePanel.classList.remove('is-autoplay');
+        if (progressEl) void progressEl.offsetWidth;
+        consolePanel.classList.add('is-autoplay');
+        autoTimer = setTimeout(function () {
+          if (!autoCycleEnabled || autoPaused) return;
+          var r = consolePanel.getBoundingClientRect();
+          if (r.bottom > 80 && r.top < (window.innerHeight || 800)) {
+            activateConsole(activeConsoleIdx + 1, false);
+          } else {
+            restartAutoCycle();
+          }
+        }, AUTO_DELAY_MS);
+      }
+
+      function activateConsole(idx, userInitiated) {
         if (!consoleTabs.length) return;
+        if (userInitiated) stopAutoCycle();
         activeConsoleIdx = (idx + consoleTabs.length) % consoleTabs.length;
         var key = consoleTabs[activeConsoleIdx].getAttribute('data-pp-console');
         consoleTabs.forEach(function (t, i) {
@@ -5072,20 +4887,48 @@
         consolePanes.forEach(function (pane) {
           pane.classList.toggle('is-active', pane.getAttribute('data-pp-pane') === key);
         });
+        if (countEl) {
+          countEl.textContent = (activeConsoleIdx + 1) + ' / ' + consoleTabs.length;
+        }
         syncPanelSlider();
+        var tabsRail = document.getElementById('pp-console-tabs');
+        var activeTab = consoleTabs[activeConsoleIdx];
+        if (tabsRail && activeTab && tabsRail.scrollWidth > tabsRail.clientWidth) {
+          var targetLeft = activeTab.offsetLeft - (tabsRail.clientWidth - activeTab.offsetWidth) / 2;
+          tabsRail.scrollTo({ left: Math.max(0, targetLeft), behavior: 'smooth' });
+        }
+        if (!userInitiated) restartAutoCycle();
       }
 
       consoleTabs.forEach(function (tab, idx) {
-        tab.addEventListener('click', function () { activateConsole(idx); });
+        tab.addEventListener('click', function () { activateConsole(idx, true); });
       });
       if (prevBtn) {
-        prevBtn.addEventListener('click', function () { activateConsole(activeConsoleIdx - 1); });
+        prevBtn.addEventListener('click', function () { activateConsole(activeConsoleIdx - 1, true); });
       }
       if (nextBtn) {
-        nextBtn.addEventListener('click', function () { activateConsole(activeConsoleIdx + 1); });
+        nextBtn.addEventListener('click', function () { activateConsole(activeConsoleIdx + 1, true); });
+      }
+      if (consolePanel) {
+        consolePanel.addEventListener('mouseenter', function () {
+          autoPaused = true;
+          consolePanel.classList.add('is-paused');
+          if (autoTimer) { clearTimeout(autoTimer); autoTimer = null; }
+        });
+        consolePanel.addEventListener('mouseleave', function () {
+          autoPaused = false;
+          consolePanel.classList.remove('is-paused');
+          restartAutoCycle();
+        });
+        consolePanel.addEventListener('focusin', function () {
+          stopAutoCycle();
+        });
       }
       window.addEventListener('resize', syncPanelSlider, { passive: true });
-      requestAnimationFrame(syncPanelSlider);
+      requestAnimationFrame(function () {
+        syncPanelSlider();
+        restartAutoCycle();
+      });
       if (document.fonts && document.fonts.ready) {
         document.fonts.ready.then(syncPanelSlider);
       }
