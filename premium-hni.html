@@ -1527,8 +1527,26 @@
       position: relative;
       z-index: 2;
       display: grid;
-      grid-template-columns: minmax(156px, 184px) minmax(48px, 72px) minmax(248px, 1fr) minmax(48px, 72px) minmax(174px, 206px);
+      grid-template-columns: minmax(162px, 186px) minmax(42px, 60px) minmax(248px, 1fr) minmax(42px, 60px) minmax(212px, 246px);
       align-items: center;
+    }
+
+    .pp-wf-left {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 14px;
+    }
+
+    .pp-wf-col-head {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: #ffffff;
+      letter-spacing: -0.01em;
     }
 
     .pp-wf-sources {
@@ -1540,19 +1558,37 @@
     .pp-wf-pill {
       display: flex;
       align-items: center;
-      gap: 11px;
+      gap: 10px;
+      width: 100%;
       height: 42px;
       padding: 0 14px 0 10px;
       border-radius: var(--radius-pill);
       background: rgba(255, 255, 255, 0.065);
-      border: 1px solid rgba(255, 255, 255, 0.13);
+      border: 1px solid rgba(255, 255, 255, 0.14);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       font-size: 13px;
       font-weight: 450;
       color: #f4f4f6;
+      text-align: left;
       white-space: nowrap;
-      transition: background-color 0.25s var(--ease-steep), border-color 0.25s var(--ease-steep), transform 0.25s var(--ease-spring), opacity 0.25s var(--ease-steep);
+      cursor: pointer;
+      transition: background-color 0.25s var(--ease-steep), border-color 0.25s var(--ease-steep), transform 0.25s var(--ease-spring), opacity 0.25s var(--ease-steep), box-shadow 0.25s var(--ease-steep);
+    }
+
+    .pp-wf-pill:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(232, 184, 125, 0.5);
+      transform: translateX(3px);
+      color: #ffffff;
+    }
+
+    .pp-wf-pill.is-selected {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(232, 184, 125, 0.72);
+      box-shadow: 0 10px 24px -10px rgba(232, 184, 125, 0.42);
+      color: #ffffff;
+      transform: translateX(4px);
     }
 
     .pp-wf-pill__badge {
@@ -1568,6 +1604,7 @@
     .pp-wf-connectors {
       width: 100%;
       height: 266px !important;
+      margin-top: 28px;
       display: block;
       overflow: visible;
       filter: drop-shadow(0 0 4px rgba(196, 181, 253, 0.28));
@@ -1717,13 +1754,13 @@
     .pp-wf-out-item {
       display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 8px 6px;
+      gap: 9px;
+      padding: 8px 7px;
       border-radius: 10px;
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 450;
+      line-height: 1.25;
       color: #f4f4f6;
-      white-space: nowrap;
       transition: background-color 0.25s var(--ease-steep), color 0.25s var(--ease-steep), opacity 0.25s var(--ease-steep);
     }
 
@@ -1740,20 +1777,28 @@
       margin: 6px 0;
     }
 
-    /* Interactive Focus State on Wireframe Filter */
+    /* Interactive Focus State on Wireframe Filter (Product <-> Learning <-> Emotional Outcome) */
     .pp-wireframe.is-filtered .pp-wf-pill:not(.is-lit),
-    .pp-wireframe.is-filtered .pp-wf-out-item:not(.is-lit) {
-      opacity: 0.36;
+    .pp-wireframe.is-filtered .pp-wf-out-item:not(.is-lit),
+    .pp-wireframe.is-filtered .pp-wf-bento-cell:not(.is-lit):not(.is-active) {
+      opacity: 0.34;
     }
 
     .pp-wireframe.is-filtered .pp-wf-pill.is-lit {
-      background: rgba(255, 255, 255, 0.12);
-      border-color: rgba(232, 184, 125, 0.55);
+      background: rgba(255, 255, 255, 0.13);
+      border-color: rgba(232, 184, 125, 0.6);
       transform: translateX(3px);
     }
 
+    .pp-wireframe.is-filtered .pp-wf-bento-cell.is-lit {
+      background: rgba(255, 255, 255, 0.13);
+      border-color: rgba(232, 184, 125, 0.58);
+      box-shadow: 0 12px 28px -12px rgba(167, 139, 250, 0.42);
+      color: #ffffff;
+    }
+
     .pp-wireframe.is-filtered .pp-wf-out-item.is-lit {
-      background: rgba(255, 255, 255, 0.09);
+      background: rgba(255, 255, 255, 0.095);
       color: #ffffff;
     }
 
@@ -1789,8 +1834,23 @@
       align-items: center;
       justify-content: space-between;
       gap: 8px 18px;
-      font-size: 12.5px;
-      color: rgba(255, 255, 255, 0.72);
+      font-size: 13px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.84);
+    }
+
+    .pp-wf-caption__text {
+      flex: 1 1 360px;
+      min-height: 2.9em;
+      display: flex;
+      align-items: center;
+      transition: opacity 0.2s var(--ease-steep);
+    }
+
+    .pp-wf-caption__tag {
+      color: #e8b87d;
+      font-size: 12px;
+      white-space: nowrap;
     }
 
     /* Section 5 Outcomes: Steep Borderless Pastel-Mist Intrinsic Bento Grid */
@@ -2924,9 +2984,16 @@
       }
 
       .pp-wf-pill {
+        width: auto;
         height: 38px;
         padding: 0 12px 0 8px;
         font-size: 12.5px;
+      }
+
+      .pp-wf-pill:hover,
+      .pp-wf-pill.is-selected,
+      .pp-wireframe.is-filtered .pp-wf-pill.is-lit {
+        transform: translateY(-1px);
       }
 
       .pp-wf-hub {
@@ -2936,8 +3003,8 @@
 
       .pp-wf-out-card {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 155px), 1fr));
-        gap: 8px 12px;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 195px), 1fr));
+        gap: 6px 12px;
       }
 
       .pp-wf-out-sep {
@@ -4044,67 +4111,74 @@
 
         <!-- Centerpiece Wireframe: Steep Semantic-Platform Style 3-Column Frosted Architecture -->
         <div class="pp-wireframe reveal" id="pp-wireframe" role="region"
-          aria-label="Interactive architectural flow illustrating how RRP and Partners transforms fragmented wealth holdings into independent financial command.">
+          aria-label="Interactive flow showing how selecting any of your assets maps to what you learn with RRP and Partners and the peace of mind you walk away with.">
           <div class="pp-wireframe__glow" aria-hidden="true"></div>
           <div class="dark-grain" aria-hidden="true"></div>
 
           <div class="pp-wf-grid">
-            <!-- Left Column: 5 Capital Exposure Pills -->
-            <div class="pp-wf-sources" aria-label="Your capital inputs">
-              <div class="pp-wf-pill" data-wf-tags="all,audit">
-                <span class="pp-wf-pill__badge" style="background:rgba(125,180,255,0.18);color:#93c5fd;" aria-hidden="true">
-                  <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6.5" cy="8" r="3.5"/><circle cx="10" cy="8" r="3.5"/></svg>
-                </span>
-                <span>Mutual Funds</span>
+            <!-- Left Column: 5 Interactive Plain-English Asset Pills -->
+            <div class="pp-wf-left" aria-label="Select where your money lives">
+              <div class="pp-wf-col-head">
+                <span class="pp-panel__diamond" aria-hidden="true"></span>
+                <span>Select Your Asset</span>
               </div>
-              <div class="pp-wf-pill" data-wf-tags="all,macro,audit">
-                <span class="pp-wf-pill__badge" style="background:rgba(232,184,125,0.2);color:#e8b87d;" aria-hidden="true">
-                  <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M2.5 6.5L8 3.5l5.5 3v6H2.5v-6z"/><path d="M6 12.5V9h4v3.5"/></svg>
-                </span>
-                <span>Business Surplus</span>
-              </div>
-              <div class="pp-wf-pill" data-wf-tags="all,mechanics,audit">
-                <span class="pp-wf-pill__badge" style="background:rgba(45,212,191,0.18);color:#2dd4bf;" aria-hidden="true">
-                  <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2.5 11.5L6 8l2.5 2L13.5 4.5"/></svg>
-                </span>
-                <span>Direct Equities</span>
-              </div>
-              <div class="pp-wf-pill" data-wf-tags="all,macro">
-                <span class="pp-wf-pill__badge" style="background:rgba(167,139,250,0.2);color:#c4b5fd;" aria-hidden="true">
-                  <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="8,2.5 13,5.5 8,8.5 3,5.5"/><path d="M3 9.5l5 3 5-3"/></svg>
-                </span>
-                <span>Debt &amp; Gold</span>
-              </div>
-              <div class="pp-wf-pill" data-wf-tags="all,macro,mechanics">
-                <span class="pp-wf-pill__badge" style="background:rgba(235,128,128,0.2);color:#eb8080;" aria-hidden="true">
-                  <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="8" cy="8" r="5.5"/><path d="M2.5 8h11M8 2.5c1.8 1.6 2.6 3.5 2.6 5.5S9.8 11.9 8 13.5C6.2 11.9 5.4 10 5.4 8S6.2 4.1 8 2.5z"/></svg>
-                </span>
-                <span>Global FX</span>
+
+              <div class="pp-wf-sources" role="group" aria-label="Choose an asset to inspect">
+                <button type="button" class="pp-wf-pill" data-wf-select="mf" data-wf-tags="all,mf,leaks,shifts" aria-pressed="false">
+                  <span class="pp-wf-pill__badge" style="background:rgba(125,180,255,0.18);color:#93c5fd;" aria-hidden="true">
+                    <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6.5" cy="8" r="3.5"/><circle cx="10" cy="8" r="3.5"/></svg>
+                  </span>
+                  <span>Mutual Funds</span>
+                </button>
+                <button type="button" class="pp-wf-pill" data-wf-select="cash" data-wf-tags="all,cash,leaks,shifts" aria-pressed="false">
+                  <span class="pp-wf-pill__badge" style="background:rgba(232,184,125,0.2);color:#e8b87d;" aria-hidden="true">
+                    <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M2.5 6.5L8 3.5l5.5 3v6H2.5v-6z"/><path d="M6 12.5V9h4v3.5"/></svg>
+                  </span>
+                  <span>Business Cash</span>
+                </button>
+                <button type="button" class="pp-wf-pill" data-wf-select="stocks" data-wf-tags="all,stocks,leaks,value" aria-pressed="false">
+                  <span class="pp-wf-pill__badge" style="background:rgba(45,212,191,0.18);color:#2dd4bf;" aria-hidden="true">
+                    <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2.5 11.5L6 8l2.5 2L13.5 4.5"/></svg>
+                  </span>
+                  <span>Direct Stocks</span>
+                </button>
+                <button type="button" class="pp-wf-pill" data-wf-select="gold" data-wf-tags="all,gold,shifts" aria-pressed="false">
+                  <span class="pp-wf-pill__badge" style="background:rgba(167,139,250,0.2);color:#c4b5fd;" aria-hidden="true">
+                    <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="8,2.5 13,5.5 8,8.5 3,5.5"/><path d="M3 9.5l5 3 5-3"/></svg>
+                  </span>
+                  <span>Gold &amp; Debt</span>
+                </button>
+                <button type="button" class="pp-wf-pill" data-wf-select="global" data-wf-tags="all,global,shifts,value" aria-pressed="false">
+                  <span class="pp-wf-pill__badge" style="background:rgba(235,128,128,0.2);color:#eb8080;" aria-hidden="true">
+                    <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="8" cy="8" r="5.5"/><path d="M2.5 8h11M8 2.5c1.8 1.6 2.6 3.5 2.6 5.5S9.8 11.9 8 13.5C6.2 11.9 5.4 10 5.4 8S6.2 4.1 8 2.5z"/></svg>
+                  </span>
+                  <span>Global &amp; Currency</span>
+                </button>
               </div>
             </div>
 
             <!-- Left Dotted Bezier Connectors (Crisp Vector-Effect Non-Scaling Strokes + Anchors) -->
-            <svg class="pp-wf-connectors" width="72" height="266" viewBox="0 0 72 266" preserveAspectRatio="none" aria-hidden="true">
-              <path class="pp-wf-line" data-wf-tags="all,audit" d="M 3 21 C 34 21, 36 109, 69 109" />
-              <path class="pp-wf-line" data-wf-tags="all,macro,audit" d="M 3 77 C 34 77, 36 121, 69 121" />
-              <path class="pp-wf-line" data-wf-tags="all,mechanics,audit" d="M 3 133 C 28 133, 44 133, 69 133" />
-              <path class="pp-wf-line" data-wf-tags="all,macro" d="M 3 189 C 34 189, 36 145, 69 145" />
-              <path class="pp-wf-line" data-wf-tags="all,macro,mechanics" d="M 3 245 C 34 245, 36 157, 69 157" />
-              <circle class="pp-wf-node-dot" data-wf-tags="all,audit" cx="3" cy="21" r="2.2" />
-              <circle class="pp-wf-node-dot" data-wf-tags="all,macro,audit" cx="3" cy="77" r="2.2" />
-              <circle class="pp-wf-node-dot" data-wf-tags="all,mechanics,audit" cx="3" cy="133" r="2.2" />
-              <circle class="pp-wf-node-dot" data-wf-tags="all,macro" cx="3" cy="189" r="2.2" />
-              <circle class="pp-wf-node-dot" data-wf-tags="all,macro,mechanics" cx="3" cy="245" r="2.2" />
+            <svg class="pp-wf-connectors" width="60" height="266" viewBox="0 0 60 266" preserveAspectRatio="none" aria-hidden="true">
+              <path class="pp-wf-line" data-wf-tags="all,mf,leaks,shifts" d="M 3 21 C 28 21, 30 109, 57 109" />
+              <path class="pp-wf-line" data-wf-tags="all,cash,leaks,shifts" d="M 3 77 C 28 77, 30 121, 57 121" />
+              <path class="pp-wf-line" data-wf-tags="all,stocks,leaks,value" d="M 3 133 C 24 133, 36 133, 57 133" />
+              <path class="pp-wf-line" data-wf-tags="all,gold,shifts" d="M 3 189 C 28 189, 30 145, 57 145" />
+              <path class="pp-wf-line" data-wf-tags="all,global,shifts,value" d="M 3 245 C 28 245, 30 157, 57 157" />
+              <circle class="pp-wf-node-dot" data-wf-tags="all,mf,leaks,shifts" cx="3" cy="21" r="2.2" />
+              <circle class="pp-wf-node-dot" data-wf-tags="all,cash,leaks,shifts" cx="3" cy="77" r="2.2" />
+              <circle class="pp-wf-node-dot" data-wf-tags="all,stocks,leaks,value" cx="3" cy="133" r="2.2" />
+              <circle class="pp-wf-node-dot" data-wf-tags="all,gold,shifts" cx="3" cy="189" r="2.2" />
+              <circle class="pp-wf-node-dot" data-wf-tags="all,global,shifts,value" cx="3" cy="245" r="2.2" />
             </svg>
 
             <!-- Mobile Vertical Dotted Connector 1 -->
             <svg class="pp-wf-v-connector" width="120" height="36" viewBox="0 0 120 36" fill="none" aria-hidden="true">
-              <path class="pp-wf-line" data-wf-tags="all,audit" d="M 20 2 C 20 18, 52 18, 52 34" />
-              <path class="pp-wf-line" data-wf-tags="all,macro,audit,mechanics" d="M 60 2 L 60 34" />
-              <path class="pp-wf-line" data-wf-tags="all,macro,mechanics" d="M 100 2 C 100 18, 68 18, 68 34" />
+              <path class="pp-wf-line" data-wf-tags="all,mf,cash,stocks,leaks" d="M 20 2 C 20 18, 52 18, 52 34" />
+              <path class="pp-wf-line" data-wf-tags="all,mf,cash,gold,global,shifts" d="M 60 2 L 60 34" />
+              <path class="pp-wf-line" data-wf-tags="all,stocks,global,value" d="M 100 2 C 100 18, 68 18, 68 34" />
             </svg>
 
-            <!-- Center Frosted Glass Hub (Exact Steep 1-over-3 Bento Geometry) -->
+            <!-- Center Frosted Glass Hub (Exact Steep 1-over-3 Bento Geometry: What You Learn) -->
             <div class="pp-wf-hub">
               <div>
                 <div class="pp-wf-brand">
@@ -4114,86 +4188,86 @@
                     <span class="pp-wordmark__partners">Partners</span>
                   </span>
                 </div>
-                <div class="pp-wf-subtitle">Private coaching architecture</div>
+                <div class="pp-wf-subtitle">What you actually learn</div>
               </div>
 
-              <div class="pp-wf-bento" role="group" aria-label="Filter architectural lenses">
+              <div class="pp-wf-bento" role="group" aria-label="Filter what you learn">
                 <button type="button" class="pp-wf-bento-top is-active" data-wf-filter="all" aria-pressed="true">
-                  11-Level Market Framework
+                  Complete Wealth Mastery
                 </button>
                 <div class="pp-wf-bento-tri">
-                  <button type="button" class="pp-wf-bento-cell" data-wf-filter="audit" aria-pressed="false">Portfolio Audits</button>
-                  <button type="button" class="pp-wf-bento-cell" data-wf-filter="macro" aria-pressed="false">Macro Cycles</button>
-                  <button type="button" class="pp-wf-bento-cell" data-wf-filter="mechanics" aria-pressed="false">Order Flow</button>
+                  <button type="button" class="pp-wf-bento-cell" data-wf-filter="leaks" data-wf-tags="all,mf,cash,stocks,leaks" aria-pressed="false">Spot Hidden Leaks</button>
+                  <button type="button" class="pp-wf-bento-cell" data-wf-filter="shifts" data-wf-tags="all,mf,cash,gold,global,shifts" aria-pressed="false">Read Economic Shifts</button>
+                  <button type="button" class="pp-wf-bento-cell" data-wf-filter="value" data-wf-tags="all,stocks,global,value" aria-pressed="false">Time Real Value</button>
                 </div>
               </div>
             </div>
 
             <!-- Mobile Vertical Dotted Connector 2 -->
             <svg class="pp-wf-v-connector" width="120" height="36" viewBox="0 0 120 36" fill="none" aria-hidden="true">
-              <path class="pp-wf-line" data-wf-tags="all,audit" d="M 52 2 C 52 18, 20 18, 20 34" />
-              <path class="pp-wf-line" data-wf-tags="all,macro,audit,mechanics" d="M 60 2 L 60 34" />
-              <path class="pp-wf-line" data-wf-tags="all,macro,mechanics" d="M 68 2 C 68 18, 100 18, 100 34" />
+              <path class="pp-wf-line" data-wf-tags="all,mf,cash,stocks,leaks" d="M 52 2 C 52 18, 20 18, 20 34" />
+              <path class="pp-wf-line" data-wf-tags="all,mf,cash,gold,global,shifts" d="M 60 2 L 60 34" />
+              <path class="pp-wf-line" data-wf-tags="all,stocks,global,value" d="M 68 2 C 68 18, 100 18, 100 34" />
             </svg>
 
             <!-- Right Dotted Bezier Connectors (Crisp Vector-Effect Non-Scaling Strokes + Anchors) -->
-            <svg class="pp-wf-connectors pp-wf-connectors--right" width="72" height="296" viewBox="0 0 72 296" preserveAspectRatio="none" aria-hidden="true">
-              <path class="pp-wf-line" data-wf-tags="all,audit" d="M 3 118 C 36 118, 38 36, 69 36" />
-              <path class="pp-wf-line" data-wf-tags="all,macro" d="M 3 130 C 36 130, 38 78, 69 78" />
-              <path class="pp-wf-line" data-wf-tags="all,audit,macro" d="M 3 142 C 36 142, 38 120, 69 120" />
-              <path class="pp-wf-line" data-wf-tags="all,mechanics" d="M 3 154 C 36 154, 38 176, 69 176" />
-              <path class="pp-wf-line" data-wf-tags="all,audit,mechanics" d="M 3 166 C 36 166, 38 218, 69 218" />
-              <path class="pp-wf-line" data-wf-tags="all,audit,macro,mechanics" d="M 3 178 C 36 178, 38 260, 69 260" />
-              <circle class="pp-wf-node-dot" data-wf-tags="all,audit" cx="69" cy="36" r="2.2" />
-              <circle class="pp-wf-node-dot" data-wf-tags="all,macro" cx="69" cy="78" r="2.2" />
-              <circle class="pp-wf-node-dot" data-wf-tags="all,audit,macro" cx="69" cy="120" r="2.2" />
-              <circle class="pp-wf-node-dot" data-wf-tags="all,mechanics" cx="69" cy="176" r="2.2" />
-              <circle class="pp-wf-node-dot" data-wf-tags="all,audit,mechanics" cx="69" cy="218" r="2.2" />
-              <circle class="pp-wf-node-dot" data-wf-tags="all,audit,macro,mechanics" cx="69" cy="260" r="2.2" />
+            <svg class="pp-wf-connectors pp-wf-connectors--right" width="60" height="296" viewBox="0 0 60 296" preserveAspectRatio="none" aria-hidden="true">
+              <path class="pp-wf-line" data-wf-tags="all,mf,leaks" d="M 3 118 C 30 118, 32 36, 57 36" />
+              <path class="pp-wf-line" data-wf-tags="all,mf,stocks,leaks,value" d="M 3 130 C 30 130, 32 78, 57 78" />
+              <path class="pp-wf-line" data-wf-tags="all,cash,stocks,gold,global,shifts" d="M 3 142 C 30 142, 32 120, 57 120" />
+              <path class="pp-wf-line" data-wf-tags="all,stocks,global,value" d="M 3 154 C 30 154, 32 176, 57 176" />
+              <path class="pp-wf-line" data-wf-tags="all,cash,leaks,shifts" d="M 3 166 C 30 166, 32 218, 57 218" />
+              <path class="pp-wf-line" data-wf-tags="all,mf,cash,gold,global,shifts,value" d="M 3 178 C 30 178, 32 260, 57 260" />
+              <circle class="pp-wf-node-dot" data-wf-tags="all,mf,leaks" cx="57" cy="36" r="2.2" />
+              <circle class="pp-wf-node-dot" data-wf-tags="all,mf,stocks,leaks,value" cx="57" cy="78" r="2.2" />
+              <circle class="pp-wf-node-dot" data-wf-tags="all,cash,stocks,gold,global,shifts" cx="57" cy="120" r="2.2" />
+              <circle class="pp-wf-node-dot" data-wf-tags="all,stocks,global,value" cx="57" cy="176" r="2.2" />
+              <circle class="pp-wf-node-dot" data-wf-tags="all,cash,leaks,shifts" cx="57" cy="218" r="2.2" />
+              <circle class="pp-wf-node-dot" data-wf-tags="all,mf,cash,gold,global,shifts,value" cx="57" cy="260" r="2.2" />
             </svg>
 
-            <!-- Right Column: Floating Brand Header + 2-Group Outcome Card -->
-            <div class="pp-wf-right" aria-label="Permanent principal outcomes">
+            <!-- Right Column: Floating Header + 2-Group Emotional Solution Card -->
+            <div class="pp-wf-right" aria-label="What changes in your life">
               <div class="pp-wf-right__head">
                 <span class="pp-panel__diamond" aria-hidden="true"></span>
-                <span>Principal Outcomes</span>
+                <span>What Changes For You</span>
               </div>
 
               <div class="pp-wf-out-card">
-                <div class="pp-wf-out-item" data-wf-tags="all,audit">
+                <div class="pp-wf-out-item" data-wf-tags="all,mf,leaks">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2.5L4 5v4.8c0 3.8 2.6 7.1 6 8.2 3.4-1.1 6-4.4 6-8.2V5l-6-2.5z"/><path d="M7.5 10.2l1.7 1.7 3.4-3.5"/></svg>
+                  <span>Never get missold again</span>
+                </div>
+                <div class="pp-wf-out-item" data-wf-tags="all,mf,stocks,leaks,value">
                   <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="5.5"/><path d="M13.5 13.5L17 17"/></svg>
-                  <span>30-Min Self-Audit</span>
+                  <span>Keep every rupee earned</span>
                 </div>
-                <div class="pp-wf-out-item" data-wf-tags="all,macro">
-                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2.5L4 5v4.8c0 3.8 2.6 7.1 6 8.2 3.4-1.1 6-4.4 6-8.2V5l-6-2.5z"/></svg>
-                  <span>Cycle Defense</span>
-                </div>
-                <div class="pp-wf-out-item" data-wf-tags="all,audit,macro">
-                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14.5h14M5 10.5l3.5-3.5 3 2.5L15.5 5"/></svg>
-                  <span>Clean Rebalancing</span>
+                <div class="pp-wf-out-item" data-wf-tags="all,cash,stocks,gold,global,shifts">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13.5c2.2-2.2 4.2-2.2 6.4 0s4.2 2.2 7.6-1.5"/><path d="M3 9c2.2-2.2 4.2-2.2 6.4 0s4.2 2.2 7.6-1.5"/></svg>
+                  <span>Sleep calm through crashes</span>
                 </div>
 
                 <div class="pp-wf-out-sep" aria-hidden="true"></div>
 
-                <div class="pp-wf-out-item" data-wf-tags="all,mechanics">
-                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14V9M8 14V6M12 14V10M16 14V4"/></svg>
-                  <span>Auction Mechanics</span>
+                <div class="pp-wf-out-item" data-wf-tags="all,stocks,global,value">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14.5h14M5 11.5l3.5-3.5 2.8 2.4L15.5 5.5"/></svg>
+                  <span>Buy on proof, not hype</span>
                 </div>
-                <div class="pp-wf-out-item" data-wf-tags="all,audit,mechanics">
-                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="4.5" width="13" height="11" rx="2"/><path d="M7 9h6M7 12h4"/></svg>
-                  <span>Business Valuation</span>
+                <div class="pp-wf-out-item" data-wf-tags="all,cash,leaks,shifts">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5.5" width="13" height="10" rx="2"/><path d="M7.5 5.5V4a1.5 1.5 0 0 1 1.5-1.5h2A1.5 1.5 0 0 1 12.5 4v1.5"/></svg>
+                  <span>Bulletproof business cash</span>
                 </div>
-                <div class="pp-wf-out-item" data-wf-tags="all,audit,macro,mechanics">
+                <div class="pp-wf-out-item" data-wf-tags="all,mf,cash,gold,global,shifts,value">
                   <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="M7.5 10l1.8 1.8 3.5-3.6"/></svg>
-                  <span>Quiet Command</span>
+                  <span>Protect your family&rsquo;s future</span>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="pp-wf-caption">
-            <span>Select any analytical module inside the hub to inspect how holdings map to independent judgment.</span>
-            <span style="color:#e8b87d;">1-on-1 Calibrated &middot; Zero Delegation</span>
+            <span class="pp-wf-caption__text" id="pp-wf-caption-text">Click any asset on the left or skill in the center to see what you learn and the peace of mind it gives you.</span>
+            <span class="pp-wf-caption__tag">1-on-1 Personal &middot; Zero Delegation</span>
           </div>
         </div>
 
@@ -4969,29 +5043,66 @@
         });
       });
 
-      /* 4. Interactive Steep Semantic-Style Wireframe Module Highlight */
+      /* 4. Interactive Bidirectional Wireframe (Select Asset <-> Learn Skill <-> Emotional Outcome) */
       var wfStage = document.getElementById('pp-wireframe');
       if (wfStage) {
         var wfButtons = Array.from(wfStage.querySelectorAll('[data-wf-filter]'));
+        var wfAssetPills = Array.from(wfStage.querySelectorAll('[data-wf-select]'));
         var wfTargets = Array.from(wfStage.querySelectorAll('[data-wf-tags]'));
+        var wfCaptionEl = document.getElementById('pp-wf-caption-text');
+        var activeWfKey = 'all';
+
+        var wfStories = {
+          all: 'Click any asset on the left or skill in the center to see what you learn and the peace of mind it gives you.',
+          mf: 'Mutual Funds: Expose silent trail commissions and overlapping funds in 30 minutes, so your returns build your family\u2019s wealth, not a middleman\u2019s.',
+          cash: 'Business Cash: Separate personal wealth from business risk, put idle surplus to work calmly, and never scramble when cycles tighten.',
+          stocks: 'Direct Stocks: Stop chasing noisy tips or panicking on red days. Read real institutional demand and hold quality businesses with conviction.',
+          gold: 'Gold & Debt: Know clearly when safety protects your downside and when silent inflation is eroding decades of hard work.',
+          global: 'Global & Currency: See how rupee shifts, global yields, and cross-border flows shape your real net worth long before headlines react.',
+          leaks: 'Spot Hidden Leaks: Audit any fund, stock, or cashflow sheet yourself with Chartered Accountant discipline, ending silent fees and blind trust.',
+          shifts: 'Read Economic Shifts: Understand rates, inflation, and currency turns in plain English, turning market fear into quiet preparation.',
+          value: 'Time Real Value: Read real supply, demand, and institutional buying directly from price, so you enter on proof and never on hype.'
+        };
 
         function setWireframeFilter(key) {
+          if (key === activeWfKey && key !== 'all') {
+            key = 'all';
+          }
+          activeWfKey = key;
+          var isFiltered = key !== 'all';
+          wfStage.classList.toggle('is-filtered', isFiltered);
+
           wfButtons.forEach(function (b) {
             var active = b.getAttribute('data-wf-filter') === key;
             b.classList.toggle('is-active', active);
             b.setAttribute('aria-pressed', String(active));
           });
-          var isFiltered = key !== 'all';
-          wfStage.classList.toggle('is-filtered', isFiltered);
+
+          wfAssetPills.forEach(function (p) {
+            var selected = p.getAttribute('data-wf-select') === key;
+            p.classList.toggle('is-selected', selected);
+            p.setAttribute('aria-pressed', String(selected));
+          });
+
           wfTargets.forEach(function (el) {
             var tags = (el.getAttribute('data-wf-tags') || '').split(',');
             el.classList.toggle('is-lit', !isFiltered || tags.indexOf(key) !== -1);
           });
+
+          if (wfCaptionEl && wfStories[key]) {
+            wfCaptionEl.textContent = wfStories[key];
+          }
         }
 
         wfButtons.forEach(function (btn) {
           btn.addEventListener('click', function () {
             setWireframeFilter(btn.getAttribute('data-wf-filter'));
+          });
+        });
+
+        wfAssetPills.forEach(function (pill) {
+          pill.addEventListener('click', function () {
+            setWireframeFilter(pill.getAttribute('data-wf-select'));
           });
         });
       }

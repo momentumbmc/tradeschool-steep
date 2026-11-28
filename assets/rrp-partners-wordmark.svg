@@ -1,0 +1,47 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 32" width="210" height="32" fill="none">
+  <!--
+    ============================================================================
+    RRP & PARTNERS - Official Brand Wordmark Asset
+    ============================================================================
+    How to adjust from here:
+    1. Text: Edit "RRP", "&", or "PARTNERS" in the <text> tags below.
+    2. Font & Size: Adjust font-family, font-size, or letter-spacing in <style>.
+    3. Colors:
+       - Script initials ("RRP"):  .script   -> fill: #ffffff (dark) or #141619 (light)
+       - Serif ampersand ("&"):    .amp      -> fill: #e8b87d (gold) or #925827 (bronze)
+       - Subtitle ("PARTNERS"):    .partners -> fill: rgba(240,240,242,0.9) (dark) or rgba(20,22,25,0.85) (light)
+    ============================================================================
+  -->
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Allura&amp;family=Inter:wght@500&amp;family=Newsreader:ital@1&amp;display=swap');
+      .script {
+        font-family: 'Allura', 'Snell Roundhand', 'Brush Script MT', cursive;
+        font-size: 26px;
+        font-weight: 400;
+        fill: #ffffff;
+        letter-spacing: 0.055em;
+      }
+      .amp {
+        font-family: 'Newsreader', Georgia, serif;
+        font-style: italic;
+        font-size: 15px;
+        font-weight: 400;
+        fill: #e8b87d;
+      }
+      .partners {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        fill: rgba(240, 240, 242, 0.9);
+      }
+    </style>
+  </defs>
+  <g id="rrp-wordmark">
+    <text x="2" y="24" class="script">RRP</text>
+    <text x="59" y="22" class="amp">&amp;</text>
+    <text x="76" y="21" class="partners">PARTNERS</text>
+  </g>
+</svg>
